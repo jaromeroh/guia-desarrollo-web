@@ -353,19 +353,18 @@ Tu código se empaqueta como funciones que se ejecutan **solo cuando hay una pet
 │                                                      │
 │   Petición llega:                                    │
 │   ┌──────────┐                                       │
-│   │ λ función│ ──▶ Respuesta ──▶ 💤                 │
+│   │ función  │ ──▶ Respuesta ──▶ 💤                 │
 │   └──────────┘     (se apaga)                       │
 │                                                      │
 │   Muchas peticiones:                                 │
 │   ┌──────────┐ ┌──────────┐ ┌──────────┐           │
-│   │ λ        │ │ λ        │ │ λ        │  (auto)   │
+│   │ función  │ │ función  │ │ función  │  (auto)   │
 │   └──────────┘ └──────────┘ └──────────┘           │
-│                                                      │
-│   Ejemplos: AWS Lambda, Vercel Functions,            │
-│             Cloudflare Workers, Netlify Functions    │
 │                                                      │
 └─────────────────────────────────────────────────────┘
 ```
+
+📖 **Concepto**: ¿Qué es una "Lambda"? **AWS Lambda** fue el primer servicio popular de este tipo (lanzado en 2014). El nombre viene de la letra griega λ, usada en programación funcional para representar funciones anónimas. Hoy "Lambda" se usa coloquialmente como sinónimo de "función serverless", aunque cada proveedor tiene su nombre: Vercel Functions, Cloudflare Workers, Google Cloud Functions, Azure Functions. Todos funcionan igual: tu código duerme hasta que llega una petición, se ejecuta, responde, y vuelve a dormir.
 
 **Ventajas:**
 - No manejas servidores
@@ -472,49 +471,6 @@ Ahora que entiendes que son dos decisiones separadas, aquí está cómo tomar ca
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
-
----
-
-### Caso especial: frameworks modernos como Next.js
-
-Los meta-frameworks modernos como **Next.js**, **Nuxt**, **SvelteKit** y **Remix** son interesantes porque:
-
-1. **Organizan como monolito**: Un repositorio, frontend y backend juntos, código compartido fácilmente
-2. **Pueden ejecutarse de ambas formas**:
-   - `next start` → servidor Node.js tradicional
-   - Deploy en Vercel → serverless automático
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                     PROYECTO NEXT.JS                                │
-│                                                                     │
-│   ┌─────────────────────────────────────────────────────────────┐  │
-│   │  /app                                                        │  │
-│   │    /page.tsx           (Server Component)                   │  │
-│   │    /api/users/route.ts (API Route)                          │  │
-│   │    /api/posts/route.ts (API Route)                          │  │
-│   │  /components                                                 │  │
-│   │  /lib                                                        │  │
-│   └─────────────────────────────────────────────────────────────┘  │
-│                              │                                      │
-│              ┌───────────────┴───────────────┐                     │
-│              ▼                               ▼                      │
-│   ┌─────────────────────┐       ┌─────────────────────┐            │
-│   │  next start         │       │  Deploy a Vercel    │            │
-│   │  (Node.js server)   │       │  (Serverless)       │            │
-│   │                     │       │                     │            │
-│   │  Un proceso 24/7    │       │  λ /                │            │
-│   │  corriendo todo     │       │  λ /api/users       │            │
-│   │                     │       │  λ /api/posts       │            │
-│   │  TRADICIONAL        │       │  SERVERLESS         │            │
-│   └─────────────────────┘       └─────────────────────┘            │
-│                                                                     │
-│   Mismo código, diferente modelo de ejecución                      │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
-💡 **Insight**: Esta flexibilidad es poderosa. Puedes desarrollar localmente como servidor tradicional (sin cold starts, debugging fácil) y desplegar como serverless en producción (escala automática, cero mantenimiento).
 
 ---
 
