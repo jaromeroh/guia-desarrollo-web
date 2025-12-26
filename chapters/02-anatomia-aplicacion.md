@@ -635,7 +635,7 @@ Una aplicación web moderna típicamente incluye:
 - Una aplicación web es un **sistema distribuido**: múltiples programas comunicándose por red
 - La división **cliente-servidor** sigue siendo fundamental: cliente pide, servidor responde
 - Las aplicaciones tienen **capas** (presentación, API, lógica de negocio, datos) para separar responsabilidades
-- Hay tres arquitecturas principales: **monolito** (simple, ideal para empezar), **microservicios** (para grandes equipos), **serverless** (para tráfico variable)
+- La arquitectura implica **dos decisiones ortogonales**: organización (monolito vs microservicios) y ejecución (tradicional vs serverless)—se pueden combinar
 - Una petición atraviesa múltiples componentes; entender este flujo es clave para debuggear
 - El stack moderno tiene muchas opciones; elige uno y domínalo antes de explorar otros
 
