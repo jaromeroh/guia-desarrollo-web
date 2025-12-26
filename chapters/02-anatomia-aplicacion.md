@@ -202,13 +202,37 @@ Una aplicación web moderna tiene múltiples capas, cada una con responsabilidad
 
 ---
 
-## Arquitecturas: Monolito vs Microservicios vs Serverless
+## Dos decisiones arquitectónicas fundamentales
 
-Una de las primeras decisiones arquitectónicas es cómo organizar tu código en el servidor. Hay tres enfoques principales.
+Cuando diseñas la arquitectura de tu aplicación, no tomas una decisión—tomas **dos decisiones independientes** que se pueden combinar:
 
-### El Monolito
+```
+┌────────────────────────────────────────────────────────────────┐
+│                                                                │
+│   DECISIÓN 1: ¿Cómo ORGANIZO el código?                       │
+│   ──────────────────────────────────────                       │
+│   Monolito ◄─────────────────────────────► Microservicios     │
+│   (todo junto)                              (servicios separados)
+│                                                                │
+│   DECISIÓN 2: ¿Cómo EJECUTO el código?                        │
+│   ──────────────────────────────────────                       │
+│   Tradicional ◄──────────────────────────► Serverless         │
+│   (servidores 24/7)                         (funciones on-demand)
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+```
 
-Todo el código del servidor vive en una sola aplicación.
+Estas dos dimensiones son **ortogonales**: puedes combinarlas de cualquier manera. Veamos cada una.
+
+---
+
+### Decisión 1: Organización del código
+
+Esta decisión responde: *¿Cómo divido las responsabilidades de mi aplicación?*
+
+#### Monolito
+
+Todo el código del servidor vive en una sola aplicación, un solo repositorio, un solo deployment.
 
 ```
 ┌────────────────────────────────────────┐
@@ -239,9 +263,7 @@ Todo el código del servidor vive en una sola aplicación.
 - El código tiende a acoplarse con el tiempo
 - Deployments más riesgosos a medida que crece
 
-📖 **Concepto**: Un monolito bien estructurado (con módulos internos claros) es perfectamente válido y a menudo la mejor opción para empezar. No dejes que el hype de microservicios te convenza de lo contrario.
-
-### Microservicios
+#### Microservicios
 
 La aplicación se divide en servicios pequeños e independientes que se comunican por red.
 
@@ -257,7 +279,7 @@ La aplicación se divide en servicios pequeños e independientes que se comunica
        └──────────────────┼──────────────────┘
                           │
                     ┌─────┴─────┐
-                    │  API      │
+                    │    API    │
                     │  Gateway  │
                     └───────────┘
 ```
@@ -273,72 +295,226 @@ La aplicación se divide en servicios pequeños e independientes que se comunica
 - Latencia de red entre servicios
 - Transacciones distribuidas son difíciles
 - Debugging es más complicado
-- Requiere infraestructura sofisticada
 
-⚠️ **Advertencia**: Los microservicios resuelven problemas organizacionales, no técnicos. Si tienes un equipo de 5 personas, probablemente no necesitas microservicios. La regla informal: considera microservicios cuando tengas más desarrolladores que pueden trabajar efectivamente en un solo repositorio (~10-15 personas).
+⚠️ **Advertencia**: Los microservicios resuelven problemas **organizacionales**, no técnicos. Si tienes un equipo de 5 personas, probablemente no necesitas microservicios. La regla informal: considera microservicios cuando tengas más desarrolladores que los que pueden trabajar efectivamente en un solo repositorio (~10-15 personas).
 
-### Serverless
+---
 
-En lugar de manejar servidores, escribes funciones que se ejecutan bajo demanda.
+### Decisión 2: Modelo de ejecución
+
+Esta decisión responde: *¿Cómo y dónde corre mi código?*
+
+#### Servidores tradicionales
+
+Tu aplicación corre como un proceso (o varios) en servidores que están encendidos 24/7, esperando peticiones.
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                    PROVEEDOR CLOUD                   │
-│                (AWS Lambda, Vercel, etc.)            │
+│              SERVIDOR TRADICIONAL                    │
 ├─────────────────────────────────────────────────────┤
 │                                                      │
-│   Petición ──▶ ┌──────────┐                         │
-│                │ Función  │ ──▶ Base de datos       │
-│                │ getUsers │                         │
-│                └──────────┘                         │
+│   ┌─────────────────────────────────────────────┐   │
+│   │              Tu aplicación                   │   │
+│   │         (proceso corriendo 24/7)             │   │
+│   │                                              │   │
+│   │   Esperando... → Petición → Respuesta →     │   │
+│   │   Esperando... → Petición → Respuesta →     │   │
+│   │   Esperando...                               │   │
+│   └─────────────────────────────────────────────┘   │
 │                                                      │
-│   Petición ──▶ ┌──────────┐                         │
-│                │ Función  │ ──▶ Servicio externo    │
-│                │ sendEmail│                         │
-│                └──────────┘                         │
+│   Ejemplos: VPS, EC2, Docker en un servidor,        │
+│             Kubernetes, tu laptop corriendo Node     │
 │                                                      │
-│   (Las funciones "duermen" cuando no se usan)        │
-│   (El proveedor maneja escalado automáticamente)     │
+└─────────────────────────────────────────────────────┘
+```
+
+**Ventajas:**
+- Control total sobre el ambiente
+- Sin cold starts (siempre listo)
+- Costo predecible
+- Conexiones persistentes fáciles (WebSockets)
+- Sin límites de tiempo de ejecución
+
+**Desventajas:**
+- Pagas aunque no haya tráfico
+- Tú manejas el escalado
+- Mantenimiento de servidores (actualizaciones, seguridad)
+
+#### Serverless (Functions as a Service)
+
+Tu código se empaqueta como funciones que se ejecutan **solo cuando hay una petición**. El proveedor maneja todo lo demás.
+
+```
+┌─────────────────────────────────────────────────────┐
+│              SERVERLESS / FaaS                       │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│   Sin peticiones:  💤 (nada corriendo, $0)          │
+│                                                      │
+│   Petición llega:                                    │
+│   ┌──────────┐                                       │
+│   │ λ función│ ──▶ Respuesta ──▶ 💤                 │
+│   └──────────┘     (se apaga)                       │
+│                                                      │
+│   Muchas peticiones:                                 │
+│   ┌──────────┐ ┌──────────┐ ┌──────────┐           │
+│   │ λ        │ │ λ        │ │ λ        │  (auto)   │
+│   └──────────┘ └──────────┘ └──────────┘           │
+│                                                      │
+│   Ejemplos: AWS Lambda, Vercel Functions,            │
+│             Cloudflare Workers, Netlify Functions    │
 │                                                      │
 └─────────────────────────────────────────────────────┘
 ```
 
 **Ventajas:**
 - No manejas servidores
-- Paga solo por lo que usas (ideal para tráfico variable)
-- Escalado automático e infinito
+- Escala a cero (no pagas si no hay tráfico)
+- Escala automáticamente bajo carga
 - Menos código de infraestructura
 
 **Desventajas:**
 - Cold starts (latencia cuando la función "despierta")
-- Límites de tiempo de ejecución
+- Límites de tiempo de ejecución (típicamente 10-30 segundos)
 - Vendor lock-in
-- Debugging y testing local más difícil
-- Puede ser más caro a escala constante
+- WebSockets y conexiones persistentes son más difíciles
 
-### ¿Cuál elegir?
+---
+
+### La matriz: combinando las dos decisiones
+
+Aquí está la clave conceptual: **puedes combinar cualquier organización con cualquier ejecución**.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                  GUÍA DE DECISIÓN                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ¿Equipo pequeño (<10)?                                     │
-│      └──▶ MONOLITO                                          │
-│                                                             │
-│  ¿Tráfico muy variable o impredecible?                      │
-│      └──▶ SERVERLESS                                        │
-│                                                             │
-│  ¿Múltiples equipos que necesitan autonomía?                │
-│      └──▶ MICROSERVICIOS                                    │
-│                                                             │
-│  ¿No estás seguro?                                          │
-│      └──▶ MONOLITO (siempre puedes migrar después)          │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│                           ORGANIZACIÓN                              │
+│                                                                     │
+│                     Monolito          Microservicios                │
+│                 ┌───────────────┬─────────────────────┐             │
+│                 │               │                     │             │
+│   Tradicional   │  Rails en     │  Kubernetes con     │             │
+│   (servidores   │  un VPS       │  Docker             │             │
+│    24/7)        │               │                     │             │
+│                 │  Django en    │  Cada servicio en   │             │
+│ E               │  EC2          │  su contenedor      │             │
+│ J               │               │                     │             │
+│ E               ├───────────────┼─────────────────────┤             │
+│ C               │               │                     │             │
+│ U               │  Next.js en   │  Cada servicio      │             │
+│ C   Serverless  │  Vercel       │  como Lambdas       │             │
+│ I   (funciones  │               │                     │             │
+│ Ó    on-demand) │  Remix en     │  Event-driven       │             │
+│ N               │  Cloudflare   │  architecture       │             │
+│                 │               │                     │             │
+│                 └───────────────┴─────────────────────┘             │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
-💡 **Insight**: La arquitectura correcta depende del contexto, no de las tendencias. Muchas empresas exitosas corren monolitos. Shopify, Basecamp, y GitHub (hasta hace poco) son ejemplos.
+📖 **Concepto**: Next.js desplegado en Vercel es un **monolito serverless**: organización de monolito (un repo, un proyecto, frontend y API juntos) con ejecución serverless (cada ruta es una función Lambda).
+
+### Ejemplos del mundo real
+
+| Combinación | Ejemplo | Por qué funciona |
+|-------------|---------|------------------|
+| **Monolito + Tradicional** | Basecamp (Rails), Shopify | Simplicidad, equipo cohesivo, control total |
+| **Monolito + Serverless** | Next.js en Vercel, Remix en Cloudflare | Simplicidad de desarrollo + escala automática |
+| **Microservicios + Tradicional** | Netflix, Uber (Kubernetes) | Múltiples equipos, escala masiva, control fino |
+| **Microservicios + Serverless** | Backend distribuido en AWS Lambda | Escala por servicio, pago granular por uso |
+
+---
+
+### Guía de decisión
+
+Ahora que entiendes que son dos decisiones separadas, aquí está cómo tomar cada una:
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│   DECISIÓN 1: ¿Monolito o Microservicios?                          │
+│   ─────────────────────────────────────────                         │
+│                                                                     │
+│   ¿Equipo pequeño (< 10 personas)?                                 │
+│       └──▶ MONOLITO                                                 │
+│                                                                     │
+│   ¿Un solo producto con dominio cohesivo?                          │
+│       └──▶ MONOLITO                                                 │
+│                                                                     │
+│   ¿Múltiples equipos que necesitan autonomía total?                │
+│       └──▶ MICROSERVICIOS                                           │
+│                                                                     │
+│   ¿Partes del sistema con requisitos de escala muy diferentes?     │
+│       └──▶ MICROSERVICIOS (o monolito + servicios auxiliares)       │
+│                                                                     │
+│   ¿No estás seguro?                                                 │
+│       └──▶ MONOLITO (siempre puedes extraer servicios después)      │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   DECISIÓN 2: ¿Tradicional o Serverless?                           │
+│   ─────────────────────────────────────────                         │
+│                                                                     │
+│   ¿Tráfico muy variable o impredecible?                            │
+│       └──▶ SERVERLESS (escala a cero, escala al infinito)          │
+│                                                                     │
+│   ¿Necesitas WebSockets o conexiones persistentes?                 │
+│       └──▶ TRADICIONAL (o serverless con servicios especializados) │
+│                                                                     │
+│   ¿Procesos de larga duración (> 30 segundos)?                     │
+│       └──▶ TRADICIONAL                                              │
+│                                                                     │
+│   ¿Quieres mínima operación de infraestructura?                    │
+│       └──▶ SERVERLESS                                               │
+│                                                                     │
+│   ¿Tráfico constante y predecible?                                 │
+│       └──▶ TRADICIONAL (puede ser más económico)                    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Caso especial: frameworks modernos como Next.js
+
+Los meta-frameworks modernos como **Next.js**, **Nuxt**, **SvelteKit** y **Remix** son interesantes porque:
+
+1. **Organizan como monolito**: Un repositorio, frontend y backend juntos, código compartido fácilmente
+2. **Pueden ejecutarse de ambas formas**:
+   - `next start` → servidor Node.js tradicional
+   - Deploy en Vercel → serverless automático
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                     PROYECTO NEXT.JS                                │
+│                                                                     │
+│   ┌─────────────────────────────────────────────────────────────┐  │
+│   │  /app                                                        │  │
+│   │    /page.tsx           (Server Component)                   │  │
+│   │    /api/users/route.ts (API Route)                          │  │
+│   │    /api/posts/route.ts (API Route)                          │  │
+│   │  /components                                                 │  │
+│   │  /lib                                                        │  │
+│   └─────────────────────────────────────────────────────────────┘  │
+│                              │                                      │
+│              ┌───────────────┴───────────────┐                     │
+│              ▼                               ▼                      │
+│   ┌─────────────────────┐       ┌─────────────────────┐            │
+│   │  next start         │       │  Deploy a Vercel    │            │
+│   │  (Node.js server)   │       │  (Serverless)       │            │
+│   │                     │       │                     │            │
+│   │  Un proceso 24/7    │       │  λ /                │            │
+│   │  corriendo todo     │       │  λ /api/users       │            │
+│   │                     │       │  λ /api/posts       │            │
+│   │  TRADICIONAL        │       │  SERVERLESS         │            │
+│   └─────────────────────┘       └─────────────────────┘            │
+│                                                                     │
+│   Mismo código, diferente modelo de ejecución                      │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+💡 **Insight**: Esta flexibilidad es poderosa. Puedes desarrollar localmente como servidor tradicional (sin cold starts, debugging fácil) y desplegar como serverless en producción (escala automática, cero mantenimiento).
 
 ---
 
