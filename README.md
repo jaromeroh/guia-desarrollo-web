@@ -259,7 +259,17 @@ Este es un libro vivo. Si encuentras errores, tienes sugerencias o quieres contr
 
 ## Licencia
 
-[Por definir]
+Este trabajo está bajo una licencia [Creative Commons Atribución-NoComercial 4.0 Internacional (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.es).
+
+**Puedes:**
+- Compartir — copiar y redistribuir el material en cualquier medio o formato
+- Adaptar — remezclar, transformar y construir a partir del material
+
+**Bajo los siguientes términos:**
+- **Atribución** — Debes dar crédito apropiado, proporcionar un enlace a la licencia e indicar si se han realizado cambios
+- **NoComercial** — No puedes usar el material con fines comerciales
+
+[![CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/deed.es)
 
 ---
 
