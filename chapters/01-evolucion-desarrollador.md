@@ -274,7 +274,7 @@ Desarrolla estas meta-habilidades:
 
 1. **Reflexión**: Piensa en el último proyecto en el que trabajaste. ¿Qué porcentaje del tiempo se dedicó al "antes", al "durante" y al "después"? ¿El resultado habría sido mejor con una distribución diferente?
 
-2. **Análisis**: Elige una herramienta de IA para desarrollo (GitHub Copilot, Claude, Cursor, etc.). Úsala para una tarea pequeña. Documenta: ¿Qué hizo bien? ¿Dónde necesitó corrección? ¿Qué decisiones tuviste que tomar tú?
+2. **Análisis**: Elige una herramienta de IA para desarrollo (Claude Code, Cursor, Codex, GitHub Copilot, etc.). Úsala para una tarea pequeña. Documenta: ¿Qué hizo bien? ¿Dónde necesitó corrección? ¿Qué decisiones tuviste que tomar tú?
 
 3. **Planificación personal**: Lista tres habilidades del "antes" y tres del "después" que quieras desarrollar en los próximos seis meses. ¿Qué acciones concretas puedes tomar para cada una?
 
