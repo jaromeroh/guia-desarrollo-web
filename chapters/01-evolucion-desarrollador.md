@@ -22,17 +22,7 @@ Pero la realidad siempre fue más compleja.
 
 En los primeros días de la web, existía una figura casi mitológica: el **webmaster**. Una sola persona que hacía todo: diseñaba las páginas en Photoshop, las cortaba en tablas HTML, escribía los CGI scripts en Perl, configuraba el servidor Apache, y hasta respondía los emails de contacto.
 
-```
-┌─────────────────────────────────────┐
-│           WEBMASTER                 │
-│  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐   │
-│  │HTML │ │CSS  │ │JS   │ │PHP  │   │
-│  └─────┘ └─────┘ └─────┘ └─────┘   │
-│  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐   │
-│  │MySQL│ │Linux│ │Email│ │Design│  │
-│  └─────┘ └─────┘ └─────┘ └─────┘   │
-└─────────────────────────────────────┘
-```
+![El Webmaster: una persona, todas las tecnologías](../assets/images/cap01-img01-webmaster.png)
 
 Era insostenible, pero funcionaba porque las expectativas eran bajas. Una página que tardaba 30 segundos en cargar era aceptable. Un formulario de contacto que enviaba un email era tecnología de punta.
 
@@ -49,18 +39,7 @@ Algo curioso ocurrió con la llegada de Node.js en 2009: JavaScript, el lenguaje
 
 Nació el término **Full Stack Developer**, y con él, una nueva presión: se esperaba que una persona dominara todo el stack tecnológico.
 
-```
-┌─────────────────────────────────────────────┐
-│         FULL STACK DEVELOPER                │
-├─────────────────────────────────────────────┤
-│  Frontend    │  Backend     │  DevOps       │
-│  ──────────  │  ──────────  │  ──────────   │
-│  React       │  Node.js     │  Docker       │
-│  CSS-in-JS   │  PostgreSQL  │  AWS          │
-│  Webpack     │  Redis       │  CI/CD        │
-│  TypeScript  │  APIs REST   │  Kubernetes   │
-└─────────────────────────────────────────────┘
-```
+![Full Stack Developer: Frontend, Backend y DevOps](../assets/images/cap01-img02-fullstack-developer.png)
 
 El problema es que la profundidad del conocimiento se sacrificó por la amplitud. Muchos desarrolladores sabían un poco de todo, pero no dominaban nada en particular.
 
@@ -168,24 +147,7 @@ Escribir código es solo el comienzo. Luego hay que:
 
 Este libro está organizado alrededor de una idea central: el desarrollo de software es mucho más que escribir código.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CICLO DE DESARROLLO                          │
-├───────────────────┬───────────────────┬─────────────────────────┤
-│      ANTES        │     DURANTE       │        DESPUÉS          │
-│   (Parte II)      │    (Parte III)    │      (Parte IV)         │
-├───────────────────┼───────────────────┼─────────────────────────┤
-│ • Entender el     │ • Implementar     │ • Probar               │
-│   problema        │   la solución     │ • Desplegar            │
-│ • Diseñar UX      │ • Escribir código │ • Monitorear           │
-│ • Arquitectura    │   (o generarlo)   │ • Escalar              │
-│ • Diseñar APIs    │ • Integrar        │ • Mantener             │
-│ • Modelar datos   │   componentes     │ • Iterar               │
-│ • Planificar      │                   │                        │
-├───────────────────┼───────────────────┼─────────────────────────┤
-│    ~40% tiempo    │    ~20% tiempo    │      ~40% tiempo        │
-└───────────────────┴───────────────────┴─────────────────────────┘
-```
+![Ciclo de Desarrollo: Antes, Durante y Después](../assets/images/cap01-img03-ciclo-desarrollo.png)
 
 Observa los porcentajes. En un proyecto bien ejecutado, escribir código es quizás el 20% del trabajo. El 80% restante está en entender qué construir y asegurar que funciona correctamente.
 
