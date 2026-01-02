@@ -1,4 +1,4 @@
-# 4. Entendiendo el Problema
+# 5. Entendiendo el Problema
 
 > El mayor desperdicio en software es construir algo que nadie necesita.
 
@@ -472,6 +472,61 @@ actuales de la vista.
 
 ---
 
+## 🤖 Usando IA para Entender el Problema
+
+La IA puede acelerar significativamente el proceso de descubrimiento de requerimientos, pero no reemplaza la conversación con stakeholders.
+
+### Lo que la IA hace bien
+
+**Estructurar conversaciones desordenadas:**
+```
+Prompt: "El cliente me dijo esto en una llamada: [pegar transcripción].
+Extrae los requerimientos implícitos, identifica ambigüedades que
+debo clarificar, y sugiere preguntas de seguimiento."
+```
+
+**Generar preguntas de descubrimiento:**
+```
+Prompt: "Voy a entrevistar al dueño de una tienda de mascotas que
+quiere vender online. Dame 15 preguntas para entender su negocio,
+priorizadas de más a menos importante."
+```
+
+**Convertir pedidos vagos en user stories:**
+```
+Prompt: "El cliente dijo 'quiero que los usuarios puedan guardar
+sus favoritos'. Genera 3 user stories con criterios de aceptación
+y lista los casos borde que debería confirmar con el cliente."
+```
+
+**Identificar lo que falta:**
+```
+Prompt: "Estos son los requerimientos para un sistema de reservas
+de restaurante: [lista]. ¿Qué requerimientos típicos faltan?
+¿Qué preguntas debería hacer?"
+```
+
+### Lo que la IA NO puede hacer
+
+- **Hablar con el cliente por ti** — Las mejores preguntas surgen del contexto de una conversación real
+- **Detectar lo que el cliente no dice** — La IA no ve lenguaje corporal ni dudas
+- **Entender la política organizacional** — No sabe quién tiene el poder de decisión
+- **Priorizar según tu contexto** — No conoce tu presupuesto, timeline, ni capacidades del equipo
+
+### Flujo recomendado
+
+```
+1. Conversa con stakeholders (sin IA)
+2. Transcribe/documenta la conversación
+3. Usa IA para estructurar y encontrar gaps
+4. Vuelve al stakeholder con preguntas específicas
+5. Repite hasta tener claridad
+```
+
+⚠️ **Advertencia**: No muestres al cliente un documento "generado por IA" sin revisarlo. Los requerimientos mal interpretados cuestan caro — el 47% de proyectos fallidos tienen problemas de requerimientos como causa raíz.
+
+---
+
 ## Ejercicios
 
 1. **Práctica de entrevista**: Pide a un amigo o colega que te describa un problema de su trabajo. Usa la técnica de los 5 "Por qué" para llegar a la raíz del problema. ¿La solución que pidió inicialmente era la mejor?
@@ -492,4 +547,4 @@ actuales de la vista.
 
 ---
 
-**Anterior**: [Pensamiento en Sistemas](./03-pensamiento-sistemas.md) | **Siguiente**: [Diseño de Producto y UX](./05-diseno-producto-ux.md)
+**Anterior**: [Desarrollo Asistido por IA](./04-desarrollo-asistido-ia.md) | **Siguiente**: [Diseño de Producto y UX](./06-diseno-producto-ux.md)

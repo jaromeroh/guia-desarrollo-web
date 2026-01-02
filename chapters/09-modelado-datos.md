@@ -1,4 +1,4 @@
-# 8. Modelado de Datos
+# 9. Modelado de Datos
 
 > "Dame seis horas para cortar un árbol y pasaré las primeras cuatro afilando el hacha." — Abraham Lincoln
 
@@ -1482,6 +1482,127 @@ CREATE INDEX idx_productos_nombre ON productos USING gin(to_tsvector('spanish', 
 
 ---
 
+## 🤖 Usando IA para Modelado de Datos
+
+La IA ha transformado el diseño de bases de datos, permitiendo generar schemas completos desde descripciones en lenguaje natural.
+
+### Generación de schemas desde requisitos
+
+```
+Prompt efectivo:
+"Diseña el modelo de datos para una aplicación de gestión
+de eventos con:
+- Usuarios que pueden crear y asistir a eventos
+- Eventos con fecha, ubicación, capacidad máxima
+- Sistema de tickets con diferentes tipos (VIP, general)
+- Pagos y confirmaciones
+
+Genera DDL para PostgreSQL con:
+- Tipos de datos apropiados
+- Constraints y validaciones
+- Índices para consultas frecuentes"
+```
+
+La IA genera un borrador que puedes refinar, ahorrando horas de diseño inicial.
+
+### Casos de uso principales
+
+**1. De descripción a ERD**
+
+```
+Prompt:
+"Necesito un sistema donde los doctores atienden pacientes,
+cada consulta genera un diagnóstico, y los pacientes pueden
+tener múltiples seguros médicos.
+
+Dibuja las entidades y relaciones con cardinalidades."
+```
+
+Herramientas como **ChartDB** o **Eraser** generan diagramas visuales directamente.
+
+**2. Revisión y optimización**
+
+```
+Prompt:
+"Revisa este schema y sugiere mejoras:
+
+CREATE TABLE pedidos (
+    id INT,
+    cliente VARCHAR(255),
+    email VARCHAR(255),
+    producto VARCHAR(255),
+    precio FLOAT,
+    fecha DATE
+);
+
+- ¿Está normalizado correctamente?
+- ¿Qué índices debería crear?
+- ¿Hay problemas de tipos de datos?"
+```
+
+**3. Generación de migraciones**
+
+```
+Prompt:
+"Tengo esta tabla de usuarios:
+CREATE TABLE users (name VARCHAR(100), address TEXT);
+
+Necesito:
+1. Separar name en first_name y last_name
+2. Mover address a una tabla separada (users pueden tener múltiples)
+3. Generar las migraciones up y down"
+```
+
+**4. Consultas complejas**
+
+```
+Prompt:
+"Dado este schema [pegar DDL], genera una consulta que:
+- Muestre el total de ventas por categoría por mes
+- Solo categorías con más de 10 productos
+- Ordenado por monto descendente
+- Con porcentaje respecto al total general"
+```
+
+### Herramientas potenciadas por IA
+
+| Herramienta | Función |
+|-------------|---------|
+| **ChartDB** | ERD desde lenguaje natural, sincroniza con DB real |
+| **Eraser AI** | Genera diagramas desde código o requisitos |
+| **dbForge AI** | Asistente integrado en IDE con sugerencias de normalización |
+| **DrawSQL** | Visualización colaborativa de schemas |
+| **Xano AI** | Backend completo desde descripción |
+
+### Limitaciones importantes
+
+| ❌ Cuidado con... | ✅ Usa IA para... |
+|-------------------|-------------------|
+| Tipos de datos sin verificar | Generar estructura inicial |
+| Índices sin analizar queries reales | Sugerir índices candidatos |
+| Normalización excesiva o insuficiente | Revisar diseño y detectar anomalías |
+| Migraciones sin probar | Generar borradores de migración |
+
+### Flujo recomendado
+
+```
+1. Describe el dominio en lenguaje natural
+              ↓
+2. IA genera modelo conceptual (ERD)
+              ↓
+3. Revisas relaciones y cardinalidades
+              ↓
+4. IA genera DDL con constraints
+              ↓
+5. Validas con datos de prueba reales
+              ↓
+6. Iteras basándote en consultas reales
+```
+
+> 🤖 **Nota**: La IA genera schemas rápidamente, pero el modelado de datos requiere entender **cómo crecerán los datos** y **qué consultas serán frecuentes**. Eso solo lo sabes tú conociendo el negocio.
+
+---
+
 ## Resumen
 
 - El modelo de datos es el cimiento de tu aplicación — invierte tiempo en diseñarlo bien
@@ -1523,4 +1644,4 @@ CREATE INDEX idx_productos_nombre ON productos USING gin(to_tsvector('spanish', 
 
 ---
 
-**Siguiente**: [Planificación Técnica](./09-planificacion-tecnica.md)
+**Anterior**: [Diseño de APIs](./08-diseno-apis.md) | **Siguiente**: [Planificación Técnica](./10-planificacion-tecnica.md)

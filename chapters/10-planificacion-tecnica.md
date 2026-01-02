@@ -1,4 +1,4 @@
-# 9. Planificación Técnica
+# 10. Planificación Técnica
 
 > "Los planes son inútiles, pero la planificación es indispensable." — Dwight D. Eisenhower
 
@@ -833,6 +833,128 @@ con posibilidad de adelantar a 5 si todo fluye bien."
 
 ---
 
+## 🤖 Usando IA para Planificación Técnica
+
+La IA está transformando la planificación de proyectos, desde la descomposición de tareas hasta la estimación basada en datos históricos.
+
+### Descomposición de requerimientos
+
+```
+Prompt efectivo:
+"Descompón este requerimiento en tareas técnicas:
+
+'Los usuarios deben poder dejar reviews de productos
+con calificación 1-5 estrellas y texto opcional'
+
+Para cada tarea indica:
+- Descripción clara
+- Criterios de aceptación
+- Dependencias
+- Complejidad estimada (S/M/L)"
+```
+
+La IA genera un borrador que luego el equipo valida y ajusta.
+
+### Casos de uso principales
+
+**1. Generación de user stories**
+
+```
+Prompt:
+"Convierte estos requisitos de negocio en user stories:
+- Los clientes necesitan ver su historial de compras
+- Los clientes quieren repetir pedidos fácilmente
+- Los clientes necesitan descargar facturas
+
+Usa el formato: Como [rol], quiero [acción] para [beneficio]
+Incluye criterios de aceptación para cada una."
+```
+
+**2. Identificación de riesgos**
+
+```
+Prompt:
+"Estamos desarrollando un sistema de pagos recurrentes.
+Stack: Node.js, PostgreSQL, Stripe.
+Equipo: 2 devs seniors, 1 junior.
+Deadline: 8 semanas.
+
+Identifica riesgos técnicos potenciales, clasifícalos
+por probabilidad/impacto, y sugiere mitigaciones."
+```
+
+**3. Estimación asistida**
+
+```
+Prompt:
+"Dado este historial de sprints:
+- Sprint 1: 23 story points completados
+- Sprint 2: 28 story points completados
+- Sprint 3: 21 story points completados
+
+Y estas tareas pendientes (42 story points total),
+¿cuántos sprints necesitaremos? ¿Qué riesgos ves?"
+```
+
+**4. Generación de ADRs**
+
+```
+Prompt:
+"Genera un ADR para la decisión de usar PostgreSQL
+en lugar de MongoDB para nuestro sistema de inventario.
+
+Contexto: Operaciones transaccionales complejas,
+equipo con experiencia en SQL, necesidad de reportes.
+
+Incluye: alternativas consideradas, pros/contras,
+decisión y consecuencias."
+```
+
+### Herramientas potenciadas por IA
+
+| Herramienta | Función |
+|-------------|---------|
+| **Jira AI** | Sugerencias de story points basadas en histórico |
+| **Zenhub** | Estimación predictiva con datos de GitHub |
+| **Linear** | Priorización automática y detección de bloqueos |
+| **ClickUp AI** | Generación de acceptance criteria |
+| **Baseliner** | Forecasting multi-equipo con ML |
+
+### Limitaciones importantes
+
+| ❌ Cuidado con... | ✅ Usa IA para... |
+|-------------------|-------------------|
+| Estimaciones sin contexto del equipo | Generar borradores de descomposición |
+| Predicciones sin datos históricos | Identificar riesgos que podrías olvidar |
+| Reemplazar la discusión del equipo | Preparar material para planning |
+| Fechas exactas basadas en IA | Comunicar rangos con incertidumbre |
+
+### Advertencia sobre estimaciones
+
+> ⚠️ **Importante**: La IA puede informar estimaciones, pero **no debe reemplazar el consenso del equipo**. Las estimaciones son compromisos humanos, no cálculos matemáticos.
+
+El valor de técnicas como Planning Poker no está solo en el número final, sino en la **conversación** que revela supuestos diferentes entre miembros del equipo.
+
+### Flujo recomendado
+
+```
+1. Describe requerimientos en lenguaje natural
+              ↓
+2. IA genera descomposición inicial
+              ↓
+3. Equipo revisa, ajusta, y discute
+              ↓
+4. IA sugiere riesgos y dependencias
+              ↓
+5. Equipo estima con contexto real
+              ↓
+6. IA ayuda a comunicar plan con stakeholders
+```
+
+> 🤖 **Nota**: La IA acelera la preparación del planning, pero la **planificación efectiva requiere conversación humana**. Los malentendidos se descubren hablando, no generando texto.
+
+---
+
 ## Resumen
 
 - La planificación reduce sorpresas — el objetivo no es predecir perfectamente
@@ -867,4 +989,4 @@ con posibilidad de adelantar a 5 si todo fluye bien."
 
 ---
 
-**Siguiente**: [Arquitectura Frontend](./10-arquitectura-frontend.md)
+**Anterior**: [Modelado de Datos](./09-modelado-datos.md) | **Siguiente**: [Arquitectura Frontend](./11-arquitectura-frontend.md)

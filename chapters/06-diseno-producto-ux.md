@@ -1,4 +1,4 @@
-# 5. Diseño de Producto y UX
+# 6. Diseño de Producto y UX
 
 > El mejor código del mundo no salva un producto mal diseñado.
 
@@ -484,6 +484,69 @@ Cuando el usuario no tiene acceso.
 
 ---
 
+## 🤖 Usando IA para Diseño de Producto
+
+La IA está transformando el diseño de interfaces, pero su rol es acelerar la exploración, no reemplazar el pensamiento de diseño.
+
+### Herramientas especializadas
+
+**Para generar UI desde descripciones:**
+- **v0.dev** (Vercel) — Genera componentes React desde texto. Ideal para explorar variaciones rápidamente.
+- **Lovable** — Genera aplicaciones web completas. Útil para prototipos funcionales en horas.
+
+**Para diseño visual:**
+- **Figma AI** — Genera variantes, sugiere layouts, auto-completa diseños.
+- **Galileo AI** — Crea interfaces completas desde descripciones.
+
+### Prompts útiles para diseño
+
+**Explorar alternativas:**
+```
+Prompt: "Dame 5 formas diferentes de diseñar una pantalla de
+onboarding para una app de fitness. Para cada una, explica
+qué tipo de usuario se beneficiaría más."
+```
+
+**Mejorar un diseño existente:**
+```
+Prompt: "Este es el wireframe de mi checkout [descripción/imagen].
+¿Qué problemas de usabilidad ves? ¿Qué cambios sugerirías para
+reducir el abandono del carrito?"
+```
+
+**Generar copy para UI:**
+```
+Prompt: "Escribe el microcopy para estos estados de un formulario
+de registro: campo vacío, email inválido, contraseña muy corta,
+éxito. Tono: amigable pero profesional."
+```
+
+**Validar accesibilidad:**
+```
+Prompt: "Revisa esta estructura HTML de formulario. ¿Cumple con
+WCAG 2.1 nivel AA? ¿Qué atributos ARIA faltan?"
+```
+
+### Limitaciones importantes
+
+- **La IA no conoce a TUS usuarios** — Puede sugerir "mejores prácticas" que no aplican a tu audiencia específica
+- **Sesgo hacia lo común** — Tiende a generar diseños genéricos que has visto mil veces
+- **No prueba con usuarios reales** — Un diseño "bonito" de IA puede fallar completamente en usabilidad
+- **Ignora tu sistema de diseño** — Genera componentes que pueden no integrarse con lo que ya tienes
+
+### Cuándo usar IA vs diseñador humano
+
+| Usa IA para... | Usa humano para... |
+|----------------|-------------------|
+| Explorar muchas variantes rápido | Decisiones estratégicas de producto |
+| Generar borradores iniciales | Investigación con usuarios |
+| Prototipos desechables | Diseño de sistema coherente |
+| Ideas cuando estás bloqueado | Problemas de UX complejos |
+
+⚠️ **Advertencia**: No uses diseños generados por IA directamente en producción sin validar con usuarios reales. La IA optimiza para "verse bien", no para "funcionar bien".
+
+---
+
 ## Resumen
 
 - Los desarrolladores toman decisiones de UX constantemente—entender los principios básicos es esencial
@@ -517,4 +580,4 @@ Cuando el usuario no tiene acceso.
 
 ---
 
-**Anterior**: [Entendiendo el Problema](./04-entendiendo-problema.md) | **Siguiente**: [Arquitectura de Software](./06-arquitectura-software.md)
+**Anterior**: [Entendiendo el Problema](./05-entendiendo-problema.md) | **Siguiente**: [Arquitectura de Software](./07-arquitectura-software.md)

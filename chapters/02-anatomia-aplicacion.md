@@ -20,7 +20,7 @@ Una aplicación web moderna no es un programa que corre en una computadora. Es u
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        INTERNET                                      │
+│                        INTERNET                                     │
 └─────────────────────────────────────────────────────────────────────┘
         │                    │                      │
         ▼                    ▼                      ▼
@@ -86,6 +86,68 @@ El código que envías       El navegador del usuario
 
 ⚠️ **Advertencia**: Nunca confíes en el cliente. Todo lo que viene del navegador puede ser manipulado. La validación en el cliente es para UX; la validación real ocurre en el servidor.
 
+### Cómo el navegador muestra una página: el DOM
+
+Cuando el navegador recibe HTML del servidor, no lo muestra directamente. Primero lo convierte en una estructura de datos llamada **DOM (Document Object Model)**.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│               DE HTML A PANTALLA                            │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. Servidor envía HTML                                     │
+│     <html>                                                  │
+│       <body>                                                │
+│         <h1>Hola</h1>                                       │
+│         <p>Mundo</p>                                        │
+│       </body>                                               │
+│     </html>                                                 │
+│                                                             │
+│  2. Navegador parsea y crea el DOM (árbol de objetos)       │
+│                                                             │
+│     document                                                │
+│        └── html                                             │
+│              └── body                                       │
+│                    ├── h1 ─── "Hola"                        │
+│                    └── p ──── "Mundo"                       │
+│                                                             │
+│  3. Navegador renderiza el DOM en pantalla                  │
+│     ┌─────────────────────┐                                 │
+│     │  Hola               │                                 │
+│     │  Mundo              │                                 │
+│     └─────────────────────┘                                 │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+📖 **Concepto**: El DOM es una representación en memoria de la página web como un **árbol de objetos**. Cada elemento HTML (`<div>`, `<p>`, `<button>`) se convierte en un "nodo" del árbol. El navegador usa este árbol para:
+- Calcular dónde va cada elemento (layout)
+- Aplicar estilos CSS
+- Responder a eventos (clicks, teclas)
+- Permitir que JavaScript modifique la página
+
+**¿Por qué importa el DOM?**
+
+JavaScript puede modificar el DOM para cambiar la página sin recargarla:
+
+```javascript
+// Encontrar un elemento en el DOM
+const titulo = document.querySelector('h1');
+
+// Modificarlo
+titulo.textContent = '¡Hola modificado!';  // Cambia el texto
+titulo.style.color = 'blue';               // Cambia el estilo
+
+// Crear nuevos elementos
+const nuevoParrafo = document.createElement('p');
+nuevoParrafo.textContent = 'Soy nuevo';
+document.body.appendChild(nuevoParrafo);   // Lo añade a la página
+```
+
+Cuando ejecutas este código, **el navegador actualiza la pantalla automáticamente** para reflejar los cambios en el DOM. Esta es la base de toda interactividad web.
+
+💡 **Insight**: Los frameworks modernos como React, Vue y Svelte abstraen la manipulación directa del DOM. En lugar de escribir `document.querySelector()`, describes cómo debería verse la UI y el framework actualiza el DOM por ti. Pero por debajo, todo sigue siendo manipulación del DOM.
+
 ### El Servidor
 
 El servidor es un programa que escucha peticiones y responde. A diferencia del cliente, el servidor está bajo tu control total:
@@ -120,13 +182,13 @@ Cliente y servidor hablan a través de **HTTP** (HyperText Transfer Protocol). E
 │  Cliente │                              │ Servidor │
 └────┬─────┘                              └────┬─────┘
      │                                         │
-     │  ────── Petición HTTP ──────────────▶  │
+     │  ────── Petición HTTP ──────────────▶   │
      │         GET /api/users                  │
      │         Headers: { auth: "token" }      │
      │                                         │
      │                                         │ (procesa)
      │                                         │
-     │  ◀────── Respuesta HTTP ─────────────  │
+     │  ◀────── Respuesta HTTP ─────────────   │
      │          Status: 200 OK                 │
      │          Body: [{ id: 1, name: "Ana" }] │
      │                                         │
@@ -152,7 +214,7 @@ Una aplicación web moderna tiene múltiples capas, cada una con responsabilidad
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    CAPA DE PRESENTACIÓN                      │
+│                    CAPA DE PRESENTACIÓN                     │
 │  (Lo que el usuario ve e interactúa)                        │
 │  ─────────────────────────────────────────────────────────  │
 │  HTML, CSS, JavaScript, React/Vue/Svelte                    │
@@ -161,40 +223,40 @@ Una aplicación web moderna tiene múltiples capas, cada una con responsabilidad
                               │
                               ▼ HTTP/HTTPS
 ┌─────────────────────────────────────────────────────────────┐
-│                      CAPA DE API                             │
-│  (El contrato entre cliente y servidor)                      │
+│                      CAPA DE API                            │
+│  (El contrato entre cliente y servidor)                     │
 │  ─────────────────────────────────────────────────────────  │
-│  REST endpoints, GraphQL, tRPC                               │
-│  Autenticación, validación de entrada                        │
-│  Corre en: Servidor                                          │
+│  REST endpoints, GraphQL, tRPC                              │
+│  Autenticación, validación de entrada                       │
+│  Corre en: Servidor                                         │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                  CAPA DE LÓGICA DE NEGOCIO                   │
-│  (Las reglas y procesos del dominio)                         │
+│                  CAPA DE LÓGICA DE NEGOCIO                  │
+│  (Las reglas y procesos del dominio)                        │
 │  ─────────────────────────────────────────────────────────  │
-│  Servicios, casos de uso, validaciones de negocio            │
-│  "Un usuario no puede tener más de 3 pedidos pendientes"     │
-│  Corre en: Servidor                                          │
+│  Servicios, casos de uso, validaciones de negocio           │
+│  "Un usuario no puede tener más de 3 pedidos pendientes"    │
+│  Corre en: Servidor                                         │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   CAPA DE ACCESO A DATOS                     │
-│  (Comunicación con bases de datos y servicios externos)      │
+│                   CAPA DE ACCESO A DATOS                    │
+│  (Comunicación con bases de datos y servicios externos)     │
 │  ─────────────────────────────────────────────────────────  │
-│  Repositories, ORMs, clientes de APIs externas               │
-│  Corre en: Servidor                                          │
+│  Repositories, ORMs, clientes de APIs externas              │
+│  Corre en: Servidor                                         │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   CAPA DE PERSISTENCIA                       │
-│  (Donde viven los datos)                                     │
+│                   CAPA DE PERSISTENCIA                      │
+│  (Donde viven los datos)                                    │
 │  ─────────────────────────────────────────────────────────  │
-│  PostgreSQL, MongoDB, Redis, S3                              │
-│  Corre en: Servidor de base de datos (o servicio en nube)    │
+│  PostgreSQL, MongoDB, Redis, S3                             │
+│  Corre en: Servidor de base de datos (o servicio en nube)   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -209,15 +271,15 @@ Cuando diseñas la arquitectura de tu aplicación, no tomas una decisión—toma
 ```
 ┌────────────────────────────────────────────────────────────────┐
 │                                                                │
-│   DECISIÓN 1: ¿Cómo ORGANIZO el código?                       │
+│   DECISIÓN 1: ¿Cómo ORGANIZO el código?                        │
 │   ──────────────────────────────────────                       │
-│   Monolito ◄─────────────────────────────► Microservicios     │
-│   (todo junto)                              (servicios separados)
+│   Monolito ◄─────────────────────────────► Microservicios      │
+│   (todo junto)                           (servicios separados) │
 │                                                                │
-│   DECISIÓN 2: ¿Cómo EJECUTO el código?                        │
+│   DECISIÓN 2: ¿Cómo EJECUTO el código?                         │
 │   ──────────────────────────────────────                       │
-│   Tradicional ◄──────────────────────────► Serverless         │
-│   (servidores 24/7)                         (funciones on-demand)
+│   Tradicional ◄──────────────────────────► Serverless          │
+│   (servidores 24/7)                      (funciones on-demand) │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
 ```
@@ -236,14 +298,14 @@ Todo el código del servidor vive en una sola aplicación, un solo repositorio, 
 
 ```
 ┌────────────────────────────────────────┐
-│              MONOLITO                   │
+│              MONOLITO                  │
 ├────────────────────────────────────────┤
-│  ┌──────────┐ ┌──────────┐ ┌────────┐ │
-│  │ Usuarios │ │ Productos│ │ Pagos  │ │
-│  └──────────┘ └──────────┘ └────────┘ │
-│  ┌──────────┐ ┌──────────┐ ┌────────┐ │
-│  │ Envíos   │ │ Reportes │ │ Admin  │ │
-│  └──────────┘ └──────────┘ └────────┘ │
+│  ┌──────────┐ ┌──────────┐ ┌────────┐  │
+│  │ Usuarios │ │ Productos│ │ Pagos  │  │
+│  └──────────┘ └──────────┘ └────────┘  │
+│  ┌──────────┐ ┌──────────┐ ┌────────┐  │
+│  │ Envíos   │ │ Reportes │ │ Admin  │  │
+│  └──────────┘ └──────────┘ └────────┘  │
 │                                        │
 │         Una base de datos              │
 │         Un deployment                  │
@@ -310,21 +372,21 @@ Tu aplicación corre como un proceso (o varios) en servidores que están encendi
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│              SERVIDOR TRADICIONAL                    │
+│              SERVIDOR TRADICIONAL                   │
 ├─────────────────────────────────────────────────────┤
-│                                                      │
+│                                                     │
 │   ┌─────────────────────────────────────────────┐   │
-│   │              Tu aplicación                   │   │
-│   │         (proceso corriendo 24/7)             │   │
-│   │                                              │   │
+│   │              Tu aplicación                  │   │
+│   │         (proceso corriendo 24/7)            │   │
+│   │                                             │   │
 │   │   Esperando... → Petición → Respuesta →     │   │
 │   │   Esperando... → Petición → Respuesta →     │   │
-│   │   Esperando...                               │   │
+│   │   Esperando...                              │   │
 │   └─────────────────────────────────────────────┘   │
-│                                                      │
+│                                                     │
 │   Ejemplos: VPS, EC2, Docker en un servidor,        │
-│             Kubernetes, tu laptop corriendo Node     │
-│                                                      │
+│             Kubernetes, tu laptop corriendo Node    │
+│                                                     │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -346,21 +408,21 @@ Tu código se empaqueta como funciones que se ejecutan **solo cuando hay una pet
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│              SERVERLESS / FaaS                       │
+│              SERVERLESS / FaaS                      │
 ├─────────────────────────────────────────────────────┤
-│                                                      │
+│                                                     │
 │   Sin peticiones:  💤 (nada corriendo, $0)          │
-│                                                      │
-│   Petición llega:                                    │
-│   ┌──────────┐                                       │
+│                                                     │
+│   Petición llega:                                   │
+│   ┌──────────┐                                      │
 │   │ función  │ ──▶ Respuesta ──▶ 💤                 │
 │   └──────────┘     (se apaga)                       │
-│                                                      │
-│   Muchas peticiones:                                 │
-│   ┌──────────┐ ┌──────────┐ ┌──────────┐           │
-│   │ función  │ │ función  │ │ función  │  (auto)   │
-│   └──────────┘ └──────────┘ └──────────┘           │
-│                                                      │
+│                                                     │
+│   Muchas peticiones:                                │
+│   ┌──────────┐ ┌──────────┐ ┌──────────┐            │
+│   │ función  │ │ función  │ │ función  │  (auto)    │
+│   └──────────┘ └──────────┘ └──────────┘            │
+│                                                     │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -431,19 +493,19 @@ Ahora que entiendes que son dos decisiones separadas, aquí está cómo tomar ca
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                                                                     │
-│   DECISIÓN 1: ¿Monolito o Microservicios?                          │
+│   DECISIÓN 1: ¿Monolito o Microservicios?                           │
 │   ─────────────────────────────────────────                         │
 │                                                                     │
-│   ¿Equipo pequeño (< 10 personas)?                                 │
+│   ¿Equipo pequeño (< 10 personas)?                                  │
 │       └──▶ MONOLITO                                                 │
 │                                                                     │
-│   ¿Un solo producto con dominio cohesivo?                          │
+│   ¿Un solo producto con dominio cohesivo?                           │
 │       └──▶ MONOLITO                                                 │
 │                                                                     │
-│   ¿Múltiples equipos que necesitan autonomía total?                │
+│   ¿Múltiples equipos que necesitan autonomía total?                 │
 │       └──▶ MICROSERVICIOS                                           │
 │                                                                     │
-│   ¿Partes del sistema con requisitos de escala muy diferentes?     │
+│   ¿Partes del sistema con requisitos de escala muy diferentes?      │
 │       └──▶ MICROSERVICIOS (o monolito + servicios auxiliares)       │
 │                                                                     │
 │   ¿No estás seguro?                                                 │
@@ -451,22 +513,22 @@ Ahora que entiendes que son dos decisiones separadas, aquí está cómo tomar ca
 │                                                                     │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   DECISIÓN 2: ¿Tradicional o Serverless?                           │
+│   DECISIÓN 2: ¿Tradicional o Serverless?                            │
 │   ─────────────────────────────────────────                         │
 │                                                                     │
-│   ¿Tráfico muy variable o impredecible?                            │
-│       └──▶ SERVERLESS (escala a cero, escala al infinito)          │
+│   ¿Tráfico muy variable o impredecible?                             │
+│       └──▶ SERVERLESS (escala a cero, escala al infinito)           │
 │                                                                     │
-│   ¿Necesitas WebSockets o conexiones persistentes?                 │
-│       └──▶ TRADICIONAL (o serverless con servicios especializados) │
+│   ¿Necesitas WebSockets o conexiones persistentes?                  │
+│       └──▶ TRADICIONAL (o serverless con servicios especializados)  │
 │                                                                     │
-│   ¿Procesos de larga duración (> 30 segundos)?                     │
+│   ¿Procesos de larga duración (> 30 segundos)?                      │
 │       └──▶ TRADICIONAL                                              │
 │                                                                     │
-│   ¿Quieres mínima operación de infraestructura?                    │
+│   ¿Quieres mínima operación de infraestructura?                     │
 │       └──▶ SERVERLESS                                               │
 │                                                                     │
-│   ¿Tráfico constante y predecible?                                 │
+│   ¿Tráfico constante y predecible?                                  │
 │       └──▶ TRADICIONAL (puede ser más económico)                    │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
@@ -495,78 +557,78 @@ Usuario hace clic en "Mi Perfil"
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 2. DNS                                                       │
+│ 2. DNS                                                      │
 │    - Convierte "api.miapp.com" → "143.55.32.10"             │
 │    - Resultado cacheado para futuras peticiones             │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 3. CDN / EDGE (opcional)                                     │
+│ 3. CDN / EDGE (opcional)                                    │
 │    - Si el contenido está cacheado, responde inmediatamente │
 │    - Si no, pasa la petición al origen                      │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 4. LOAD BALANCER                                             │
-│    - Recibe la petición                                      │
+│ 4. LOAD BALANCER                                            │
+│    - Recibe la petición                                     │
 │    - Elige un servidor disponible (round-robin, least-conn) │
-│    - Reenvía la petición                                     │
+│    - Reenvía la petición                                    │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 5. SERVIDOR DE APLICACIÓN                                    │
-│                                                              │
-│    5a. Middleware de autenticación                           │
-│        - Valida el token JWT                                 │
-│        - Extrae user_id del token                            │
-│        - Si inválido: responde 401 Unauthorized              │
-│                                                              │
-│    5b. Router                                                │
-│        - Mapea GET /users/me → UserController.getProfile()   │
-│                                                              │
-│    5c. Controller                                            │
-│        - Recibe la petición                                  │
-│        - Llama al servicio correspondiente                   │
-│                                                              │
+│ 5. SERVIDOR DE APLICACIÓN                                   │
+│                                                             │
+│    5a. Middleware de autenticación                          │
+│        - Valida el token JWT                                │
+│        - Extrae user_id del token                           │
+│        - Si inválido: responde 401 Unauthorized             │
+│                                                             │
+│    5b. Router                                               │
+│        - Mapea GET /users/me → UserController.getProfile()  │
+│                                                             │
+│    5c. Controller                                           │
+│        - Recibe la petición                                 │
+│        - Llama al servicio correspondiente                  │
+│                                                             │
 │    5d. Service (lógica de negocio)                          │
-│        - Aplica reglas de negocio                            │
-│        - Decide qué datos necesita                           │
-│                                                              │
+│        - Aplica reglas de negocio                           │
+│        - Decide qué datos necesita                          │
+│                                                             │
 │    5e. Repository (acceso a datos)                          │
-│        - Construye la query SQL                              │
-│        - Se comunica con la base de datos                    │
+│        - Construye la query SQL                             │
+│        - Se comunica con la base de datos                   │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 6. BASE DE DATOS                                             │
-│    - Recibe: SELECT * FROM users WHERE id = 42               │
-│    - Busca en índices                                        │
-│    - Retorna el registro del usuario                         │
+│ 6. BASE DE DATOS                                            │
+│    - Recibe: SELECT * FROM users WHERE id = 42              │
+│    - Busca en índices                                       │
+│    - Retorna el registro del usuario                        │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 7. CAMINO DE VUELTA                                          │
-│    - Repository recibe datos, los mapea a objeto User        │
-│    - Service aplica transformaciones (oculta password hash)  │
-│    - Controller serializa a JSON                             │
-│    - Servidor envía respuesta HTTP 200                       │
-│    - Response: { id: 42, name: "Ana", email: "ana@..." }     │
+│ 7. CAMINO DE VUELTA                                         │
+│    - Repository recibe datos, los mapea a objeto User       │
+│    - Service aplica transformaciones (oculta password hash) │
+│    - Controller serializa a JSON                            │
+│    - Servidor envía respuesta HTTP 200                      │
+│    - Response: { id: 42, name: "Ana", email: "ana@..." }    │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ 8. NAVEGADOR (de vuelta)                                     │
-│    - Recibe la respuesta JSON                                │
-│    - JavaScript parsea el JSON                               │
-│    - Actualiza el estado de la aplicación                    │
-│    - React/Vue/Svelte re-renderiza                           │
-│    - Usuario ve su perfil                                    │
-│    - Spinner desaparece                                       │
+│ 8. NAVEGADOR (de vuelta)                                    │
+│    - Recibe la respuesta JSON                               │
+│    - JavaScript parsea el JSON                              │
+│    - Actualiza el estado de la aplicación                   │
+│    - React/Vue/Svelte re-renderiza                          │
+│    - Usuario ve su perfil                                   │
+│    - Spinner desaparece                                     │
 └─────────────────────────────────────────────────────────────┘
 
 Tiempo total: 50-500ms (dependiendo de latencia, carga, etc.)

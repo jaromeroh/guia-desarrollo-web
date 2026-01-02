@@ -37,16 +37,16 @@ Considera un e-commerce simple:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         SISTEMA                                  │
-│                                                                  │
-│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐ │
-│   │ Frontend │───▶│   API    │───▶│ Servicio │───▶│   Base   │ │
-│   │          │◀───│          │◀───│  Pagos   │◀───│  Datos   │ │
-│   └──────────┘    └──────────┘    └──────────┘    └──────────┘ │
-│                                                                  │
-│   Cada componente puede funcionar perfectamente...               │
+│                         SISTEMA                                 │
+│                                                                 │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐  │
+│   │ Frontend │───▶│   API    │───▶│ Servicio │───▶│   Base   │  │
+│   │          │◀───│          │◀───│  Pagos   │◀───│  Datos   │  │
+│   └──────────┘    └──────────┘    └──────────┘    └──────────┘  │
+│                                                                 │
+│   Cada componente puede funcionar perfectamente...              │
 │   ...pero el sistema puede fallar en las conexiones.            │
-│                                                                  │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -71,24 +71,24 @@ Un componente es una unidad de software con:
 
 ```
 ┌─────────────────────────────────────────┐
-│            COMPONENTE                    │
+│            COMPONENTE                   │
 ├─────────────────────────────────────────┤
-│                                          │
+│                                         │
 │   Interfaz (lo que expone):             │
-│   ─────────────────────────              │
-│   • createUser(data)                     │
-│   • getUser(id)                          │
-│   • updateUser(id, data)                 │
-│                                          │
-│   ════════════════════════════           │
-│                                          │
-│   Implementación (oculta):               │
-│   ─────────────────────────              │
-│   • Validación de datos                  │
-│   • Queries a la BD                      │
-│   • Hasheo de passwords                  │
-│   • Logging                              │
-│                                          │
+│   ─────────────────────────             │
+│   • createUser(data)                    │
+│   • getUser(id)                         │
+│   • updateUser(id, data)                │
+│                                         │
+│   ════════════════════════════          │
+│                                         │
+│   Implementación (oculta):              │
+│   ─────────────────────────             │
+│   • Validación de datos                 │
+│   • Queries a la BD                     │
+│   • Hasheo de passwords                 │
+│   • Logging                             │
+│                                         │
 └─────────────────────────────────────────┘
 ```
 
@@ -187,11 +187,11 @@ Puedes testear A con un mock de B.
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   BUEN DISEÑO = Bajo acoplamiento + Alta cohesión          │
+│   BUEN DISEÑO = Bajo acoplamiento + Alta cohesión           │
 │                                                             │
 │   • Componentes independientes (bajo acoplamiento)          │
-│   • Cada componente hace una cosa bien (alta cohesión)     │
-│   • Cambios localizados, fáciles de entender               │
+│   • Cada componente hace una cosa bien (alta cohesión)      │
+│   • Cambios localizados, fáciles de entender                │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -369,34 +369,34 @@ Usuario hace clic en "Agregar al carrito"
 │
 ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ FRONTEND                                                         │
-│ 1. Captura el evento click                                       │
+│ FRONTEND                                                        │
+│ 1. Captura el evento click                                      │
 │ 2. Actualiza UI optimistamente (muestra item en carrito)        │
 │ 3. Envía petición POST /api/cart/items                          │
 └──────────────────────────────┬──────────────────────────────────┘
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ API                                                              │
+│ API                                                             │
 │ 4. Valida autenticación (token JWT)                             │
 │ 5. Valida datos de entrada (productId, quantity)                │
-│ 6. Llama al servicio de carrito                                  │
+│ 6. Llama al servicio de carrito                                 │
 └──────────────────────────────┬──────────────────────────────────┘
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ SERVICIO DE CARRITO                                              │
-│ 7. Verifica que el producto existe                               │
-│ 8. Verifica stock disponible                                     │
+│ SERVICIO DE CARRITO                                             │
+│ 7. Verifica que el producto existe                              │
+│ 8. Verifica stock disponible                                    │
 │ 9. Calcula precio actual (puede haber descuentos)               │
 │ 10. Agrega item al carrito del usuario                          │
-│ 11. Persiste en base de datos                                    │
+│ 11. Persiste en base de datos                                   │
 └──────────────────────────────┬──────────────────────────────────┘
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ BASE DE DATOS                                                    │
-│ 12. INSERT en tabla cart_items                                   │
+│ BASE DE DATOS                                                   │
+│ 12. INSERT en tabla cart_items                                  │
 │ 13. UPDATE stock reservado (opcional)                           │
 └──────────────────────────────┬──────────────────────────────────┘
                                │
@@ -405,9 +405,9 @@ Usuario hace clic en "Agregar al carrito"
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ FRONTEND                                                         │
-│ 14. Recibe confirmación                                          │
-│ 15. Si éxito: ya mostraba el item (actualización optimista)    │
+│ FRONTEND                                                        │
+│ 14. Recibe confirmación                                         │
+│ 15. Si éxito: ya mostraba el item (actualización optimista)     │
 │ 16. Si error: revierte UI y muestra mensaje                     │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -456,4 +456,4 @@ Estas preguntas no surgen cuando piensas en cajas. Surgen cuando piensas en fluj
 
 ---
 
-**Anterior**: [Anatomía de una Aplicación Web Moderna](./02-anatomia-aplicacion.md) | **Siguiente**: [Entendiendo el Problema](./04-entendiendo-problema.md)
+**Anterior**: [Anatomía de una Aplicación Web Moderna](./02-anatomia-aplicacion.md) | **Siguiente**: [Desarrollo Asistido por IA](./04-desarrollo-asistido-ia.md)

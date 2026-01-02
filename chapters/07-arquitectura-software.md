@@ -1,4 +1,4 @@
-# 6. Arquitectura de Software
+# 7. Arquitectura de Software
 
 > La arquitectura es las decisiones que desearías haber tomado correctamente al principio del proyecto.
 
@@ -2291,6 +2291,102 @@ Nivel 6: Clean Architecture / Hexagonal
 
 ---
 
+## 🤖 Usando IA para Decisiones de Arquitectura
+
+La IA se ha convertido en una herramienta valiosa para el trabajo arquitectónico. Según reportes de 2025, el 52% de los equipos ya usan IA en la fase de diseño y arquitectura, con un aumento del 28% en velocidad de iteración de diseños.
+
+### Dónde brilla la IA en arquitectura
+
+**1. Evaluar trade-offs y simular escenarios**
+
+```
+Prompt efectivo:
+"Estoy diseñando un sistema de e-commerce que manejará
+10,000 pedidos/día. Compara estas opciones de arquitectura:
+
+Opción A: Monolito modular con PostgreSQL
+Opción B: Microservicios con eventos y MongoDB
+
+Analiza: escalabilidad, complejidad operativa,
+costos de infraestructura, curva de aprendizaje del equipo"
+```
+
+La IA puede simular cómo se comportará cada opción bajo diferentes condiciones antes de que escribas una línea de código.
+
+**2. Documentar decisiones (ADRs)**
+
+```
+Prompt efectivo:
+"Genera un ADR (Architecture Decision Record) para la decisión
+de usar Redis como sistema de caché en lugar de Memcached.
+
+Contexto: API REST con 50ms de latencia objetivo
+Equipo: 3 desarrolladores, experiencia intermedia
+Incluye: alternativas consideradas, consecuencias, riesgos"
+```
+
+La IA genera borradores completos de ADRs que luego puedes refinar, ahorrando tiempo significativo.
+
+**3. Revisar código contra estándares arquitectónicos**
+
+Los agentes de IA pueden actuar como "guardianes arquitectónicos":
+
+- **En pull requests**: detectan violaciones como llamadas directas a la base de datos desde la capa de presentación
+- **En revisiones de diseño**: analizan diagramas y documentación buscando inconsistencias
+- **En tiempo real**: responden preguntas sobre patrones y señalan desviaciones de los estándares internos
+
+**4. Explorar patrones y refactoring**
+
+```
+Prompt efectivo:
+"Este módulo de pagos tiene 2000 líneas en un solo archivo.
+Sugiere cómo dividirlo siguiendo Clean Architecture.
+Muestra la estructura de carpetas propuesta y
+qué responsabilidades iría en cada capa."
+```
+
+### Herramientas emergentes
+
+| Herramienta | Uso |
+|-------------|-----|
+| **Claude/ChatGPT** | Análisis de trade-offs, generación de ADRs, revisión de diseños |
+| **GitHub Copilot** | Sugerencias de refactoring alineadas con patrones |
+| **Codeium Architect** | Entorno de co-diseño con generación de diagramas |
+| **ArchUnit + IA** | Tests de arquitectura potenciados con análisis inteligente |
+
+### Limitaciones importantes
+
+| ❌ No confíes ciegamente en... | ✅ Usa IA para... |
+|-------------------------------|-------------------|
+| Decisiones sin contexto de negocio | Generar opciones que luego evalúas |
+| Estimaciones de rendimiento exactas | Identificar qué métricas deberías medir |
+| Conocimiento de tu infraestructura específica | Documentar y comunicar decisiones |
+| "La mejor arquitectura" universal | Entender trade-offs de cada opción |
+
+### Ejemplo práctico: refactoring guiado
+
+```
+Prompt:
+"Tengo este código que viola la arquitectura hexagonal:
+
+// api/routes/users.js
+import { db } from '../database/connection';
+
+app.get('/users/:id', async (req, res) => {
+  const user = await db.query('SELECT * FROM users WHERE id = ?', [req.params.id]);
+  res.json(user);
+});
+
+Refactorízalo para que siga puertos y adaptadores.
+Muestra todos los archivos necesarios."
+```
+
+La IA generará la separación en capas, pero **tú decides** si esa complejidad adicional vale la pena para tu caso específico.
+
+> 🤖 **Nota**: La arquitectura es fundamentalmente sobre **decisiones humanas** basadas en contexto de negocio, capacidades del equipo y restricciones organizacionales. La IA acelera la exploración y documentación, pero las decisiones finales requieren juicio humano.
+
+---
+
 ## Resumen
 
 ### Conceptos fundamentales
@@ -2344,4 +2440,4 @@ Nivel 6: Clean Architecture / Hexagonal
 
 ---
 
-**Anterior**: [Diseño de Producto y UX](./05-diseno-producto-ux.md) | **Siguiente**: [Diseño de APIs](./07-diseno-apis.md)
+**Anterior**: [Diseño de Producto y UX](./06-diseno-producto-ux.md) | **Siguiente**: [Diseño de APIs](./08-diseno-apis.md)

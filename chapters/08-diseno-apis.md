@@ -1,4 +1,4 @@
-# 7. Diseño de APIs
+# 8. Diseño de APIs
 
 > Una API es un contrato. Y como todo contrato, es mejor pensarlo bien antes de firmarlo.
 
@@ -1719,6 +1719,112 @@ curl -X POST "https://api.ejemplo.com/v2/orders" \
 
 ---
 
+## 🤖 Usando IA para Diseño de APIs
+
+La IA ha transformado el diseño de APIs, permitiendo ir de requisitos en lenguaje natural a especificaciones OpenAPI funcionales.
+
+### Generación de especificaciones desde requisitos
+
+```
+Prompt efectivo:
+"Diseña una API REST para una aplicación de delivery de comida.
+Necesito endpoints para:
+- Restaurantes (listar, buscar por ubicación, ver menú)
+- Pedidos (crear, ver estado, cancelar)
+- Usuarios (perfil, historial de pedidos)
+
+Genera la especificación OpenAPI 3.0 completa con:
+- Schemas de datos
+- Ejemplos de request/response
+- Códigos de error apropiados
+- Autenticación con Bearer token"
+```
+
+La IA genera un borrador completo que puedes refinar, ahorrando horas de trabajo inicial.
+
+### Casos de uso principales
+
+**1. De código existente a documentación**
+
+```
+Prompt:
+"Analiza estos endpoints de Express y genera la documentación
+OpenAPI correspondiente:
+
+app.get('/users/:id', getUserById);
+app.post('/users', createUser);
+app.put('/users/:id', updateUser);
+
+Infiere los schemas de los nombres de funciones y parámetros."
+```
+
+**2. Revisión de diseño de API**
+
+```
+Prompt:
+"Revisa esta especificación OpenAPI y sugiere mejoras:
+- ¿Sigue principios REST correctamente?
+- ¿Los nombres de recursos son consistentes?
+- ¿Faltan códigos de error importantes?
+- ¿La paginación está bien diseñada?"
+```
+
+**3. Generación de mocks y ejemplos**
+
+```
+Prompt:
+"Para este endpoint POST /orders, genera 5 ejemplos
+realistas de request body y sus correspondientes responses,
+incluyendo casos de éxito y errores comunes."
+```
+
+**4. Migración entre versiones**
+
+```
+Prompt:
+"Tengo esta API v1. Necesito crear v2 donde 'name' se separa
+en 'firstName' y 'lastName'. Genera:
+1. El nuevo schema v2
+2. Estrategia de backwards compatibility
+3. Guía de migración para clientes"
+```
+
+### Herramientas potenciadas por IA
+
+| Herramienta | Función |
+|-------------|---------|
+| **Stoplight** | Diseño visual de APIs con sugerencias inteligentes |
+| **Apidog** | Generación automática de documentación desde specs |
+| **Claude/ChatGPT** | Diseño desde cero, revisión, generación de ejemplos |
+| **Postman AI** | Tests y mocks generados automáticamente |
+
+### Limitaciones a considerar
+
+| ❌ Cuidado con... | ✅ Usa IA para... |
+|-------------------|-------------------|
+| Asumir que la IA conoce tu dominio | Generar borradores que luego refinas |
+| Generar schemas sin validar | Crear ejemplos y casos de prueba |
+| Confiar en convenciones inventadas | Revisar consistencia y mejores prácticas |
+| Documentación genérica | Acelerar la escritura inicial |
+
+### Flujo recomendado
+
+```
+1. Describe requisitos en lenguaje natural
+              ↓
+2. IA genera especificación OpenAPI inicial
+              ↓
+3. Revisas y ajustas con conocimiento de dominio
+              ↓
+4. IA genera mocks y documentación
+              ↓
+5. Iteras con feedback de usuarios de la API
+```
+
+> 🤖 **Nota**: La IA es excelente para generar la **estructura inicial** y mantener **consistencia** en APIs grandes. Pero el diseño de una buena API requiere entender cómo la usarán los desarrolladores, y eso sigue necesitando empatía humana.
+
+---
+
 ## Resumen
 
 ### API-First
@@ -1781,4 +1887,4 @@ curl -X POST "https://api.ejemplo.com/v2/orders" \
 
 ---
 
-**Anterior**: [Arquitectura de Software](./06-arquitectura-software.md) | **Siguiente**: [Modelado de Datos](./08-modelado-datos.md)
+**Anterior**: [Arquitectura de Software](./07-arquitectura-software.md) | **Siguiente**: [Modelado de Datos](./09-modelado-datos.md)
