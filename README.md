@@ -234,7 +234,7 @@ Usa el índice como referencia. Cada capítulo es autocontenido y enlaza a conce
 *Hacia dónde vamos*
 
 26. **[La Nueva Capa de Abstracción](./chapters/26-nueva-capa-abstraccion.md)**
-    - El terremoto de magnitud 9 (cita de Karpathy)
+    - El terremoto de magnitud 9
     - Agents, subagents, contexto y memoria
     - MCP: el protocolo que conecta todo
     - Configurando tu entorno agentico
