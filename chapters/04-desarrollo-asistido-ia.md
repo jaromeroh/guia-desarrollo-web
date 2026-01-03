@@ -468,52 +468,42 @@ El panorama de herramientas cambia rápidamente, pero aquí está el estado a 20
 
 ### IDEs y editores con IA
 
-| Herramienta | Descripción |
-|-------------|-------------|
-| **GitHub Copilot** | El más popular. Autocompletado inline en VS Code, JetBrains, etc. |
-| **Cursor** | Fork de VS Code con IA profundamente integrada (chat + edición) |
-| **Google Antigravity** | IDE agentico de Google (absorbió a Windsurf). Gratuito en preview |
-| **JetBrains AI** | IA integrada en IntelliJ, PyCharm, WebStorm |
-| **Amazon CodeWhisperer** | Alternativa de AWS, gratuito para individuos |
+- **GitHub Copilot** — El más popular. Autocompletado inline en VS Code, JetBrains, etc.
+- **Cursor** — Fork de VS Code con IA profundamente integrada (chat + edición)
+- **Google Antigravity** — IDE agentico de Google (absorbió a Windsurf). Gratuito en preview
+- **JetBrains AI** — IA integrada en IntelliJ, PyCharm, WebStorm
+- **Amazon CodeWhisperer** — Alternativa de AWS, gratuito para individuos
 
 ### Agentes de coding (autónomos)
 
 Los agentes no solo sugieren código — pueden ejecutar tareas completas: crear PRs, correr tests, modificar múltiples archivos.
 
-| Herramienta | Descripción |
-|-------------|-------------|
-| **OpenAI Codex** | Agente cloud que trabaja en paralelo, crea PRs, ejecuta tests |
-| **Claude Code** | Agente CLI de Anthropic para tareas de desarrollo |
-| **Google Antigravity** | También funciona como agente con "Artifacts" verificables |
+- **OpenAI Codex** — Agente cloud que trabaja en paralelo, crea PRs, ejecuta tests
+- **Claude Code** — Agente CLI de Anthropic para tareas de desarrollo
+- **Google Antigravity** — También funciona como agente con "Artifacts" verificables
 
 ### Asistentes conversacionales
 
 Para consultas, explicaciones, y generación de código en chat:
 
-| Herramienta | Fortaleza |
-|-------------|-----------|
-| **Claude** | Razonamiento profundo, código largo, explicaciones claras |
-| **ChatGPT** | Versatilidad, Code Interpreter para ejecutar código |
-| **Gemini** | Integración Google, ventana de contexto muy larga |
+- **Claude** — Razonamiento profundo, código largo, explicaciones claras
+- **ChatGPT** — Versatilidad, Code Interpreter para ejecutar código
+- **Gemini** — Integración Google, ventana de contexto muy larga
 
 ### Herramientas especializadas
 
-| Herramienta | Uso |
-|-------------|-----|
-| **v0.dev** | Generar componentes React/UI desde descripción (Vercel) |
-| **Lovable** | Generar aplicaciones web completas desde descripción |
-| **Warp** | Terminal moderna con IA integrada |
-| **Replit** | IDE en la nube con Ghostwriter (IA) |
+- **v0.dev** — Generar componentes React/UI desde descripción (Vercel)
+- **Lovable** — Generar aplicaciones web completas desde descripción
+- **Warp** — Terminal moderna con IA integrada
+- **Replit** — IDE en la nube con Ghostwriter (IA)
 
 ### ¿Cuál usar?
 
-| Necesidad | Herramienta recomendada |
-|-----------|-------------------------|
-| Quiero sugerencias mientras escribo | GitHub Copilot o Cursor |
-| Necesito generar un archivo/función completa | Chat con Claude o ChatGPT |
-| Quiero que la IA haga cambios en múltiples archivos | Cursor o Claude Code |
-| Necesito entender código existente | Pegar código en Claude/ChatGPT y preguntar |
-| Quiero generar UI rápidamente | v0.dev para componentes React |
+- **Quiero sugerencias mientras escribo** → GitHub Copilot o Cursor
+- **Necesito generar un archivo/función completa** → Chat con Claude o ChatGPT
+- **Quiero que la IA haga cambios en múltiples archivos** → Cursor o Claude Code
+- **Necesito entender código existente** → Pegar código en Claude/ChatGPT y preguntar
+- **Quiero generar UI rápidamente** → v0.dev para componentes React
 
 💡 **Insight**: Muchos desarrolladores usan múltiples herramientas. Copilot para autocompletado rápido mientras escriben, y Claude/ChatGPT para consultas más complejas o cuando necesitan explicaciones.
 
