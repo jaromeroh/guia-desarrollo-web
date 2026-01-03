@@ -1,6 +1,6 @@
 # 26. La Nueva Capa de Abstracción
 
-> "I've never felt this much behind as a programmer. The profession is being dramatically refactored... There's a new programmable layer of abstraction to master involving agents, subagents, their prompts, contexts, memory, modes, permissions, tools, plugins, skills, hooks, MCP, LSP, slash commands, workflows, IDE integrations, and a need to build an all-encompassing mental model for fundamentally stochastic, fallible, unintelligible and changing entities suddenly intermingled with what used to be good old fashioned engineering."
+> "Nunca me había sentido tan atrás como programador. La profesión está siendo dramáticamente refactorizada... Hay una nueva capa de abstracción programable que dominar, que incluye agentes, subagentes, sus prompts, contextos, memoria, modos, permisos, herramientas, plugins, skills, hooks, MCP, LSP, slash commands, workflows, integraciones con IDEs, y la necesidad de construir un modelo mental integral para entidades fundamentalmente estocásticas, falibles, ininteligibles y cambiantes, que de repente se entremezclan con lo que solía ser la buena y vieja ingeniería."
 >
 > — Andrej Karpathy, Diciembre 2025
 
@@ -363,6 +363,36 @@ CLAUDE.md es el "manual" de tu proyecto para la IA. Se carga automáticamente al
 
 Los archivos se combinan. Puedes tener instrucciones globales y específicas por módulo.
 
+### Carpeta docs/ para Contexto Persistente
+
+Además de CLAUDE.md, considera mantener una carpeta `docs/` con descripciones de subsistemas que los agentes pueden consultar:
+
+```
+docs/
+├── architecture.md      # Visión general del sistema
+├── auth-subsystem.md    # Cómo funciona autenticación
+├── data-model.md        # Entidades y relaciones
+└── api-conventions.md   # Patrones de API usados
+```
+
+**Por qué funciona:**
+
+Cuando el agente necesita contexto sobre un área específica, puede leer el documento relevante en lugar de explorar todo el código. Esto es más eficiente y produce mejores resultados.
+
+```
+❌ Sin docs/:
+   "Modifica el sistema de auth"
+   → Agente explora 50 archivos buscando entender
+   → Usa mucho contexto, puede perderse
+
+✅ Con docs/:
+   "Lee docs/auth-subsystem.md y luego modifica el sistema de auth"
+   → Agente entiende rápidamente la arquitectura
+   → Cambios más precisos y coherentes
+```
+
+Mantén estos documentos actualizados. Son una inversión que paga dividendos cada vez que trabajas con agentes.
+
 ### Hooks: Control determinístico
 
 Los hooks te permiten ejecutar comandos automáticamente en eventos específicos:
@@ -467,6 +497,49 @@ Uso: `/fix-issue 123`
 ## El Modelo Mental
 
 Esta es la sección más importante del capítulo. Sin el modelo mental correcto, usarás las herramientas de forma subóptima.
+
+### El Desplazamiento del Esfuerzo Mental
+
+El desarrollo con IA cambia **dónde** inviertes tu energía mental, no cuánto:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│  ANTES (desarrollo tradicional):                            │
+│  ───────────────────────────────                            │
+│                                                             │
+│  Cuello de botella = Tu velocidad escribiendo código        │
+│                      Tu conocimiento de sintaxis            │
+│                      Tu memoria de APIs                     │
+│                                                             │
+│  Pasabas tiempo en: implementar, debuggear,                 │
+│                     buscar en documentación                 │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  AHORA (desarrollo con IA):                                 │
+│  ──────────────────────────                                 │
+│                                                             │
+│  Cuello de botella = Tiempo de inferencia                   │
+│                      (esperar que el modelo responda)       │
+│                      + Pensamiento profundo                 │
+│                      (decidir QUÉ pedirle)                  │
+│                                                             │
+│  Pasas tiempo en: diseñar, revisar output,                  │
+│                   tomar decisiones de alto nivel            │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**"Tiempo de inferencia"** = El tiempo que tarda el modelo en procesar y responder. Si trabajas con IA, a veces esperas 30 segundos a 2 minutos por respuesta. Este tiempo de espera antes no existía.
+
+**"Pensamiento profundo"** = Como ya no gastas energía mental en sintaxis y boilerplate, esa energía ahora va a:
+- ¿Qué problema realmente estoy resolviendo?
+- ¿Este approach tiene sentido arquitectónicamente?
+- ¿El output de la IA es correcto y seguro?
+- ¿Cómo estructuro el contexto para obtener mejor resultado?
+
+> 💡 **Insight clave**: El esfuerzo mental se desplaza, no desaparece. No trabajas menos, trabajas diferente. La habilidad de "pensar profundamente" sobre sistemas mientras esperas respuestas se vuelve más valiosa que la velocidad de tipeo.
 
 ### Entidades estocásticas
 
@@ -758,6 +831,7 @@ Pero esto es especulación. Lo único seguro es que el cambio continúa.
 - Anthropic. (2024). *Introducing the Model Context Protocol*. https://anthropic.com/news/model-context-protocol
 - Model Context Protocol. (2025). *MCP Specification*. https://modelcontextprotocol.io/specification
 - Karpathy, A. (2025). *On the changing nature of programming*. X/Twitter thread.
+- Steinberger, P. (2025). *Shipping at Inference Speed*. https://steipete.me/posts/2025/shipping-at-inference-speed
 - Anthropic. (2025). *Claude Code Documentation*. https://code.claude.com/docs
 - Agentic AI Foundation. (2025). *Establishing the AAIF*. Linux Foundation.
 

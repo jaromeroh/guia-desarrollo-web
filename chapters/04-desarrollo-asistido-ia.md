@@ -116,6 +116,33 @@ Por eso este capítulo existe tan temprano en el libro. La IA es una herramienta
 
 💡 **Insight**: La IA es excelente para el "cómo" (implementación) pero limitada para el "qué" y el "por qué" (diseño y decisiones). Tú aportas el contexto, los requisitos y el juicio; la IA acelera la ejecución.
 
+### 📊 El Precipicio de la Complejidad
+
+Estudios recientes muestran un patrón claro en las capacidades de la IA para código:
+
+| Tipo de tarea | Tasa de éxito |
+|---------------|---------------|
+| Tareas aisladas (un componente, una función) | ~40% |
+| Integraciones multi-paso | ~25% |
+
+La IA "funciona bien y luego cae por un precipicio cuando la complejidad aumenta". Este fenómeno se conoce como el **complexity cliff**.
+
+**Implicación práctica**: Descomponer tareas complejas en pasos simples aumenta dramáticamente la tasa de éxito. En lugar de pedir "implementa el sistema de autenticación completo", pide primero el modelo de usuario, luego el hash de passwords, luego el endpoint de login, etc.
+
+### El Divide de Capacidades
+
+Una forma más precisa de entender qué delegar:
+
+| IA Fuerte | IA Débil |
+|-----------|----------|
+| Lógica y flujo de datos | Decisiones de diseño visual |
+| Scaffolding y boilerplate | Juicio estético ("gusto") |
+| Convertir specs explícitas en código | Jerarquía visual y decisiones UX |
+| Patrones conocidos y documentados | Integraciones multi-paso sin contexto fuerte |
+| Refactoring mecánico | Arquitectura de sistemas complejos |
+
+> 💡 **Insight**: "You are still the architect." El éxito depende menos del modelo que uses y más de la especificidad del prompt, los guardrails que establezcas, y cómo estructures el workflow. — Addy Osmani
+
 ---
 
 ## El Ciclo de Desarrollo con IA
@@ -194,6 +221,38 @@ Prueba el código. Escribe tests. Verifica edge cases. La IA no ejecuta tu códi
 ## Prompting Efectivo para Código
 
 La calidad del output depende directamente de la calidad del input.
+
+### Context Engineering: La Nueva Habilidad Crítica
+
+No basta con escribir buenos prompts. Necesitas **ingeniar el contexto** — estructurar la información que le das a la IA para maximizar la calidad del output.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│           CONTEXT ENGINEERING                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. MÁXIMO SIGNAL-TO-NOISE                                  │
+│     Solo información relevante, nada superfluo              │
+│     ❌ "Aquí está todo el archivo de 2000 líneas"           │
+│     ✅ "Aquí está la función relevante y su contexto"       │
+│                                                             │
+│  2. CODIFICAR CONVENCIONES ANTES                            │
+│     Bloquear decisiones antes de pedir código               │
+│     ❌ "Haz un componente de login"                         │
+│     ✅ "Usamos React + TypeScript + Tailwind + shadcn/ui.   │
+│        Los formularios usan React Hook Form con Zod.        │
+│        Haz un componente de login."                         │
+│                                                             │
+│  3. FORZAR TRABAJO INCREMENTAL                              │
+│     Pedir planes y pasos, no soluciones monolíticas         │
+│     ❌ "Implementa el sistema de pagos"                     │
+│     ✅ "Primero, explícame cómo estructurarías el sistema   │
+│        de pagos. Luego implementaremos paso a paso."        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+> 💡 **Insight**: La calidad del output depende más de cómo estructuras el contexto que del modelo que uses. Un prompt bien estructurado en un modelo menor puede superar a un prompt vago en un modelo superior.
 
 ### Anatomía de un buen prompt
 
@@ -448,28 +507,13 @@ Para consultas, explicaciones, y generación de código en chat:
 
 ### ¿Cuál usar?
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              GUÍA DE SELECCIÓN DE HERRAMIENTA               │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  "Quiero sugerencias mientras escribo"                      │
-│  └──▶ GitHub Copilot o Cursor                               │
-│                                                             │
-│  "Necesito generar un archivo/función completa"             │
-│  └──▶ Chat con Claude o ChatGPT                             │
-│                                                             │
-│  "Quiero que la IA haga cambios en múltiples archivos"      │
-│  └──▶ Cursor o Claude Code                                  │
-│                                                             │
-│  "Necesito entender código existente"                       │
-│  └──▶ Pegar código en Claude/ChatGPT y preguntar            │
-│                                                             │
-│  "Quiero generar UI rápidamente"                            │
-│  └──▶ v0.dev para componentes React                         │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| Necesidad | Herramienta recomendada |
+|-----------|-------------------------|
+| Quiero sugerencias mientras escribo | GitHub Copilot o Cursor |
+| Necesito generar un archivo/función completa | Chat con Claude o ChatGPT |
+| Quiero que la IA haga cambios en múltiples archivos | Cursor o Claude Code |
+| Necesito entender código existente | Pegar código en Claude/ChatGPT y preguntar |
+| Quiero generar UI rápidamente | v0.dev para componentes React |
 
 💡 **Insight**: Muchos desarrolladores usan múltiples herramientas. Copilot para autocompletado rápido mientras escriben, y Claude/ChatGPT para consultas más complejas o cuando necesitan explicaciones.
 
@@ -726,6 +770,7 @@ Cada nota asumirá que entiendes los principios de este capítulo: la importanci
 
 - Simon Willison (2023-2024). Blog posts sobre desarrollo con LLMs. https://simonwillison.net/
 - Ethan Mollick (2024). *Co-Intelligence: Living and Working with AI*. Penguin.
+- Osmani, A. (2025). *How Good is AI at Coding React Really?* https://addyo.substack.com/
 - Documentación oficial de GitHub Copilot, Claude, Cursor
 - OWASP Guidelines para seguridad en código generado por IA
 
