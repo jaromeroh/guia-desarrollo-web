@@ -393,6 +393,44 @@ Cuando el agente necesita contexto sobre un área específica, puede leer el doc
 
 Mantén estos documentos actualizados. Son una inversión que paga dividendos cada vez que trabajas con agentes.
 
+### Estructura que sirve a humanos y agentes
+
+Un insight importante: **la misma estructura que ayuda a humanos también ayuda a agentes**.
+
+> "Structure in tools works for humans and agents the same way — it reduces the ambiguity what is expected." — Karri Saarinen
+
+No necesitas crear "documentación para la IA" separada de la documentación para humanos. Un proyecto bien organizado es más fácil de navegar tanto para un desarrollador nuevo como para un agente de IA.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   ESTRUCTURA CLARA → MENOS AMBIGÜEDAD → MEJORES RESULTADOS  │
+│                                                             │
+│   Para humanos:                                             │
+│   • Onboarding más rápido                                   │
+│   • Menos preguntas al equipo                               │
+│   • Código más mantenible                                   │
+│                                                             │
+│   Para agentes:                                             │
+│   • Menos "alucinaciones" sobre cómo funciona el proyecto   │
+│   • Cambios más coherentes con el estilo existente          │
+│   • Menos necesidad de correcciones                         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Ejemplos de estructura que beneficia a ambos:**
+
+| Elemento | Beneficio humano | Beneficio agente |
+|----------|------------------|------------------|
+| Nombres de archivos descriptivos | Fácil de encontrar | Fácil de inferir contenido |
+| Carpetas organizadas por feature | Navegación intuitiva | Cambios aislados correctamente |
+| Convenciones consistentes | Código predecible | Genera código que encaja |
+| README actualizado | Onboarding rápido | Contexto preciso |
+| Tests junto al código | Fácil de mantener | Sabe dónde crear tests |
+
+La implicación es que invertir en organización del proyecto tiene un **doble retorno**: mejora la experiencia de desarrolladores humanos Y la efectividad de agentes de IA.
+
 ### Hooks: Control determinístico
 
 Los hooks te permiten ejecutar comandos automáticamente en eventos específicos:
@@ -634,6 +672,48 @@ Esto no significa menos trabajo. Significa **trabajo diferente**:
 - Menos tiempo escribiendo caracteres
 - Más tiempo entendiendo sistemas
 
+### De constructor a jardinero
+
+Hay una metáfora que captura este cambio mejor que "supervisor":
+
+> "Writing code is less like constructing a solution and more like **setting up the conditions for a good solution to emerge**." — Karri Saarinen
+
+No eres un **constructor** que pone ladrillo sobre ladrillo. Eres más como un **jardinero** que:
+- Prepara el terreno (contexto, estructura del proyecto)
+- Planta las semillas correctas (prompts bien diseñados)
+- Crea las condiciones para el crecimiento (CLAUDE.md, documentación, convenciones claras)
+- Poda lo que no sirve (revisión, refactoring)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   MENTALIDAD DE CONSTRUCTOR     MENTALIDAD DE JARDINERO     │
+│   ────────────────────────      ───────────────────────     │
+│                                                             │
+│   "Voy a escribir esta         "Voy a crear las             │
+│    función línea por línea"     condiciones para que         │
+│                                 emerja una buena función"    │
+│                                                             │
+│   Control total sobre          Influencia sobre el          │
+│   cada detalle                 resultado final               │
+│                                                             │
+│   El resultado es              El resultado puede            │
+│   predecible                   sorprenderte                  │
+│                                                             │
+│   Debuggeas el código          Debuggeas el contexto         │
+│                                y los prompts                 │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+Esta mentalidad tiene implicaciones prácticas:
+
+1. **Invertir en contexto paga dividendos** — Un buen CLAUDE.md, documentación clara, y estructura de proyecto coherente hacen que cada interacción con agentes sea más efectiva
+
+2. **La variabilidad es esperada** — No te frustres si el mismo prompt da resultados diferentes. Ajusta las condiciones, no solo el prompt
+
+3. **El outcome matters more than the process** — Si el agente llega a una buena solución por un camino inesperado, está bien. Evalúa el resultado, no el método
+
 ### La nueva habilidad: saber qué delegar
 
 ```
@@ -653,6 +733,56 @@ Esto no significa menos trabajo. Significa **trabajo diferente**:
 ```
 
 Con el tiempo, estos límites se mueven. Lo que hoy requiere supervisión cercana, mañana puede ser delegable. Pero el principio permanece: **tú eres responsable del resultado**.
+
+### La dimensión organizacional
+
+Hasta ahora hemos hablado de cómo **tú** trabajas con agentes. Pero hay una pregunta más grande:
+
+> "This might not be even an individual task, but an organizational one: how can you create these conditions as to the whole product team." — Karri Saarinen
+
+**¿Cómo crea una organización las condiciones para que los agentes sean efectivos a escala?**
+
+Esta pregunta es nueva y las respuestas están emergiendo:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│         CREAR CONDICIONES A NIVEL ORGANIZACIONAL            │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  DOCUMENTACIÓN Y CONTEXTO                                   │
+│  • ¿Tenemos docs/architecture.md actualizados?              │
+│  • ¿Los ADRs están al día?                                  │
+│  • ¿Hay CLAUDE.md en todos los repositorios?                │
+│                                                             │
+│  ESTRUCTURA Y CONVENCIONES                                  │
+│  • ¿Las convenciones de código son consistentes?            │
+│  • ¿La estructura de carpetas es predecible?                │
+│  • ¿Los nombres siguen patrones claros?                     │
+│                                                             │
+│  HERRAMIENTAS Y PROCESOS                                    │
+│  • ¿Los pipelines de CI validan el código de agentes?       │
+│  • ¿Hay linters y formatters automáticos?                   │
+│  • ¿El proceso de PR soporta revisión de código generado?   │
+│                                                             │
+│  CULTURA Y PRÁCTICAS                                        │
+│  • ¿El equipo sabe cuándo usar agentes vs escribir manual?  │
+│  • ¿Hay guías sobre qué delegar y qué no?                   │
+│  • ¿Se comparten prompts y configuraciones efectivas?       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Implicaciones para equipos:**
+
+1. **La documentación se vuelve infraestructura crítica** — No es "nice to have", es lo que permite que los agentes sean útiles
+
+2. **Las convenciones importan más** — Cuando humanos y agentes trabajan en el mismo código, la consistencia reduce fricción
+
+3. **El onboarding cambia** — Nuevos miembros del equipo necesitan aprender no solo el código, sino cómo trabajar efectivamente con agentes en ese proyecto específico
+
+4. **El code review evoluciona** — Revisar código generado por agentes requiere habilidades diferentes que revisar código escrito por humanos (más enfoque en "¿esto hace lo correcto?" que en "¿esto está bien escrito?")
+
+Esta es un área donde las mejores prácticas aún se están definiendo. Lo que sí está claro es que **la efectividad de los agentes no es solo responsabilidad individual** — es algo que las organizaciones pueden (y deben) cultivar intencionalmente.
 
 ---
 
@@ -831,6 +961,7 @@ Pero esto es especulación. Lo único seguro es que el cambio continúa.
 - Anthropic. (2024). *Introducing the Model Context Protocol*. https://anthropic.com/news/model-context-protocol
 - Model Context Protocol. (2025). *MCP Specification*. https://modelcontextprotocol.io/specification
 - Karpathy, A. (2025). *On the changing nature of programming*. X/Twitter thread.
+- Saarinen, K. (2025). *The disappearing middle of software work*. https://x.com/karrisaarinen/status/2007534281011155419
 - Steinberger, P. (2025). *Shipping at Inference Speed*. https://steipete.me/posts/2025/shipping-at-inference-speed
 - Anthropic. (2025). *Claude Code Documentation*. https://code.claude.com/docs
 - Agentic AI Foundation. (2025). *Establishing the AAIF*. Linux Foundation.

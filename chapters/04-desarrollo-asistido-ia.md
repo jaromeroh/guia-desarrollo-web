@@ -34,6 +34,56 @@ Desde 2022, algo fundamental cambió en el desarrollo de software. Herramientas 
 └─────────────────────────────────────────────────────────────┘
 ```
 
+### El "middle" que desaparece
+
+Karri Saarinen, CEO de Linear, describe este cambio con una metáfora poderosa: **el centro del trabajo de software se está comprimiendo**.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│           EL TRABAJO DE SOFTWARE: ANTES vs AHORA            │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ANTES (el "middle" era grueso):                            │
+│  ───────────────────────────────                            │
+│                                                             │
+│  ┌─────────┐   ┌─────────────────────────┐   ┌─────────┐   │
+│  │ ANTES   │   │        MIDDLE           │   │ DESPUÉS │   │
+│  │         │   │                         │   │         │   │
+│  │ Idea    │   │  Abrir IDE              │   │ Revisar │   │
+│  │ Diseño  │   │  Configurar entorno     │   │ Testear │   │
+│  │ Plan    │   │  Escribir código        │   │ Lanzar  │   │
+│  │         │   │  Debuggear              │   │         │   │
+│  │  10%    │   │  Buscar en StackOverflow│   │  10%    │   │
+│  │         │   │         80%             │   │         │   │
+│  └─────────┘   └─────────────────────────┘   └─────────┘   │
+│                                                             │
+│  AHORA (el "middle" se comprime):                           │
+│  ──────────────────────────────                             │
+│                                                             │
+│  ┌───────────────┐   ┌───────────┐   ┌───────────────┐     │
+│  │    ANTES      │   │  MIDDLE   │   │    DESPUÉS    │     │
+│  │               │   │           │   │               │     │
+│  │ Entender      │   │ Promptear │   │ Revisar       │     │
+│  │ Diseñar       │   │ Iterar    │   │ Verificar     │     │
+│  │ Dar contexto  │   │           │   │ Testear       │     │
+│  │ Decidir       │   │   30%     │   │ Validar       │     │
+│  │     35%       │   │           │   │     35%       │     │
+│  └───────────────┘   └───────────┘   └───────────────┘     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+El tiempo que antes pasabas escribiendo código ahora se redistribuye hacia los extremos:
+
+- **El antes** absorbe más esfuerzo: entender el problema, diseñar la solución, dar contexto a la IA, tomar decisiones arquitectónicas
+- **El después** también crece: revisar output, validar corrección, testear edge cases, asegurar calidad
+
+> 💡 **Insight**: "Writing code is less like constructing a solution and more like setting up the conditions for a good solution to emerge." — Karri Saarinen. Ya no "construyes" código; **creas las condiciones** para que emerja una buena solución.
+
+Esta redistribución tiene consecuencias importantes que veremos a lo largo del libro.
+
+---
+
 Pero este cambio viene con una trampa: **la IA hace que sea muy fácil generar código que no entiendes**.
 
 Y código que no entiendes es código que no puedes:
@@ -467,6 +517,12 @@ No todo el código generado por IA requiere el mismo nivel de escrutinio.
 El panorama de herramientas cambia rápidamente, pero aquí está el estado a 2025:
 
 ### IDEs y editores con IA
+
+El rol del IDE está cambiando. Antes era una **herramienta de escritura** — pasabas horas tecleando, navegando código, refactorizando manualmente. Ahora se está convirtiendo en una **herramienta de revisión y navegación** — un visor de código más que un editor.
+
+> 💡 **Insight**: "The IDE becomes more of a code viewer than a writing tool." — Karri Saarinen. Esto no significa que los IDEs sean menos importantes, sino que su función principal cambia: de escribir a supervisar, navegar y validar.
+
+Las herramientas actuales reflejan esta transición:
 
 - **GitHub Copilot** — El más popular. Autocompletado inline en VS Code, JetBrains, etc.
 - **Cursor** — Fork de VS Code con IA profundamente integrada (chat + edición)

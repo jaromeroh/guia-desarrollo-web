@@ -1,5 +1,8 @@
 # 6. Diseño de Producto y UX
 
+> "Design is not about artifacts or tools. It is about forming and shaping clarity of the intent through ideas, exploration, research, and discussion."
+> — Karri Saarinen
+
 > El mejor código del mundo no salva un producto mal diseñado.
 
 ## Objetivos de Aprendizaje
@@ -82,6 +85,37 @@ Métrica: Clics en el botón       Métrica: Tiempo para completar
 ```
 
 💡 **Insight**: Cuando entiendes el "job", a veces descubres que la solución no es lo que pidieron. Quizás no necesitan exportar a Excel—necesitan que el sistema haga la conciliación automáticamente.
+
+---
+
+## El diseño es claridad, no artefactos
+
+Antes de hablar del proceso y las herramientas, es importante entender qué es realmente diseñar.
+
+Es tentador pensar que diseñar es:
+- Crear wireframes en Figma
+- Hacer mockups bonitos
+- Entregar especificaciones visuales
+
+Pero esos son **artefactos** — subproductos del diseño, no el diseño en sí.
+
+**Diseñar es el proceso de clarificar la intención.** Es responder:
+- ¿Qué problema estamos resolviendo?
+- ¿Para quién?
+- ¿Qué tradeoffs aceptamos?
+- ¿Cómo sabremos si funciona?
+
+Los wireframes y mockups son útiles porque **fuerzan claridad** — es difícil dibujar algo si no has decidido qué es. Pero el valor está en las decisiones que tomas, no en los píxeles que produces.
+
+> 💡 **Insight**: En la era de agentes de IA que pueden generar interfaces completas en segundos, la habilidad de crear artefactos visuales se comoditiza. Lo que permanece valioso es la capacidad de **clarificar qué debe existir y por qué** — el trabajo intelectual de diseño que ninguna IA puede hacer por ti sin tu guía.
+
+Esta perspectiva cambia cómo evalúas tu trabajo de diseño:
+
+| Métrica superficial | Métrica real |
+|---------------------|--------------|
+| "Hice 5 wireframes" | "El equipo entiende qué construir" |
+| "El mockup está en Figma" | "Las decisiones están documentadas" |
+| "Se ve profesional" | "Resuelve el problema del usuario" |
 
 ---
 
