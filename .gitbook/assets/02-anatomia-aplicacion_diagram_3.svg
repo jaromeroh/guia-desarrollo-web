@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 589 589" width="589" height="589">
+  <defs>
+    <style>
+      .ascii-text {
+        font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+        font-size: 14px;
+        fill: #1f2937;
+        white-space: pre;
+      }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#f9fafb" rx="8" ry="8"/>
+
+  <text x="30" y="45.39999999999999" class="ascii-text">┌─────────────────────────────────────────────────────────────┐</text>
+  <text x="30" y="64.99999999999999" class="ascii-text">│               DE HTML A PANTALLA                            │</text>
+  <text x="30" y="84.6" class="ascii-text">├─────────────────────────────────────────────────────────────┤</text>
+  <text x="30" y="104.19999999999999" class="ascii-text">│                                                             │</text>
+  <text x="30" y="123.79999999999998" class="ascii-text">│  1. Servidor envía HTML                                     │</text>
+  <text x="30" y="143.4" class="ascii-text">│     &lt;html&gt;                                                  │</text>
+  <text x="30" y="163.0" class="ascii-text">│       &lt;body&gt;                                                │</text>
+  <text x="30" y="182.6" class="ascii-text">│         &lt;h1&gt;Hola&lt;/h1&gt;                                       │</text>
+  <text x="30" y="202.2" class="ascii-text">│         &lt;p&gt;Mundo&lt;/p&gt;                                        │</text>
+  <text x="30" y="221.79999999999998" class="ascii-text">│       &lt;/body&gt;                                               │</text>
+  <text x="30" y="241.39999999999998" class="ascii-text">│     &lt;/html&gt;                                                 │</text>
+  <text x="30" y="261.0" class="ascii-text">│                                                             │</text>
+  <text x="30" y="280.59999999999997" class="ascii-text">│  2. Navegador parsea y crea el DOM (árbol de objetos)       │</text>
+  <text x="30" y="300.2" class="ascii-text">│                                                             │</text>
+  <text x="30" y="319.79999999999995" class="ascii-text">│     document                                                │</text>
+  <text x="30" y="339.4" class="ascii-text">│        └── html                                             │</text>
+  <text x="30" y="359.0" class="ascii-text">│              └── body                                       │</text>
+  <text x="30" y="378.59999999999997" class="ascii-text">│                    ├── h1 ─── &quot;Hola&quot;                        │</text>
+  <text x="30" y="398.2" class="ascii-text">│                    └── p ──── &quot;Mundo&quot;                       │</text>
+  <text x="30" y="417.79999999999995" class="ascii-text">│                                                             │</text>
+  <text x="30" y="437.4" class="ascii-text">│  3. Navegador renderiza el DOM en pantalla                  │</text>
+  <text x="30" y="456.99999999999994" class="ascii-text">│     ┌─────────────────────┐                                 │</text>
+  <text x="30" y="476.59999999999997" class="ascii-text">│     │  Hola               │                                 │</text>
+  <text x="30" y="496.2" class="ascii-text">│     │  Mundo              │                                 │</text>
+  <text x="30" y="515.8" class="ascii-text">│     └─────────────────────┘                                 │</text>
+  <text x="30" y="535.3999999999999" class="ascii-text">│                                                             │</text>
+  <text x="30" y="554.9999999999999" class="ascii-text">└─────────────────────────────────────────────────────────────┘</text>
+</svg>

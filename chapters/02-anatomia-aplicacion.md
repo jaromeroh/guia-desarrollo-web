@@ -18,42 +18,10 @@ Antes de profundizar en técnicas específicas, necesitas un mapa mental de cóm
 
 Una aplicación web moderna no es un programa que corre en una computadora. Es un **sistema distribuido**: múltiples programas, corriendo en múltiples computadoras, comunicándose a través de la red.
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        INTERNET                                     │
-└─────────────────────────────────────────────────────────────────────┘
-        │                    │                      │
-        ▼                    ▼                      ▼
-   ┌─────────┐         ┌──────────┐          ┌──────────┐
-   │ Usuario │         │ Usuario  │          │ Usuario  │
-   │ (Chile) │         │ (México) │          │ (España) │
-   └────┬────┘         └────┬─────┘          └────┬─────┘
-        │                   │                     │
-        └───────────────────┼─────────────────────┘
-                            │
-                            ▼
-                    ┌───────────────┐
-                    │      CDN      │    ← Contenido estático
-                    └───────┬───────┘
-                            │
-                            ▼
-                    ┌───────────────┐
-                    │  Load Balancer│    ← Distribuye tráfico
-                    └───────┬───────┘
-                            │
-              ┌─────────────┼─────────────┐
-              ▼             ▼             ▼
-        ┌──────────┐  ┌──────────┐  ┌──────────┐
-        │ Servidor │  │ Servidor │  │ Servidor │
-        │    #1    │  │    #2    │  │    #3    │
-        └────┬─────┘  └────┬─────┘  └────┬─────┘
-              └─────────────┼─────────────┘
-                            │
-                            ▼
-                    ┌───────────────┐
-                    │  Base de Datos │
-                    └───────────────┘
-```
+
+
+
+![Arquitectura de Internet](../.gitbook/assets/02-arquitectura-internet.svg)
 
 No te preocupes si esto parece complejo. Vamos a desarmarlo pieza por pieza.
 
@@ -90,35 +58,9 @@ El código que envías       El navegador del usuario
 
 Cuando el navegador recibe HTML del servidor, no lo muestra directamente. Primero lo convierte en una estructura de datos llamada **DOM (Document Object Model)**.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│               DE HTML A PANTALLA                            │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  1. Servidor envía HTML                                     │
-│     <html>                                                  │
-│       <body>                                                │
-│         <h1>Hola</h1>                                       │
-│         <p>Mundo</p>                                        │
-│       </body>                                               │
-│     </html>                                                 │
-│                                                             │
-│  2. Navegador parsea y crea el DOM (árbol de objetos)       │
-│                                                             │
-│     document                                                │
-│        └── html                                             │
-│              └── body                                       │
-│                    ├── h1 ─── "Hola"                        │
-│                    └── p ──── "Mundo"                       │
-│                                                             │
-│  3. Navegador renderiza el DOM en pantalla                  │
-│     ┌─────────────────────┐                                 │
-│     │  Hola               │                                 │
-│     │  Mundo              │                                 │
-│     └─────────────────────┘                                 │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+
+
+![De HTML a Pantalla](../.gitbook/assets/02-html-a-dom.svg)
 
 📖 **Concepto**: El DOM es una representación en memoria de la página web como un **árbol de objetos**. Cada elemento HTML (`<div>`, `<p>`, `<button>`) se convierte en un "nodo" del árbol. El navegador usa este árbol para:
 - Calcular dónde va cada elemento (layout)
@@ -177,22 +119,9 @@ server.listen(3000); // Escucha en puerto 3000
 
 Cliente y servidor hablan a través de **HTTP** (HyperText Transfer Protocol). Es un protocolo de petición-respuesta:
 
-```
-┌──────────┐                              ┌──────────┐
-│  Cliente │                              │ Servidor │
-└────┬─────┘                              └────┬─────┘
-     │                                         │
-     │  ────── Petición HTTP ──────────────▶   │
-     │         GET /api/users                  │
-     │         Headers: { auth: "token" }      │
-     │                                         │
-     │                                         │ (procesa)
-     │                                         │
-     │  ◀────── Respuesta HTTP ─────────────   │
-     │          Status: 200 OK                 │
-     │          Body: [{ id: 1, name: "Ana" }] │
-     │                                         │
-```
+
+
+![Comunicación HTTP](../.gitbook/assets/02-http-comunicacion.svg)
 
 Los métodos HTTP más comunes:
 
@@ -212,53 +141,9 @@ Una aplicación web moderna tiene múltiples capas, cada una con responsabilidad
 
 ### Vista de capas (de arriba hacia abajo)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    CAPA DE PRESENTACIÓN                     │
-│  (Lo que el usuario ve e interactúa)                        │
-│  ─────────────────────────────────────────────────────────  │
-│  HTML, CSS, JavaScript, React/Vue/Svelte                    │
-│  Corre en: Navegador del usuario                            │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼ HTTP/HTTPS
-┌─────────────────────────────────────────────────────────────┐
-│                      CAPA DE API                            │
-│  (El contrato entre cliente y servidor)                     │
-│  ─────────────────────────────────────────────────────────  │
-│  REST endpoints, GraphQL, tRPC                              │
-│  Autenticación, validación de entrada                       │
-│  Corre en: Servidor                                         │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  CAPA DE LÓGICA DE NEGOCIO                  │
-│  (Las reglas y procesos del dominio)                        │
-│  ─────────────────────────────────────────────────────────  │
-│  Servicios, casos de uso, validaciones de negocio           │
-│  "Un usuario no puede tener más de 3 pedidos pendientes"    │
-│  Corre en: Servidor                                         │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   CAPA DE ACCESO A DATOS                    │
-│  (Comunicación con bases de datos y servicios externos)     │
-│  ─────────────────────────────────────────────────────────  │
-│  Repositories, ORMs, clientes de APIs externas              │
-│  Corre en: Servidor                                         │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   CAPA DE PERSISTENCIA                      │
-│  (Donde viven los datos)                                    │
-│  ─────────────────────────────────────────────────────────  │
-│  PostgreSQL, MongoDB, Redis, S3                             │
-│  Corre en: Servidor de base de datos (o servicio en nube)   │
-└─────────────────────────────────────────────────────────────┘
-```
+
+
+![Capas de una Aplicación](../.gitbook/assets/02-capas-aplicacion.svg)
 
 💡 **Insight**: Las capas no son una burocracia. Cada una tiene una razón de existir: separar responsabilidades hace que el código sea más fácil de entender, probar y modificar. Cuando todo está mezclado, un cambio en la UI puede romper la base de datos.
 
@@ -268,21 +153,9 @@ Una aplicación web moderna tiene múltiples capas, cada una con responsabilidad
 
 Cuando diseñas la arquitectura de tu aplicación, no tomas una decisión—tomas **dos decisiones independientes** que se pueden combinar:
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                                                                │
-│   DECISIÓN 1: ¿Cómo ORGANIZO el código?                        │
-│   ──────────────────────────────────────                       │
-│   Monolito ◄─────────────────────────────► Microservicios      │
-│   (todo junto)                           (servicios separados) │
-│                                                                │
-│   DECISIÓN 2: ¿Cómo EJECUTO el código?                         │
-│   ──────────────────────────────────────                       │
-│   Tradicional ◄──────────────────────────► Serverless          │
-│   (servidores 24/7)                      (funciones on-demand) │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+
+
+![Decisiones Arquitectónicas](../.gitbook/assets/02-decisiones-arquitectura.svg)
 
 Estas dos dimensiones son **ortogonales**: puedes combinarlas de cualquier manera. Veamos cada una.
 
@@ -296,22 +169,9 @@ Esta decisión responde: *¿Cómo divido las responsabilidades de mi aplicación
 
 Todo el código del servidor vive en una sola aplicación, un solo repositorio, un solo deployment.
 
-```
-┌────────────────────────────────────────┐
-│              MONOLITO                  │
-├────────────────────────────────────────┤
-│  ┌──────────┐ ┌──────────┐ ┌────────┐  │
-│  │ Usuarios │ │ Productos│ │ Pagos  │  │
-│  └──────────┘ └──────────┘ └────────┘  │
-│  ┌──────────┐ ┌──────────┐ ┌────────┐  │
-│  │ Envíos   │ │ Reportes │ │ Admin  │  │
-│  └──────────┘ └──────────┘ └────────┘  │
-│                                        │
-│         Una base de datos              │
-│         Un deployment                  │
-│         Un repositorio                 │
-└────────────────────────────────────────┘
-```
+
+
+![Monolito](../.gitbook/assets/02-monolito.svg)
 
 **Ventajas:**
 - Simple de desarrollar y debuggear
@@ -329,22 +189,9 @@ Todo el código del servidor vive en una sola aplicación, un solo repositorio, 
 
 La aplicación se divide en servicios pequeños e independientes que se comunican por red.
 
-```
-┌──────────────┐   ┌──────────────┐   ┌──────────────┐
-│   Usuarios   │   │  Productos   │   │    Pagos     │
-│   Service    │   │   Service    │   │   Service    │
-├──────────────┤   ├──────────────┤   ├──────────────┤
-│  Base Datos  │   │  Base Datos  │   │  Base Datos  │
-│   Usuarios   │   │  Productos   │   │    Pagos     │
-└──────┬───────┘   └──────┬───────┘   └──────┬───────┘
-       │                  │                  │
-       └──────────────────┼──────────────────┘
-                          │
-                    ┌─────┴─────┐
-                    │    API    │
-                    │  Gateway  │
-                    └───────────┘
-```
+
+
+![Microservicios](../.gitbook/assets/02-microservicios.svg)
 
 **Ventajas:**
 - Escala independiente por servicio
@@ -370,25 +217,8 @@ Esta decisión responde: *¿Cómo y dónde corre mi código?*
 
 Tu aplicación corre como un proceso (o varios) en servidores que están encendidos 24/7, esperando peticiones.
 
-```
-┌─────────────────────────────────────────────────────┐
-│              SERVIDOR TRADICIONAL                   │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│   ┌─────────────────────────────────────────────┐   │
-│   │              Tu aplicación                  │   │
-│   │         (proceso corriendo 24/7)            │   │
-│   │                                             │   │
-│   │   Esperando... → Petición → Respuesta →     │   │
-│   │   Esperando... → Petición → Respuesta →     │   │
-│   │   Esperando...                              │   │
-│   └─────────────────────────────────────────────┘   │
-│                                                     │
-│   Ejemplos: VPS, EC2, Docker en un servidor,        │
-│             Kubernetes, tu laptop corriendo Node    │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
+
+![Servidor Tradicional](../.gitbook/assets/02-servidor-tradicional.svg)
 
 **Ventajas:**
 - Control total sobre el ambiente
@@ -406,25 +236,9 @@ Tu aplicación corre como un proceso (o varios) en servidores que están encendi
 
 Tu código se empaqueta como funciones que se ejecutan **solo cuando hay una petición**. El proveedor maneja todo lo demás.
 
-```
-┌─────────────────────────────────────────────────────┐
-│              SERVERLESS / FaaS                      │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│   Sin peticiones:  💤 (nada corriendo, $0)          │
-│                                                     │
-│   Petición llega:                                   │
-│   ┌──────────┐                                      │
-│   │ función  │ ──▶ Respuesta ──▶ 💤                 │
-│   └──────────┘     (se apaga)                       │
-│                                                     │
-│   Muchas peticiones:                                │
-│   ┌──────────┐ ┌──────────┐ ┌──────────┐            │
-│   │ función  │ │ función  │ │ función  │  (auto)    │
-│   └──────────┘ └──────────┘ └──────────┘            │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
+
+
+![Serverless / FaaS](../.gitbook/assets/02-serverless.svg)
 
 📖 **Concepto**: ¿Qué es una "Lambda"? **AWS Lambda** fue el primer servicio popular de este tipo (lanzado en 2014). El nombre viene de la letra griega λ, usada en programación funcional para representar funciones anónimas. Hoy "Lambda" se usa coloquialmente como sinónimo de "función serverless", aunque cada proveedor tiene su nombre: Vercel Functions, Cloudflare Workers, Google Cloud Functions, Azure Functions. Todos funcionan igual: tu código duerme hasta que llega una petición, se ejecuta, responde, y vuelve a dormir.
 
@@ -446,32 +260,9 @@ Tu código se empaqueta como funciones que se ejecutan **solo cuando hay una pet
 
 Aquí está la clave conceptual: **puedes combinar cualquier organización con cualquier ejecución**.
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                                                                     │
-│                           ORGANIZACIÓN                              │
-│                                                                     │
-│                     Monolito          Microservicios                │
-│                 ┌───────────────┬─────────────────────┐             │
-│                 │               │                     │             │
-│   Tradicional   │  Rails en     │  Kubernetes con     │             │
-│   (servidores   │  un VPS       │  Docker             │             │
-│    24/7)        │               │                     │             │
-│                 │  Django en    │  Cada servicio en   │             │
-│ E               │  EC2          │  su contenedor      │             │
-│ J               │               │                     │             │
-│ E               ├───────────────┼─────────────────────┤             │
-│ C               │               │                     │             │
-│ U               │  Next.js en   │  Cada servicio      │             │
-│ C   Serverless  │  Vercel       │  como Lambdas       │             │
-│ I   (funciones  │               │                     │             │
-│ Ó    on-demand) │  Remix en     │  Event-driven       │             │
-│ N               │  Cloudflare   │  architecture       │             │
-│                 │               │                     │             │
-│                 └───────────────┴─────────────────────┘             │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+
+
+![Matriz de Arquitectura](../.gitbook/assets/02-matriz-arquitectura.svg)
 
 📖 **Concepto**: Next.js desplegado en Vercel es un **monolito serverless**: organización de monolito (un repo, un proyecto, frontend y API juntos) con ejecución serverless (cada ruta es una función Lambda).
 
@@ -490,49 +281,8 @@ Aquí está la clave conceptual: **puedes combinar cualquier organización con c
 
 Ahora que entiendes que son dos decisiones separadas, aquí está cómo tomar cada una:
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                                                                     │
-│   DECISIÓN 1: ¿Monolito o Microservicios?                           │
-│   ─────────────────────────────────────────                         │
-│                                                                     │
-│   ¿Equipo pequeño (< 10 personas)?                                  │
-│       └──▶ MONOLITO                                                 │
-│                                                                     │
-│   ¿Un solo producto con dominio cohesivo?                           │
-│       └──▶ MONOLITO                                                 │
-│                                                                     │
-│   ¿Múltiples equipos que necesitan autonomía total?                 │
-│       └──▶ MICROSERVICIOS                                           │
-│                                                                     │
-│   ¿Partes del sistema con requisitos de escala muy diferentes?      │
-│       └──▶ MICROSERVICIOS (o monolito + servicios auxiliares)       │
-│                                                                     │
-│   ¿No estás seguro?                                                 │
-│       └──▶ MONOLITO (siempre puedes extraer servicios después)      │
-│                                                                     │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│   DECISIÓN 2: ¿Tradicional o Serverless?                            │
-│   ─────────────────────────────────────────                         │
-│                                                                     │
-│   ¿Tráfico muy variable o impredecible?                             │
-│       └──▶ SERVERLESS (escala a cero, escala al infinito)           │
-│                                                                     │
-│   ¿Necesitas WebSockets o conexiones persistentes?                  │
-│       └──▶ TRADICIONAL (o serverless con servicios especializados)  │
-│                                                                     │
-│   ¿Procesos de larga duración (> 30 segundos)?                      │
-│       └──▶ TRADICIONAL                                              │
-│                                                                     │
-│   ¿Quieres mínima operación de infraestructura?                     │
-│       └──▶ SERVERLESS                                               │
-│                                                                     │
-│   ¿Tráfico constante y predecible?                                  │
-│       └──▶ TRADICIONAL (puede ser más económico)                    │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+
+![Guía de Decisión](../.gitbook/assets/02-guia-decision.svg)
 
 ---
 
@@ -542,97 +292,9 @@ Veamos qué sucede cuando un usuario hace clic en "Ver mi perfil" en una aplicac
 
 ### Paso a paso
 
-```
-Usuario hace clic en "Mi Perfil"
-            │
-            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 1. NAVEGADOR (Cliente)                                      │
-│    - JavaScript captura el evento click                     │
-│    - Muestra un spinner de carga                            │
-│    - Prepara la petición HTTP                               │
-│    - Añade headers (auth token, content-type)               │
-│    - Envía: GET https://api.miapp.com/users/me              │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 2. DNS                                                      │
-│    - Convierte "api.miapp.com" → "143.55.32.10"             │
-│    - Resultado cacheado para futuras peticiones             │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 3. CDN / EDGE (opcional)                                    │
-│    - Si el contenido está cacheado, responde inmediatamente │
-│    - Si no, pasa la petición al origen                      │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 4. LOAD BALANCER                                            │
-│    - Recibe la petición                                     │
-│    - Elige un servidor disponible (round-robin, least-conn) │
-│    - Reenvía la petición                                    │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 5. SERVIDOR DE APLICACIÓN                                   │
-│                                                             │
-│    5a. Middleware de autenticación                          │
-│        - Valida el token JWT                                │
-│        - Extrae user_id del token                           │
-│        - Si inválido: responde 401 Unauthorized             │
-│                                                             │
-│    5b. Router                                               │
-│        - Mapea GET /users/me → UserController.getProfile()  │
-│                                                             │
-│    5c. Controller                                           │
-│        - Recibe la petición                                 │
-│        - Llama al servicio correspondiente                  │
-│                                                             │
-│    5d. Service (lógica de negocio)                          │
-│        - Aplica reglas de negocio                           │
-│        - Decide qué datos necesita                          │
-│                                                             │
-│    5e. Repository (acceso a datos)                          │
-│        - Construye la query SQL                             │
-│        - Se comunica con la base de datos                   │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 6. BASE DE DATOS                                            │
-│    - Recibe: SELECT * FROM users WHERE id = 42              │
-│    - Busca en índices                                       │
-│    - Retorna el registro del usuario                        │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 7. CAMINO DE VUELTA                                         │
-│    - Repository recibe datos, los mapea a objeto User       │
-│    - Service aplica transformaciones (oculta password hash) │
-│    - Controller serializa a JSON                            │
-│    - Servidor envía respuesta HTTP 200                      │
-│    - Response: { id: 42, name: "Ana", email: "ana@..." }    │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ 8. NAVEGADOR (de vuelta)                                    │
-│    - Recibe la respuesta JSON                               │
-│    - JavaScript parsea el JSON                              │
-│    - Actualiza el estado de la aplicación                   │
-│    - React/Vue/Svelte re-renderiza                          │
-│    - Usuario ve su perfil                                   │
-│    - Spinner desaparece                                     │
-└─────────────────────────────────────────────────────────────┘
 
-Tiempo total: 50-500ms (dependiendo de latencia, carga, etc.)
-```
+
+![Viaje de una Petición](../.gitbook/assets/02-viaje-peticion.svg)
 
 ### ¿Dónde puede fallar?
 
