@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Viaje simplificado de una petición web</title>
+  <desc id="desc">El navegador resuelve el nombre mediante DNS, establece una conexión segura y envía una solicitud que puede atravesar un intermediario de edge. La aplicación valida la solicitud, aplica reglas y consulta datos. La respuesta regresa al navegador, que actualiza la interfaz.</desc>
+  <defs>
+    <marker id="request-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <marker id="response-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#59636D"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:20px;font-weight:760;letter-spacing:2px;fill:#31536A}.actor{font-size:25px;font-weight:750;text-anchor:middle}.actor-copy{font-size:18px;fill:#59636D;text-anchor:middle}.phase{font-size:18px;font-weight:760;letter-spacing:2px;fill:#59636D}.message{font-size:21px;font-weight:680;text-anchor:middle}.literal{font-size:21px;font-weight:680;text-anchor:middle}.lifeline{stroke:#A9A49B;stroke-width:2.5;stroke-dasharray:9 8}.request{stroke:#31536A;stroke-width:4;fill:none;marker-end:url(#request-arrow)}.response{stroke:#59636D;stroke-width:3.5;stroke-dasharray:10 8;fill:none;marker-end:url(#response-arrow)}.step{fill:#31536A}.step-text{font-size:16px;font-weight:760;fill:#FFFDFA;text-anchor:middle;dominant-baseline:central}
+    </style>
+  </defs>
+  <rect width="1200" height="900" fill="#F2EEE6"/>
+  <rect x="32" y="32" width="1136" height="836" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="64" y="72" class="sans tag">SECUENCIA SIMPLIFICADA</text>
+
+  <g>
+    <rect x="54" y="96" width="190" height="86" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+    <text x="149" y="133" class="sans actor">Navegador</text><text x="149" y="160" class="sans actor-copy">cliente</text>
+    <rect x="284" y="96" width="190" height="86" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+    <text x="379" y="133" class="sans actor">DNS</text><text x="379" y="160" class="sans actor-copy">resolución</text>
+    <rect x="514" y="96" width="190" height="86" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+    <text x="609" y="133" class="sans actor">Edge · proxy</text><text x="609" y="160" class="sans actor-copy">intermediario opcional</text>
+    <rect x="744" y="96" width="190" height="86" rx="18" fill="#F3E6DF" stroke="#B95736" stroke-width="3"/>
+    <text x="839" y="133" class="sans actor">Aplicación</text><text x="839" y="160" class="sans actor-copy">contrato y lógica</text>
+    <rect x="974" y="96" width="172" height="86" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+    <text x="1060" y="133" class="sans actor">Datos</text><text x="1060" y="160" class="sans actor-copy">persistencia</text>
+  </g>
+
+  <line class="lifeline" x1="149" y1="182" x2="149" y2="822"/><line class="lifeline" x1="379" y1="182" x2="379" y2="822"/><line class="lifeline" x1="609" y1="182" x2="609" y2="822"/><line class="lifeline" x1="839" y1="182" x2="839" y2="822"/><line class="lifeline" x1="1060" y1="182" x2="1060" y2="822"/>
+
+  <rect x="48" y="206" width="1104" height="188" rx="20" fill="#E8EEF1" opacity="0.72"/>
+  <text x="70" y="236" class="sans phase">RED Y CONEXIÓN</text>
+  <line class="request" x1="149" y1="274" x2="373" y2="274"/>
+  <circle class="step" cx="177" cy="274" r="16"/><text x="177" y="274" class="sans step-text">1</text>
+  <text x="264" y="260" class="mono literal">app.example.com</text>
+  <line class="response" x1="379" y1="322" x2="155" y2="322"/>
+  <circle class="step" cx="351" cy="322" r="16"/><text x="351" y="322" class="sans step-text">2</text>
+  <text x="264" y="308" class="mono literal">203.0.113.42</text>
+  <line class="request" x1="149" y1="370" x2="603" y2="370"/>
+  <circle class="step" cx="177" cy="370" r="16"/><text x="177" y="370" class="sans step-text">3</text>
+  <text x="379" y="356" class="mono literal">TLS · GET /perfil</text>
+
+  <rect x="48" y="414" width="1104" height="260" rx="20" fill="#F7F4ED"/>
+  <text x="70" y="444" class="sans phase">PROCESAMIENTO</text>
+  <line class="request" x1="609" y1="486" x2="833" y2="486"/>
+  <circle class="step" cx="637" cy="486" r="16"/><text x="637" y="486" class="sans step-text">4</text>
+  <text x="724" y="472" class="sans message">reenviar solicitud</text>
+  <rect x="748" y="520" width="386" height="58" rx="16" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/>
+  <circle cx="780" cy="549" r="16" fill="#B95736"/><text x="780" y="549" class="sans step-text">5</text>
+  <text x="956" y="555" class="sans message">validar · autorizar · decidir</text>
+  <line class="request" x1="839" y1="616" x2="1054" y2="616"/>
+  <circle class="step" cx="867" cy="616" r="16"/><text x="867" y="616" class="sans step-text">6</text>
+  <text x="947" y="602" class="sans message">operación de datos</text>
+  <line class="response" x1="1060" y1="654" x2="845" y2="654"/>
+  <circle class="step" cx="1032" cy="654" r="16"/><text x="1032" y="654" class="sans step-text">7</text>
+  <text x="947" y="640" class="sans message">resultado</text>
+
+  <rect x="48" y="694" width="1104" height="144" rx="20" fill="#F5ECD8" opacity="0.68"/>
+  <text x="70" y="724" class="sans phase">RESPUESTA</text>
+  <line class="response" x1="839" y1="764" x2="615" y2="764"/>
+  <circle class="step" cx="811" cy="764" r="16"/><text x="811" y="764" class="sans step-text">8</text>
+  <text x="724" y="750" class="mono literal">200 OK · HTML o JSON</text>
+  <line class="response" x1="609" y1="806" x2="155" y2="806"/>
+  <circle class="step" cx="581" cy="806" r="16"/><text x="581" y="806" class="sans step-text">9</text>
+  <text x="379" y="792" class="sans message">entregar respuesta · actualizar interfaz</text>
+</svg>

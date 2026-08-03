@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Un turno del event loop del navegador</title>
+  <desc id="desc">Secuencia circular de cuatro pasos: seleccionar una tarea, ejecutar JavaScript hasta vaciar la pila, procesar microtareas hasta vaciar su cola y ofrecer una oportunidad de renderizado. Las APIs del navegador programan trabajo futuro.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#59636D"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .tag { font-size: 18px; font-weight: 760; letter-spacing: 2px; fill: #31536A; }
+      .node-title { font-size: 27px; font-weight: 740; text-anchor: middle; }
+      .node-copy { font-size: 20px; fill: #59636D; text-anchor: middle; }
+      .step { fill: #31536A; }
+      .step-text { font-size: 18px; font-weight: 760; fill: #FFFDFA; text-anchor: middle; dominant-baseline: central; }
+      .flow { stroke: #59636D; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .schedule { stroke: #31536A; stroke-width: 3.5; stroke-dasharray: 10 8; fill: none; marker-end: url(#arrow-blue); }
+      .flow-label { font-size: 18px; font-weight: 650; fill: #59636D; text-anchor: middle; }
+      .small { font-size: 18px; fill: #59636D; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="680" fill="#F2EEE6"/>
+  <rect x="38" y="38" width="1124" height="604" rx="24" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="72" y="82" class="sans tag">UN TURNO DEL EVENT LOOP</text>
+
+  <g>
+    <rect x="72" y="140" width="240" height="154" rx="16" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+    <circle class="step" cx="104" cy="170" r="18"/>
+    <text x="104" y="170" class="sans step-text">1</text>
+    <text x="192" y="200" class="sans node-title">Cola de tareas</text>
+    <text x="192" y="238" class="sans node-copy">seleccionar una tarea</text>
+    <text x="192" y="269" class="mono node-copy">evento · timer</text>
+
+    <rect x="344" y="140" width="240" height="154" rx="16" fill="#FFFDFA" stroke="#A9A49B" stroke-width="3"/>
+    <circle class="step" cx="376" cy="170" r="18"/>
+    <text x="376" y="170" class="sans step-text">2</text>
+    <text x="464" y="200" class="sans node-title">Pila JavaScript</text>
+    <text x="464" y="238" class="sans node-copy">ejecutar hasta finalizar</text>
+    <text x="464" y="269" class="sans node-copy">sin interrumpir la tarea</text>
+
+    <rect x="616" y="140" width="240" height="154" rx="16" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+    <circle class="step" cx="648" cy="170" r="18"/>
+    <text x="648" y="170" class="sans step-text">3</text>
+    <text x="736" y="200" class="sans node-title">Microtareas</text>
+    <text x="736" y="238" class="sans node-copy">vaciar la cola completa</text>
+    <text x="736" y="269" class="mono node-copy">Promise · microtarea</text>
+
+    <rect x="888" y="140" width="240" height="154" rx="16" fill="#F3E6DF" stroke="#B95736" stroke-width="3"/>
+    <circle class="step" cx="920" cy="170" r="18"/>
+    <text x="920" y="170" class="sans step-text">4</text>
+    <text x="1008" y="200" class="sans node-title">Renderizado</text>
+    <text x="1008" y="238" class="sans node-copy">actualizar si corresponde</text>
+    <text x="1008" y="269" class="sans node-copy">estilos · layout · pintura</text>
+  </g>
+
+  <line class="flow" x1="312" y1="217" x2="338" y2="217"/>
+  <line class="flow" x1="584" y1="217" x2="610" y2="217"/>
+  <line class="flow" x1="856" y1="217" x2="882" y2="217"/>
+  <path class="flow" d="M1008 294 V350 H192 V300"/>
+  <text x="600" y="340" class="sans flow-label">el siguiente turno comienza con otra tarea</text>
+
+  <g>
+    <rect x="218" y="420" width="764" height="142" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="2.5"/>
+    <text x="250" y="458" class="sans tag">APIS DEL NAVEGADOR</text>
+    <text x="250" y="502" class="sans" font-size="24" font-weight="700">Timers · red · eventos DOM · observadores</text>
+    <text x="250" y="538" class="sans small">El entorno anfitrión programa trabajo futuro; no ejecuta callbacks en paralelo sobre la pila.</text>
+    <path class="schedule" d="M392 420 V382 H192 V302"/>
+    <text x="292" y="405" class="sans flow-label">tareas futuras</text>
+    <path class="schedule" d="M808 420 V382 H736 V302"/>
+    <text x="784" y="405" class="sans flow-label">reacciones</text>
+  </g>
+
+  <g transform="translate(620 602)">
+    <line class="flow" x1="0" y1="0" x2="56" y2="0"/>
+    <text x="73" y="7" class="sans small">orden del turno</text>
+    <line class="schedule" x1="210" y1="0" x2="266" y2="0"/>
+    <text x="283" y="7" class="sans small">trabajo programado</text>
+  </g>
+</svg>

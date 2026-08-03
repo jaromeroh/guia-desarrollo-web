@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1290" role="img" aria-labelledby="title desc">
+  <title id="title">Una feature flag también tiene ciclo de vida</title>
+  <desc id="desc">El equipo crea una bandera con propietario y fecha de retiro, despliega el código inactivo, habilita por cohortes y señales, decide expandir o apagar, y finalmente elimina ambas rutas.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1290" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1258" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">CREAR · EXPONER · RETIRAR</text><rect id="flag-mobile-0" x="52" y="92" width="316" height="140" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="flag-mobile-0" data-padding="18" x="210" y="134" class="sans node-title"><tspan x="210" y="134">1 · Definir</tspan><tspan x="210" dy="32" class="node-copy">dueño · propósito</tspan><tspan x="210" dy="24" class="node-copy">caducidad</tspan></text><path class="flow" d="M210 232V289"/><rect id="flag-mobile-1" x="52" y="297" width="316" height="140" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="flag-mobile-1" data-padding="18" x="210" y="339" class="sans node-title"><tspan x="210" y="339">2 · Desplegar</tspan><tspan x="210" dy="32" class="node-copy">ruta nueva apagada</tspan><tspan x="210" dy="24" class="node-copy">ruta estable activa</tspan></text><path class="flow" d="M210 437V494"/><rect id="flag-mobile-2" x="52" y="502" width="316" height="140" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="flag-mobile-2" data-padding="18" x="210" y="544" class="sans node-title"><tspan x="210" y="544">3 · Exponer</tspan><tspan x="210" dy="32" class="node-copy">cohorte estable</tspan><tspan x="210" dy="24" class="node-copy">señales del grupo</tspan></text><path class="flow" d="M210 642V699"/><rect id="flag-mobile-3" x="52" y="707" width="316" height="140" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="flag-mobile-3" data-padding="18" x="210" y="749" class="sans node-title"><tspan x="210" y="749">4 · Decidir</tspan><tspan x="210" dy="32" class="node-copy">expandir, pausar</tspan><tspan x="210" dy="24" class="node-copy">o desactivar</tspan></text><path class="flow" d="M210 847V904"/><rect id="flag-mobile-4" x="52" y="912" width="316" height="140" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="flag-mobile-4" data-padding="18" x="210" y="954" class="sans node-title"><tspan x="210" y="954">5 · Retirar</tspan><tspan x="210" dy="32" class="node-copy">borrar flag</tspan><tspan x="210" dy="24" class="node-copy">y código obsoleto</tspan></text><rect id="flag-mobile-note" x="52" y="1125" width="316" height="115" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="flag-mobile-note" data-padding="16" x="210" y="1160" class="sans node-copy"><tspan x="210">Si una señal empeora, apaga.</tspan><tspan x="210" dy="25">Después corrige, reconcilia</tspan><tspan x="210" dy="25">y retira la deuda temporal.</tspan></text>
+</svg>

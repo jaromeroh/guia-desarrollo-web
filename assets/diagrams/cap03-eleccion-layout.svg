@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo elegir entre flujo normal, Flexbox y Grid</title>
+  <desc id="desc">La relación espacial determina el modelo de layout: el flujo normal conserva el orden de lectura, Flexbox distribuye elementos en un eje y Grid coordina filas y columnas.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.tag{font-size:21px;font-weight:760;letter-spacing:2px;fill:#31536A}.heading{font-size:30px;font-weight:760;text-anchor:middle}.copy{font-size:22px;fill:#59636D;text-anchor:middle}.signal{font-size:18px;font-weight:760;letter-spacing:1.2px;fill:#31536A;text-anchor:middle}.item{font-size:20px;font-weight:700;text-anchor:middle}.flow{stroke:#31536A;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <rect x="38" y="38" width="1124" height="644" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="72" y="84" class="sans tag">ELIGE SEGÚN LA RELACIÓN ESPACIAL</text>
+  <rect x="330" y="118" width="540" height="118" rx="22" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <text x="600" y="166" class="sans heading">¿Qué debe coordinar el layout?</text>
+  <text x="600" y="204" class="sans copy">empieza por la relación, no por la herramienta</text>
+
+  <path class="flow" d="M600 238V284H210V328"/>
+  <path class="flow" d="M600 238V328"/>
+  <path class="flow" d="M600 238V284H990V328"/>
+
+  <rect x="68" y="338" width="284" height="260" rx="22" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="210" y="382" class="sans signal">ORDEN DE LECTURA</text>
+  <text x="210" y="430" class="sans heading">Flujo normal</text>
+  <text x="210" y="474" class="sans copy">bloques y texto avanzan</text>
+  <text x="210" y="506" class="sans copy">en el orden del documento</text>
+  <text x="210" y="558" class="sans item">artículos · formularios</text>
+
+  <rect x="458" y="338" width="284" height="260" rx="22" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="600" y="382" class="sans signal">UN EJE DOMINA</text>
+  <text x="600" y="430" class="sans heading">Flexbox</text>
+  <text x="600" y="474" class="sans copy">distribuye una fila o columna</text>
+  <text x="600" y="506" class="sans copy">y permite envolver elementos</text>
+  <text x="600" y="558" class="sans item">barras · grupos · navegación</text>
+
+  <rect x="848" y="338" width="284" height="260" rx="22" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <text x="990" y="382" class="sans signal">DOS EJES SE COORDINAN</text>
+  <text x="990" y="430" class="sans heading">Grid</text>
+  <text x="990" y="474" class="sans copy">relaciona filas y columnas</text>
+  <text x="990" y="506" class="sans copy">dentro de una cuadrícula</text>
+  <text x="990" y="558" class="sans item">regiones · galerías · paneles</text>
+  <text x="600" y="650" class="sans copy">Se pueden combinar: Grid para las regiones y Flexbox dentro de una barra.</text>
+</svg>

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1260" role="img" aria-labelledby="title desc">
+  <title id="title">Capas, Clean Architecture y Arquitectura Hexagonal</title>
+  <desc id="desc">Comparación vertical de tres formas de organizar una aplicación. Capas separa responsabilidades, Clean Architecture dirige dependencias hacia el núcleo y Hexagonal conecta adaptadores intercambiables mediante puertos.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536a"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262e; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262e; }
+      .panel { fill: #fffdfa; stroke: #d8d2c7; stroke-width: 2; }
+      .title { font-size: 32px; font-weight: 750; }
+      .subtitle { font-size: 16px; fill: #72706c; }
+      .tag { font-size: 12px; font-weight: 750; letter-spacing: 1.5px; fill: #31536a; }
+      .section-title { font-size: 24px; font-weight: 730; }
+      .label { font-size: 15px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706c; }
+      .note-title { font-size: 15px; font-weight: 720; }
+      .note { font-size: 14px; fill: #59636d; }
+      .arrow { stroke: #31536a; stroke-width: 2.5; fill: none; marker-end: url(#arrow-blue); }
+      .box { fill: #fff; stroke: #a9a49b; stroke-width: 2; }
+      .blue { fill: #e8eef1; stroke: #31536a; stroke-width: 2; }
+      .rust { fill: #f3e6df; stroke: #b95736; stroke-width: 2; }
+      .ochre { fill: #f5ecd8; stroke: #b68125; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1260" fill="#f2eee6"/>
+  <text data-small-ok="true" x="50" y="60" class="sans title">Tres vistas, un mismo objetivo</text>
+  <text data-small-ok="true" x="50" y="91" class="sans subtitle">Separar responsabilidades y proteger las reglas de negocio del cambio tecnológico</text>
+
+  <!-- Capas -->
+  <g transform="translate(40 125)">
+    <rect class="panel" width="920" height="330" rx="18"/>
+    <text data-small-ok="true" x="28" y="36" class="sans tag">01 · CAPAS</text>
+    <text data-small-ok="true" x="28" y="72" class="sans section-title">Separación horizontal</text>
+
+    <g transform="translate(40 95)">
+      <rect class="blue" x="0" y="0" width="430" height="48" rx="9"/>
+      <rect class="box" x="0" y="61" width="430" height="48" rx="9"/>
+      <rect class="ochre" x="0" y="122" width="430" height="48" rx="9"/>
+      <rect class="rust" x="0" y="183" width="430" height="48" rx="9"/>
+      <text data-small-ok="true" x="215" y="30" class="sans label">Presentación · HTTP, CLI, eventos</text>
+      <text data-small-ok="true" x="215" y="91" class="sans label">Aplicación · casos de uso</text>
+      <text data-small-ok="true" x="215" y="152" class="sans label">Dominio · reglas de negocio</text>
+      <text data-small-ok="true" x="215" y="213" class="sans label">Infraestructura · BD, email, APIs</text>
+      <path class="arrow" d="M450 24 H478 V85 H450"/>
+      <path class="arrow" d="M450 85 H490 V146 H450"/>
+    </g>
+
+    <g transform="translate(560 116)">
+      <text data-small-ok="true" x="0" y="0" class="sans note-title">Foco</text>
+      <text data-small-ok="true" x="0" y="27" class="sans note">Cada capa tiene una responsabilidad.</text>
+      <text data-small-ok="true" x="0" y="64" class="sans note-title">Aporta</text>
+      <text data-small-ok="true" x="0" y="91" class="sans note">Un lugar predecible para cada cambio.</text>
+      <text data-small-ok="true" x="0" y="128" class="sans note-title">Pregunta clave</text>
+      <text data-small-ok="true" x="0" y="155" class="sans note">¿Qué capa puede conocer a cuál?</text>
+    </g>
+  </g>
+
+  <!-- Clean -->
+  <g transform="translate(40 480)">
+    <rect class="panel" width="920" height="350" rx="18"/>
+    <text data-small-ok="true" x="28" y="36" class="sans tag">02 · CLEAN ARCHITECTURE</text>
+    <text data-small-ok="true" x="28" y="72" class="sans section-title">Dependencias hacia el núcleo</text>
+
+    <g transform="translate(55 102)">
+      <circle cx="205" cy="118" r="116" fill="#f3e6df" stroke="#b95736" stroke-width="2"/>
+      <circle cx="205" cy="118" r="85" fill="#fffdfa" stroke="#a9a49b" stroke-width="2"/>
+      <circle cx="205" cy="118" r="57" fill="#f5ecd8" stroke="#b68125" stroke-width="2"/>
+      <circle cx="205" cy="118" r="31" fill="#e8eef1" stroke="#31536a" stroke-width="2.5"/>
+      <text data-small-ok="true" x="205" y="18" class="sans small" text-anchor="middle">frameworks e infraestructura</text>
+      <text data-small-ok="true" x="205" y="58" class="sans small" text-anchor="middle">adaptadores</text>
+      <text data-small-ok="true" x="205" y="91" class="sans small" text-anchor="middle">casos de uso</text>
+      <text data-small-ok="true" x="205" y="114" class="sans" font-size="13" font-weight="750" text-anchor="middle">REGLAS</text>
+      <text data-small-ok="true" x="205" y="130" class="sans" font-size="13" font-weight="750" text-anchor="middle">DE NEGOCIO</text>
+      <path class="arrow" d="M82 118 H166"/>
+      <path class="arrow" d="M328 118 H244"/>
+      <path class="arrow" d="M205 239 V151"/>
+    </g>
+
+    <g transform="translate(560 120)">
+      <text data-small-ok="true" x="0" y="0" class="sans note-title">Foco</text>
+      <text data-small-ok="true" x="0" y="27" class="sans note">La dirección de las dependencias.</text>
+      <text data-small-ok="true" x="0" y="64" class="sans note-title">Regla</text>
+      <text data-small-ok="true" x="0" y="91" class="sans note">El exterior conoce al interior.</text>
+      <text data-small-ok="true" x="0" y="115" class="sans note">El núcleo nunca conoce tecnología.</text>
+      <text data-small-ok="true" x="0" y="152" class="sans note-title">Protege</text>
+      <text data-small-ok="true" x="0" y="179" class="sans note">Entidades y reglas de negocio.</text>
+    </g>
+  </g>
+
+  <!-- Hexagonal -->
+  <g transform="translate(40 855)">
+    <rect class="panel" width="920" height="350" rx="18"/>
+    <text data-small-ok="true" x="28" y="36" class="sans tag">03 · ARQUITECTURA HEXAGONAL</text>
+    <text data-small-ok="true" x="28" y="72" class="sans section-title">Puertos y adaptadores intercambiables</text>
+
+    <g transform="translate(35 80)">
+      <polygon points="210,0 330,68 330,188 210,256 90,188 90,68" fill="#e8eef1" stroke="#31536a" stroke-width="3"/>
+      <text data-small-ok="true" x="210" y="116" class="sans" font-size="17" font-weight="750" text-anchor="middle">NÚCLEO</text>
+      <text data-small-ok="true" x="210" y="140" class="sans small" text-anchor="middle">crear pedido</text>
+      <text data-small-ok="true" x="210" y="161" class="sans small" text-anchor="middle">calcular descuento</text>
+
+      <rect class="ochre" x="174" y="10" width="72" height="32" rx="8"/>
+      <text data-small-ok="true" x="210" y="31" class="sans" font-size="12" font-weight="700" text-anchor="middle">PUERTO</text>
+      <rect class="ochre" x="174" y="228" width="72" height="32" rx="8"/>
+      <text data-small-ok="true" x="210" y="249" class="sans" font-size="12" font-weight="700" text-anchor="middle">PUERTO</text>
+
+      <rect class="box" x="8" y="17" width="112" height="45" rx="9"/>
+      <text data-small-ok="true" x="64" y="45" class="sans label">REST API</text>
+      <rect class="box" x="8" y="194" width="112" height="45" rx="9"/>
+      <text data-small-ok="true" x="64" y="222" class="sans label">CLI</text>
+      <rect class="rust" x="300" y="17" width="128" height="45" rx="9"/>
+      <text data-small-ok="true" x="364" y="45" class="sans label">PostgreSQL</text>
+      <rect class="rust" x="300" y="194" width="128" height="45" rx="9"/>
+      <text data-small-ok="true" x="364" y="222" class="sans label">En memoria</text>
+
+      <path class="arrow" d="M120 40 H152"/>
+      <path class="arrow" d="M120 216 H152"/>
+      <path class="arrow" d="M300 40 H270"/>
+      <path class="arrow" d="M300 216 H270"/>
+    </g>
+
+    <g transform="translate(560 120)">
+      <text data-small-ok="true" x="0" y="0" class="sans note-title">Foco</text>
+      <text data-small-ok="true" x="0" y="27" class="sans note">Qué se conecta y mediante qué contrato.</text>
+      <text data-small-ok="true" x="0" y="64" class="sans note-title">Regla</text>
+      <text data-small-ok="true" x="0" y="91" class="sans note">Los puertos pertenecen a la aplicación.</text>
+      <text data-small-ok="true" x="0" y="128" class="sans note-title">Permite</text>
+      <text data-small-ok="true" x="0" y="155" class="sans note">Cambiar REST, BD o tests sin tocar el núcleo.</text>
+    </g>
+  </g>
+
+  <text data-small-ok="true" x="500" y="1235" class="sans small" text-anchor="middle">No son arquitecturas rivales: muchos sistemas combinan vocabulario y prácticas de las tres.</text>
+</svg>

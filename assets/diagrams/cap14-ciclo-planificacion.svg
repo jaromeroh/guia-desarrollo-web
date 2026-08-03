@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Planificar es un ciclo de aprendizaje</title>
+  <desc id="desc">Planear conduce a ejecutar, ejecutar produce evidencia para revisar, revisar permite ajustar y el ajuste alimenta el siguiente plan.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Planificar es un ciclo de aprendizaje</text>
+  <text x="48" y="91" class="sans subtitle">El plan cambia cuando la evidencia cambia</text><rect id="plan-0" x="130" y="180" width="320" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="plan-0" data-padding="18" x="290" y="222" class="sans node-title"><tspan x="290" y="222">Planear</tspan><tspan x="290" dy="32" class="node-copy">supuesto y alcance</tspan></text><rect id="plan-1" x="750" y="180" width="320" height="130" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="plan-1" data-padding="18" x="910" y="222" class="sans node-title"><tspan x="910" y="222">Ejecutar</tspan><tspan x="910" dy="32" class="node-copy">slice verificable</tspan></text><rect id="plan-2" x="750" y="430" width="320" height="130" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="plan-2" data-padding="18" x="910" y="472" class="sans node-title"><tspan x="910" y="472">Revisar</tspan><tspan x="910" dy="32" class="node-copy">resultado y señales</tspan></text><rect id="plan-3" x="130" y="430" width="320" height="130" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="plan-3" data-padding="18" x="290" y="472" class="sans node-title"><tspan x="290" y="472">Ajustar</tspan><tspan x="290" dy="32" class="node-copy">decisión y backlog</tspan></text><path class="flow" d="M450 245H746"/><path class="flow" d="M910 310V426"/><path class="flow" d="M750 495H454"/><path class="flow" d="M290 430V314"/><rect id="plan-center" x="470" y="335" width="260" height="120" rx="18" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="plan-center" data-padding="20" x="600" y="375" class="sans node-title"><tspan x="600">Evidencia</tspan><tspan x="600" dy="28" class="node-copy">uso · fallos</tspan><tspan x="600" dy="22" class="node-copy">restricciones</tspan></text>
+</svg>

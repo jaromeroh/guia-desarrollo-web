@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1630" role="img" aria-labelledby="title desc">
+  <title id="title">Cuatro formas de mantener datos recientes</title>
+  <desc id="desc">Polling repite solicitudes; long polling mantiene una solicitud hasta que hay datos; SSE abre un flujo del servidor al cliente; WebSocket mantiene un canal bidireccional.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1630" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1598" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">PATRONES DE CONEXIÓN</text><rect id="rt-mobile-0" x="38" y="92" width="344" height="285" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="rt-mobile-0" data-padding="18" x="210" y="137" class="sans node-title"><tspan x="210" y="137">Polling</tspan></text><text x="62" y="192" class="sans tag">CLIENTE → SERVIDOR</text><text x="62" y="222" class="sans small">preguntar</text><text x="62" y="272" class="sans tag">SERVIDOR → CLIENTE</text><text x="62" y="302" class="sans small">responder</text><text x="62" y="347" class="sans small">Operación: intervalo</text><rect id="rt-mobile-1" x="38" y="457" width="344" height="285" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="rt-mobile-1" data-padding="18" x="210" y="502" class="sans node-title"><tspan x="210" y="502">Long polling</tspan></text><text x="62" y="557" class="sans tag">CLIENTE → SERVIDOR</text><text x="62" y="587" class="sans small">preguntar y esperar</text><text x="62" y="637" class="sans tag">SERVIDOR → CLIENTE</text><text x="62" y="667" class="sans small">responder al tener datos</text><text x="62" y="712" class="sans small">Operación: nueva solicitud</text><rect id="rt-mobile-2" x="38" y="822" width="344" height="285" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="rt-mobile-2" data-padding="18" x="210" y="867" class="sans node-title"><tspan x="210" y="867">SSE</tspan></text><text x="62" y="922" class="sans tag">CLIENTE → SERVIDOR</text><text x="62" y="952" class="sans small">abrir stream</text><text x="62" y="1002" class="sans tag">SERVIDOR → CLIENTE</text><text x="62" y="1032" class="sans small">eventos sucesivos</text><text x="62" y="1077" class="sans small">Operación: auto: EventSource</text><rect id="rt-mobile-3" x="38" y="1187" width="344" height="285" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="rt-mobile-3" data-padding="18" x="210" y="1232" class="sans node-title"><tspan x="210" y="1232">WebSocket</tspan></text><text x="62" y="1287" class="sans tag">CLIENTE → SERVIDOR</text><text x="62" y="1317" class="sans small">handshake</text><text x="62" y="1367" class="sans tag">SERVIDOR → CLIENTE</text><text x="62" y="1397" class="sans small">mensajes ↔</text><text x="62" y="1442" class="sans small">Operación: definida por app</text>
+</svg>

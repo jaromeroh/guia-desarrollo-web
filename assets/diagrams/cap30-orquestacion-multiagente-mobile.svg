@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1370" role="img" aria-labelledby="title desc">
+  <title id="title">Multiagente · paralelizar sin perder integración</title>
+  <desc id="desc">El orquestador delega tareas independientes con contratos de entrada y salida; cada agente produce un entregable verificable; la integración detecta conflictos y reúne evidencia antes de aceptar.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1370" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1338" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">DELEGAR · VERIFICAR · INTEGRAR</text><rect id="ma-mobile-orch" x="52" y="92" width="316" height="155" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="ma-mobile-orch" data-padding="18" x="210" y="134" class="sans node-title"><tspan x="210" y="134">Orquestador</tspan><tspan x="210" dy="32" class="node-copy">divide y define aceptación</tspan></text><path class="flow" d="M210 247V310"/><rect id="ma-mobile-agent-0" x="52" y="320" width="316" height="160" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ma-mobile-agent-0" data-padding="18" x="210" y="362" class="sans node-title"><tspan x="210" y="362">Backend</tspan><tspan x="210" dy="32" class="node-copy">API y dominio</tspan><tspan x="210" dy="24" class="node-copy">contrato A</tspan></text><path class="flow" d="M210 480V537"/><rect id="ma-mobile-agent-1" x="52" y="545" width="316" height="160" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ma-mobile-agent-1" data-padding="18" x="210" y="587" class="sans node-title"><tspan x="210" y="587">Frontend</tspan><tspan x="210" dy="32" class="node-copy">interfaz y estados</tspan><tspan x="210" dy="24" class="node-copy">contrato B</tspan></text><path class="flow" d="M210 705V762"/><rect id="ma-mobile-agent-2" x="52" y="770" width="316" height="160" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ma-mobile-agent-2" data-padding="18" x="210" y="812" class="sans node-title"><tspan x="210" y="812">Verificación</tspan><tspan x="210" dy="32" class="node-copy">pruebas y revisión</tspan><tspan x="210" dy="24" class="node-copy">evidencia C</tspan></text><path class="flow" d="M210 930V987"/><rect id="ma-mobile-integrate" x="52" y="1005" width="316" height="175" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="ma-mobile-integrate" data-padding="18" x="210" y="1047" class="sans node-title"><tspan x="210" y="1047">Integración</tspan><tspan x="210" dy="32" class="node-copy">conflictos · pruebas</tspan><tspan x="210" dy="24" class="node-copy">revisión humana</tspan></text><rect id="ma-mobile-note" x="52" y="1225" width="316" height="110" rx="14" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="ma-mobile-note" data-padding="14" x="210" y="1258" class="sans node-copy"><tspan x="210">Si las tareas se solapan,</tspan><tspan x="210" dy="24">integrar puede costar más</tspan><tspan x="210" dy="24">que el paralelismo ganado.</tspan></text>
+</svg>

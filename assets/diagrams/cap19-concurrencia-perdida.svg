@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Concurrencia · una actualización perdida</title>
+  <desc id="desc">Dos transacciones leen el mismo saldo; ambas calculan desde el valor anterior y la segunda escritura oculta la primera. La invariante debe protegerse con una operación atómica, bloqueo, restricción o aislamiento adecuado.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Concurrencia · una actualización perdida</text>
+  <text x="48" y="91" class="sans subtitle">Una transacción no corrige por sí sola una lectura y escritura mal coordinadas</text><rect id="lu-a" x="120" y="130" width="260" height="110" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="lu-a" data-padding="18" x="250" y="194" class="sans node-title"><tspan x="250" y="194">Transacción A</tspan></text><rect id="lu-db" x="470" y="130" width="260" height="110" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="lu-db" data-padding="18" x="600" y="170" class="sans node-title"><tspan x="600" y="170">Cuenta</tspan><tspan x="600" dy="32" class="node-copy">saldo inicial · 100</tspan></text><rect id="lu-b" x="820" y="130" width="260" height="110" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="lu-b" data-padding="18" x="950" y="194" class="sans node-title"><tspan x="950" y="194">Transacción B</tspan></text><path class="relation" stroke-dasharray="7 8" d="M250 225V690"/><path class="relation" stroke-dasharray="7 8" d="M600 225V690"/><path class="relation" stroke-dasharray="7 8" d="M950 225V690"/><path class="flow" d="M250 285H600"/><rect id="lu-event-0" x="355" y="247" width="140" height="34" rx="8" fill="#FFFDFA"/><text data-container="lu-event-0" data-padding="6" x="425" y="270" class="sans label">lee 100</text><path class="flow" d="M950 345H600"/><rect id="lu-event-1" x="705" y="307" width="140" height="34" rx="8" fill="#FFFDFA"/><text data-container="lu-event-1" data-padding="6" x="775" y="330" class="sans label">lee 100</text><path class="flow" d="M250 430H600"/><rect id="lu-event-2" x="355" y="392" width="140" height="34" rx="8" fill="#FFFDFA"/><text data-container="lu-event-2" data-padding="6" x="425" y="415" class="sans label">escribe 20</text><path class="risk-flow" d="M950 510H600"/><rect id="lu-event-3" x="705" y="472" width="140" height="34" rx="8" fill="#FFFDFA"/><text data-container="lu-event-3" data-padding="6" x="775" y="495" class="sans label">escribe 50</text><rect id="lu-failure" x="330" y="565" width="540" height="125" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="lu-failure" data-padding="18" x="600" y="600" class="sans node-copy"><tspan x="600">Saldo final 50: la retirada de A desapareció.</tspan><tspan x="600" dy="25">Protege la invariante con una operación atómica,</tspan><tspan x="600" dy="25">una restricción, un bloqueo o el aislamiento adecuado.</tspan></text>
+</svg>

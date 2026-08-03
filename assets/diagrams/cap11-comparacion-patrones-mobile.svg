@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1440" role="img" aria-labelledby="title desc">
+  <title id="title">Capas, Clean y Hexagonal</title>
+  <desc id="desc">Comparación vertical: capas separa responsabilidades, Clean dirige dependencias hacia el núcleo y Hexagonal conecta adaptadores mediante puertos.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1440" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1408" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">TRES VISTAS · UN OBJETIVO</text><rect id="arch-card-0" x="38" y="92" width="344" height="360" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="arch-card-0" data-padding="18" x="210" y="134" class="sans node-title"><tspan x="210" y="134">Capas</tspan><tspan x="210" dy="32" class="node-copy">separar responsabilidades</tspan></text><rect id="arch-layer-0-0" x="78" y="217" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text data-container="arch-layer-0-0" data-padding="6" x="210" y="242" class="sans label">Presentación</text><rect id="arch-layer-0-1" x="78" y="267" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text data-container="arch-layer-0-1" data-padding="6" x="210" y="292" class="sans label">Aplicación</text><rect id="arch-layer-0-2" x="78" y="317" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text data-container="arch-layer-0-2" data-padding="6" x="210" y="342" class="sans label">Dominio</text><rect id="arch-layer-0-3" x="78" y="367" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text data-container="arch-layer-0-3" data-padding="6" x="210" y="392" class="sans label">Infraestructura</text><rect id="arch-card-1" x="38" y="512" width="344" height="360" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="arch-card-1" data-padding="18" x="210" y="554" class="sans node-title"><tspan x="210" y="554">Clean Architecture</tspan><tspan x="210" dy="32" class="node-copy">dependencias hacia el núcleo</tspan></text><rect id="arch-layer-1-0" x="78" y="637" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#C59132" stroke-width="2"/><text data-container="arch-layer-1-0" data-padding="6" x="210" y="662" class="sans label">Tecnología</text><rect id="arch-layer-1-1" x="78" y="687" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#C59132" stroke-width="2"/><text data-container="arch-layer-1-1" data-padding="6" x="210" y="712" class="sans label">Adaptadores</text><rect id="arch-layer-1-2" x="78" y="737" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#C59132" stroke-width="2"/><text data-container="arch-layer-1-2" data-padding="6" x="210" y="762" class="sans label">Casos de uso</text><rect id="arch-layer-1-3" x="78" y="787" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#C59132" stroke-width="2"/><text data-container="arch-layer-1-3" data-padding="6" x="210" y="812" class="sans label">Reglas</text><rect id="arch-card-2" x="38" y="932" width="344" height="360" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="arch-card-2" data-padding="18" x="210" y="974" class="sans node-title"><tspan x="210" y="974">Arquitectura Hexagonal</tspan><tspan x="210" dy="32" class="node-copy">puertos y adaptadores</tspan></text><rect id="arch-layer-2-0" x="78" y="1057" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/><text data-container="arch-layer-2-0" data-padding="6" x="210" y="1082" class="sans label">REST / CLI</text><rect id="arch-layer-2-1" x="78" y="1107" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/><text data-container="arch-layer-2-1" data-padding="6" x="210" y="1132" class="sans label">PUERTOS</text><rect id="arch-layer-2-2" x="78" y="1157" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/><text data-container="arch-layer-2-2" data-padding="6" x="210" y="1182" class="sans label">NÚCLEO</text><rect id="arch-layer-2-3" x="78" y="1207" width="264" height="38" rx="9" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/><text data-container="arch-layer-2-3" data-padding="6" x="210" y="1232" class="sans label">BD / tests</text>
+</svg>

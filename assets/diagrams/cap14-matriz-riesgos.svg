@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Matriz de riesgo técnico</title>
+  <desc id="desc">La acción recomendada surge al combinar probabilidad e impacto: ignorar o aceptar en la zona baja, vigilar en la intermedia y mitigar o actuar de inmediato en la alta.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Matriz de riesgo técnico</text>
+  <text x="48" y="91" class="sans subtitle">Prioriza incertidumbre por probabilidad e impacto, no por intuición</text><text x="675" y="145" class="sans tag" text-anchor="middle">IMPACTO →</text><text x="120" y="380" class="sans tag" transform="rotate(-90 120 380)" text-anchor="middle">PROBABILIDAD →</text><text x="425.0" y="170" class="sans node-title">Bajo</text><text x="675.0" y="170" class="sans node-title">Medio</text><text x="925.0" y="170" class="sans node-title">Alto</text><text x="255" y="252" class="sans node-title">Alta</text><rect id="risk-0-0" x="300" y="180" width="250" height="125" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="risk-0-0" data-padding="20" x="425.0" y="252" class="sans node-title">Vigilar</text><rect id="risk-0-1" x="550" y="180" width="250" height="125" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="risk-0-1" data-padding="20" x="675.0" y="252" class="sans node-title">Mitigar</text><rect id="risk-0-2" x="800" y="180" width="250" height="125" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="risk-0-2" data-padding="20" x="925.0" y="252" class="sans node-title">Urgente</text><text x="255" y="377" class="sans node-title">Media</text><rect id="risk-1-0" x="300" y="305" width="250" height="125" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="risk-1-0" data-padding="20" x="425.0" y="377" class="sans node-title">Aceptar</text><rect id="risk-1-1" x="550" y="305" width="250" height="125" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="risk-1-1" data-padding="20" x="675.0" y="377" class="sans node-title">Vigilar</text><rect id="risk-1-2" x="800" y="305" width="250" height="125" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="risk-1-2" data-padding="20" x="925.0" y="377" class="sans node-title">Mitigar</text><text x="255" y="502" class="sans node-title">Baja</text><rect id="risk-2-0" x="300" y="430" width="250" height="125" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="risk-2-0" data-padding="20" x="425.0" y="502" class="sans node-title">Ignorar</text><rect id="risk-2-1" x="550" y="430" width="250" height="125" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="risk-2-1" data-padding="20" x="675.0" y="502" class="sans node-title">Aceptar</text><rect id="risk-2-2" x="800" y="430" width="250" height="125" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="risk-2-2" data-padding="20" x="925.0" y="502" class="sans node-title">Vigilar</text>
+</svg>

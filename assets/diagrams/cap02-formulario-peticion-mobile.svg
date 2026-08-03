@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1240" role="img" aria-labelledby="title desc">
+  <title id="title">De un formulario HTML a una petición HTTP en composición vertical</title>
+  <desc id="desc">Cuatro pasos: el usuario completa un formulario, el navegador reúne los pares de nombre y valor, crea una petición HTTP y el servidor responde.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:14px;font-weight:760;letter-spacing:1.5px;fill:#31536A}.title{font-size:22px;font-weight:760}.copy{font-size:16px;fill:#59636D}.literal{font-size:16px}.number{font-size:16px;font-weight:760;fill:#FFFDFA;text-anchor:middle;dominant-baseline:central}.flow{stroke:#31536A;stroke-width:3.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="420" height="1240" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1208" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="36" y="50" class="sans tag">INTERFAZ Y PROTOCOLO</text>
+  <line class="flow" x1="70" y1="108" x2="70" y2="1088"/>
+
+  <circle cx="70" cy="112" r="22" fill="#31536A"/><text x="70" y="112" class="sans number">1</text>
+  <rect x="112" y="76" width="264" height="226" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+  <text x="134" y="116" class="sans title">Formulario</text>
+  <text x="134" y="148" class="sans copy">campo visible: Buscar productos</text>
+  <rect x="134" y="172" width="220" height="54" rx="12" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+  <text x="244" y="206" class="mono literal" text-anchor="middle">name="q" · teclado</text>
+  <text x="134" y="260" class="sans copy">action="/buscar" · method="get"</text>
+
+  <circle cx="70" cy="380" r="22" fill="#31536A"/><text x="70" y="380" class="sans number">2</text>
+  <rect x="112" y="344" width="264" height="184" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="2.5"/>
+  <text x="134" y="386" class="sans title">Pares nombre–valor</text>
+  <text x="134" y="430" class="mono literal">q = teclado</text>
+  <text x="134" y="458" class="sans copy"><tspan x="134">solo participa lo que</tspan><tspan x="134" dy="24">tiene name</tspan></text>
+
+  <circle cx="70" cy="610" r="22" fill="#31536A"/><text x="70" y="610" class="sans number">3</text>
+  <rect x="112" y="574" width="264" height="212" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="2.5"/>
+  <text x="134" y="616" class="sans title">Petición HTTP</text>
+  <text x="134" y="660" class="mono literal">GET /buscar?q=teclado</text>
+  <text x="134" y="704" class="sans copy">el navegador codifica</text>
+  <text x="134" y="738" class="sans copy">y envía los datos</text>
+
+  <circle cx="70" cy="868" r="22" fill="#B95736"/><text x="70" y="868" class="sans number">4</text>
+  <rect x="112" y="832" width="264" height="212" rx="18" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/>
+  <text x="134" y="874" class="sans title">Servidor</text>
+  <text x="134" y="918" class="sans copy">lee · valida · procesa</text>
+  <text x="134" y="962" class="sans copy">devuelve una respuesta</text>
+  <text x="134" y="996" class="mono literal">200 OK · HTML</text>
+
+  <circle cx="70" cy="1124" r="22" fill="#59636D"/><text x="70" y="1124" class="sans number">5</text>
+  <rect x="112" y="1082" width="264" height="92" rx="18" fill="#FFFDFA" stroke="#59636D" stroke-width="2.5"/>
+  <text x="134" y="1122" class="sans title">Nueva página</text>
+  <text x="134" y="1153" class="sans copy">la función base ya se completó</text>
+  <text x="210" y="1190" class="sans copy" text-anchor="middle"><tspan x="210">JavaScript puede mejorar el flujo,</tspan><tspan x="210" dy="24">no originarlo.</tspan></text>
+</svg>

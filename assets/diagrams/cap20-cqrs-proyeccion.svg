@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">CQRS · separar decisiones y proyecciones</title>
+  <desc id="desc">Los comandos validan reglas y actualizan el modelo de escritura; los eventos o una sincronización alimentan una proyección de lectura optimizada para consultas. La vista puede retrasarse respecto a la escritura.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">CQRS · separar decisiones y proyecciones</text>
+  <text x="48" y="91" class="sans subtitle">Separar modelos solo cuando sus necesidades realmente divergen</text><rect id="cq-command" x="55" y="205" width="220" height="130" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="cq-command" data-padding="18" x="165" y="247" class="sans node-title"><tspan x="165" y="247">Command API</tspan><tspan x="165" dy="32" class="node-copy">expresa una intención</tspan></text><rect id="cq-write" x="355" y="205" width="240" height="130" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="cq-write" data-padding="18" x="475" y="247" class="sans node-title"><tspan x="475" y="247">Write model</tspan><tspan x="475" dy="32" class="node-copy">reglas e invariantes</tspan></text><rect id="cq-db" x="675" y="205" width="220" height="130" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="cq-db" data-padding="18" x="785" y="247" class="sans node-title"><tspan x="785" y="247">Write store</tspan><tspan x="785" dy="32" class="node-copy">fuente de verdad</tspan></text><rect id="cq-project" x="675" y="430" width="220" height="130" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="cq-project" data-padding="18" x="785" y="472" class="sans node-title"><tspan x="785" y="472">Proyector</tspan><tspan x="785" dy="32" class="node-copy">consume cambios</tspan></text><rect id="cq-read" x="355" y="430" width="240" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="cq-read" data-padding="18" x="475" y="472" class="sans node-title"><tspan x="475" y="472">Read model</tspan><tspan x="475" dy="32" class="node-copy">vista optimizada</tspan></text><rect id="cq-query" x="55" y="430" width="220" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="cq-query" data-padding="18" x="165" y="472" class="sans node-title"><tspan x="165" y="472">Query API</tspan><tspan x="165" dy="32" class="node-copy">responde consultas</tspan></text><path class="flow" d="M275 270H351"/><path class="flow" d="M595 270H671"/><path class="flow" d="M785 335V426"/><path class="flow" d="M675 495H599"/><path class="flow" d="M355 495H279"/><rect id="cq-delay" x="950" y="305" width="200" height="155" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="cq-delay" data-padding="18" x="1050" y="345" class="sans node-copy"><tspan x="1050">Coste explícito:</tspan><tspan x="1050" dy="28">la lectura puede</tspan><tspan x="1050" dy="24">estar rezagada.</tspan></text>
+</svg>

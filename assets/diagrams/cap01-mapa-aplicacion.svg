@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa de una aplicación web y sus fronteras</title>
+  <desc id="desc">Una solicitud parte de un cliente no controlado, atraviesa intermediarios de red opcionales, llega a la aplicación y puede consultar datos o servicios externos. La respuesta regresa al cliente.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <marker id="return-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#59636D"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.tag{font-size:18px;font-weight:760;letter-spacing:2px;fill:#31536A}.group{font-size:28px;font-weight:750;text-anchor:middle}.copy{font-size:18px;fill:#59636D;text-anchor:middle}.chip{font-size:17px;font-weight:650;text-anchor:middle}.label{font-size:17px;font-weight:680;fill:#59636D;text-anchor:middle}.request{stroke:#31536A;stroke-width:5;fill:none;marker-end:url(#arrow)}.response{stroke:#59636D;stroke-width:4;stroke-dasharray:11 9;fill:none;marker-end:url(#return-arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <rect x="38" y="38" width="1124" height="644" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="72" y="82" class="sans tag">MAPA DEL SISTEMA</text>
+  <rect x="214" y="108" width="212" height="32" rx="10" fill="#FFFDFA"/>
+  <text x="320" y="130" class="sans label">frontera de confianza</text>
+  <line x1="320" y1="142" x2="320" y2="588" stroke="#B95736" stroke-width="3" stroke-dasharray="10 9"/>
+
+  <g>
+    <rect x="70" y="160" width="220" height="380" rx="22" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+    <text x="180" y="212" class="sans group">Clientes</text>
+    <text x="180" y="244" class="sans copy">inician solicitudes</text>
+    <rect x="95" y="278" width="170" height="58" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+    <text x="180" y="314" class="sans chip">Navegador</text>
+    <rect x="95" y="354" width="170" height="58" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+    <text x="180" y="382" class="sans chip">Aplicación</text>
+    <text x="180" y="403" class="sans chip">móvil</text>
+    <rect x="95" y="430" width="170" height="58" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+    <text x="180" y="466" class="sans chip">Otro servicio</text>
+    <text x="180" y="518" class="sans copy">entorno no confiable</text>
+
+    <rect x="360" y="160" width="220" height="380" rx="22" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+    <text x="470" y="212" class="sans group">Red y edge</text>
+    <text x="470" y="244" class="sans copy">pueden intermediar</text>
+    <rect x="382" y="288" width="176" height="66" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/>
+    <text x="470" y="328" class="sans chip">DNS</text>
+    <rect x="382" y="382" width="176" height="92" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/>
+    <text x="470" y="416" class="sans chip">Proxy · CDN</text>
+    <text x="470" y="442" class="sans copy">caché o</text>
+    <text x="470" y="465" class="sans copy">enrutamiento</text>
+
+    <rect x="650" y="160" width="220" height="380" rx="22" fill="#F3E6DF" stroke="#B95736" stroke-width="3"/>
+    <text x="760" y="212" class="sans group">Aplicación</text>
+    <text x="760" y="244" class="sans copy">procesa la solicitud</text>
+    <rect x="672" y="288" width="176" height="76" rx="14" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/>
+    <text x="760" y="320" class="sans chip">API y validación</text>
+    <text x="760" y="347" class="sans copy">contrato de entrada</text>
+    <rect x="672" y="390" width="176" height="84" rx="14" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/>
+    <text x="760" y="424" class="sans chip">Lógica de negocio</text>
+    <text x="760" y="451" class="sans copy">decide y coordina</text>
+
+    <rect x="920" y="160" width="210" height="380" rx="22" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+    <text x="1025" y="212" class="sans group">Dependencias</text>
+    <text x="1025" y="244" class="sans copy">persisten o colaboran</text>
+    <rect x="942" y="282" width="166" height="86" rx="14" fill="#FFFDFA" stroke="#B68125" stroke-width="2"/>
+    <text x="1025" y="316" class="sans chip">Datos</text>
+    <text x="1025" y="339" class="sans copy">BD · caché</text>
+    <text x="1025" y="362" class="sans copy">objetos</text>
+    <rect x="942" y="390" width="166" height="94" rx="14" fill="#FFFDFA" stroke="#B68125" stroke-width="2"/>
+    <text x="1025" y="424" class="sans chip">Servicios externos</text>
+    <text x="1025" y="447" class="sans copy">pagos · correo</text>
+    <text x="1025" y="470" class="sans copy">APIs</text>
+  </g>
+
+  <line class="request" x1="290" y1="326" x2="354" y2="326"/>
+  <line class="request" x1="580" y1="326" x2="644" y2="326"/>
+  <line class="request" x1="870" y1="326" x2="914" y2="326"/>
+  <path class="response" d="M920 580 H296"/>
+  <rect x="540" y="548" width="120" height="28" rx="10" fill="#FFFDFA"/>
+  <text x="600" y="568" class="sans label">respuesta</text>
+
+  <text x="600" y="640" class="sans label">La topología concreta cambia; las responsabilidades y las fronteras permanecen.</text>
+</svg>

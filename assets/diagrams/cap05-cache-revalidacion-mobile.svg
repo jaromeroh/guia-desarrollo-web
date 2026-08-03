@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Decisión de caché en composición vertical</title>
+  <desc id="desc">Primero se comprueba la frescura. Si la respuesta venció, se busca un validador. Una petición condicional recibe 304 para reutilizar el cuerpo o 200 para reemplazarlo.</desc>
+  <defs><style>
+    .s{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.m{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:15px;font-weight:760;letter-spacing:1.3px;fill:#31536A}.step{font-size:14px;font-weight:760;letter-spacing:1px;fill:#31536A}.head{font-size:21px;font-weight:760}.copy{font-size:16px;fill:#59636D}.out{font-size:16px;font-weight:720;text-anchor:middle}.status{font-size:21px;font-weight:760;text-anchor:middle}
+  </style><marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#31536A"/></marker></defs>
+  <rect width="420" height="1320" fill="#F2EEE6"/><rect x="16" y="16" width="388" height="1288" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="s tag">TRES DECISIONES DE CACHÉ</text>
+  <rect x="66" y="92" width="288" height="84" rx="17" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/><text x="210" y="127" class="s head" text-anchor="middle">Respuesta almacenada</text><text x="210" y="156" class="s copy" text-anchor="middle">metadatos + cuerpo</text>
+  <path d="M210 176V218" stroke="#31536A" stroke-width="4" marker-end="url(#a)"/>
+
+  <rect x="38" y="226" width="344" height="240" rx="20" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="66" y="264" class="s step">1 · COMPROBAR FRESCURA</text><text x="66" y="298" class="s head"><tspan x="66">¿Sigue dentro de su</tspan><tspan x="66" dy="28">tiempo útil?</tspan></text>
+  <rect x="66" y="342" width="132" height="86" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text x="132" y="374" class="s out" fill="#31536A">SÍ · reutilizar</text><text x="132" y="405" class="s copy" text-anchor="middle">sin consultar</text>
+  <rect x="222" y="342" width="132" height="86" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/><text x="288" y="374" class="s out" fill="#59636D">NO · venció</text><text x="288" y="405" class="s copy" text-anchor="middle">seguir</text>
+  <path d="M210 466V508" stroke="#31536A" stroke-width="4" marker-end="url(#a)"/>
+
+  <rect x="38" y="516" width="344" height="274" rx="20" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <text x="66" y="554" class="s step">2 · SI VENCIÓ</text><text x="66" y="598" class="s head">¿Tiene ETag u otro validador?</text>
+  <rect x="66" y="634" width="132" height="112" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2"/><text x="132" y="669" class="s out" fill="#31536A">SÍ</text><text x="132" y="700" class="s copy" text-anchor="middle">petición</text><text x="132" y="728" class="s copy" text-anchor="middle">condicional</text>
+  <rect x="222" y="634" width="132" height="112" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/><text x="288" y="669" class="s out" fill="#59636D">NO</text><text x="288" y="700" class="s copy" text-anchor="middle">petición normal</text><text x="288" y="728" class="s copy" text-anchor="middle">cuerpo completo</text>
+  <path d="M210 790V832" stroke="#31536A" stroke-width="4" marker-end="url(#a)"/>
+
+  <rect x="38" y="840" width="344" height="276" rx="20" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="66" y="878" class="s step" fill="#C59132">3 · RESPUESTA DEL SERVIDOR</text><text x="66" y="922" class="s head">¿El contenido cambió?</text>
+  <rect x="66" y="958" width="132" height="112" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2"/><text x="132" y="996" class="m status">304</text><text x="132" y="1030" class="s copy" text-anchor="middle">reutiliza</text><text x="132" y="1056" class="s copy" text-anchor="middle">el cuerpo</text>
+  <rect x="222" y="958" width="132" height="112" rx="14" fill="#FFFDFA" stroke="#B68125" stroke-width="2"/><text x="288" y="996" class="m status">200</text><text x="288" y="1030" class="s copy" text-anchor="middle">reemplaza</text><text x="288" y="1056" class="s copy" text-anchor="middle">el cuerpo</text>
+  <text x="210" y="1170" class="s head" text-anchor="middle"><tspan x="210">Validar puede ahorrar</tspan><tspan x="210" dy="28">transferencia.</tspan></text><text x="210" y="1230" class="s copy" text-anchor="middle">Aun así, consulta al servidor de origen.</text>
+</svg>

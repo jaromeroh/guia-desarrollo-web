@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cada estado necesita un propietario</title>
+  <desc id="desc">El estado local pertenece a un componente o feature; el estado compartido pertenece a una experiencia del cliente; los datos del servidor conservan al servidor como fuente de verdad y usan una caché de consultas.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Cada estado necesita un propietario</text>
+  <text x="48" y="91" class="sans subtitle">Clasifica por fuente de verdad, alcance y ciclo de vida</text><rect id="card-0" x="55" y="145" width="344" height="465" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="card-0" data-padding="18" x="227" y="195" class="sans node-title"><tspan x="227" y="195">Local</tspan></text><text x="83" y="250" class="sans tag">MODELO</text><text x="83" y="281" class="sans small"><tspan x="83" y="281">un componente o feature</tspan><tspan x="83" y="305">es su propietario</tspan></text><text x="83" y="362" class="sans tag">ENCAJA CUANDO</text><text x="83" y="393" class="sans small"><tspan x="83" y="393">formularios · toggles</tspan><tspan x="83" y="417">modales · animaciones</tspan></text><text x="83" y="474" class="sans tag">COSTE A OPERAR</text><text x="83" y="505" class="sans small"><tspan x="83" y="505">transiciones explícitas</tspan><tspan x="83" y="529">y limpieza</tspan></text><rect id="card-1" x="437" y="145" width="344" height="465" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="card-1" data-padding="18" x="609" y="195" class="sans node-title"><tspan x="609" y="195">Compartido</tspan></text><text x="465" y="250" class="sans tag">MODELO</text><text x="465" y="281" class="sans small"><tspan x="465" y="281">varias vistas del cliente</tspan><tspan x="465" y="305">coordinan una experiencia</tspan></text><text x="465" y="362" class="sans tag">ENCAJA CUANDO</text><text x="465" y="393" class="sans small"><tspan x="465" y="393">sesión visible · carrito</tspan><tspan x="465" y="417">tema · notificaciones</tspan></text><text x="465" y="474" class="sans tag">COSTE A OPERAR</text><text x="465" y="505" class="sans small"><tspan x="465" y="505">alcance global</tspan><tspan x="465" y="529">y dependencias ocultas</tspan></text><rect id="card-2" x="819" y="145" width="344" height="465" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="card-2" data-padding="18" x="991" y="195" class="sans node-title"><tspan x="991" y="195">Servidor</tspan></text><text x="847" y="250" class="sans tag">MODELO</text><text x="847" y="281" class="sans small"><tspan x="847" y="281">el servidor es la fuente</tspan><tspan x="847" y="305">la UI mantiene una caché</tspan></text><text x="847" y="362" class="sans tag">ENCAJA CUANDO</text><text x="847" y="393" class="sans small"><tspan x="847" y="393">productos · pedidos</tspan><tspan x="847" y="417">usuarios · comentarios</tspan></text><text x="847" y="474" class="sans tag">COSTE A OPERAR</text><text x="847" y="505" class="sans small"><tspan x="847" y="505">frescura · reintentos</tspan><tspan x="847" y="529">invalidación y errores</tspan></text>
+</svg>

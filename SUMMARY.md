@@ -2,55 +2,62 @@
 
 * [Introducción](README.md)
 
-## Parte I: El Nuevo Paradigma
+## Parte I: Fundamentos de las Aplicaciones Web
 
-* [1. La Evolución del Desarrollador Web](chapters/01-evolucion-desarrollador.md)
-* [2. Anatomía de una Aplicación Web Moderna](chapters/02-anatomia-aplicacion.md)
-* [3. Pensamiento en Sistemas](chapters/03-pensamiento-sistemas.md)
-* [4. Desarrollo Asistido por IA](chapters/04-desarrollo-asistido-ia.md)
+* [1. Anatomía de una Aplicación Web Moderna](chapters/01-anatomia-aplicacion.md)
+* [2. HTML Semántico, Formularios y Mejora Progresiva](chapters/02-html-semantico-formularios.md)
+* [3. CSS, Layout Adaptable y Sistema Visual](chapters/03-css-layout-sistema-visual.md)
+* [4. JavaScript, Eventos y Runtime del Navegador](chapters/04-javascript-eventos-runtime.md)
+* [5. URL, DNS, TLS, HTTP, Caché y Seguridad del Navegador](chapters/05-url-dns-tls-http-seguridad.md)
 
-## Parte II: El Antes — Diseño y Planificación
+## Parte II: El Nuevo Paradigma
 
-* [5. Entendiendo el Problema](chapters/05-entendiendo-problema.md)
-* [6. Diseño de Producto y UX](chapters/06-diseno-producto-ux.md)
-* [7. Arquitectura de Software](chapters/07-arquitectura-software.md)
-* [8. Diseño de APIs](chapters/08-diseno-apis.md)
-* [9. Modelado de Datos](chapters/09-modelado-datos.md)
-* [10. Planificación Técnica](chapters/10-planificacion-tecnica.md)
+* [6. La Evolución del Desarrollador Web](chapters/06-evolucion-desarrollador.md)
+* [7. Pensamiento en Sistemas](chapters/07-pensamiento-sistemas.md)
+* [8. Desarrollo Asistido por IA](chapters/08-desarrollo-asistido-ia.md)
 
-## Parte III: El Durante — Implementación
+## Parte III: El Antes — Diseño y Planificación
 
-* [11. Arquitectura Frontend](chapters/11-arquitectura-frontend.md)
-* [12. Arquitectura Backend](chapters/12-arquitectura-backend.md)
-* [13. Autenticación y Autorización](chapters/13-autenticacion-autorizacion.md)
-* [14. Comunicación y Datos en Tiempo Real](chapters/14-tiempo-real.md)
-* [15. Persistencia y Bases de Datos](chapters/15-persistencia.md)
-* [16. Manejo de Tareas Asíncronas](chapters/16-tareas-asincronas.md)
+* [9. Entendiendo el Problema](chapters/09-entendiendo-problema.md)
+* [10. Diseño de Producto y UX](chapters/10-diseno-producto-ux.md)
+* [11. Arquitectura de Software](chapters/11-arquitectura-software.md)
+* [12. Diseño de APIs](chapters/12-diseno-apis.md)
+* [13. Modelado de Datos](chapters/13-modelado-datos.md)
+* [14. Planificación Técnica](chapters/14-planificacion-tecnica.md)
 
-## Parte IV: El Después — Calidad y Operaciones
+## Parte IV: El Durante — Implementación
 
-* [17. Estrategias de Testing](chapters/17-testing.md)
-* [18. Integración y Entrega Continua](chapters/18-ci-cd.md)
-* [19. Deployment y Infraestructura](chapters/19-deployment.md)
-* [20. Observabilidad](chapters/20-observabilidad.md)
-* [21. Escalabilidad y Performance](chapters/21-escalabilidad.md)
-* [22. Seguridad en Aplicaciones Web](chapters/22-seguridad.md)
+* [15. Arquitectura Frontend](chapters/15-arquitectura-frontend.md)
+* [16. Arquitectura Backend](chapters/16-arquitectura-backend.md)
+* [17. Autenticación y Autorización](chapters/17-autenticacion-autorizacion.md)
+* [18. Comunicación y Datos en Tiempo Real](chapters/18-tiempo-real.md)
+* [19. Persistencia y Bases de Datos](chapters/19-persistencia.md)
+* [20. Manejo de Tareas Asíncronas](chapters/20-tareas-asincronas.md)
 
-## Parte V: Stacks en Práctica
+## Parte V: El Después — Calidad y Operaciones
 
-* [23. Stack: Next.js + Node.js](chapters/23-stack-nextjs.md)
-* [24. Stack: Python + FastAPI](chapters/24-stack-fastapi.md)
-* [25. Stack: Go + APIs de Alto Rendimiento](chapters/25-stack-go.md)
+* [21. Estrategias de Testing](chapters/21-testing.md)
+* [22. Integración y Entrega Continua](chapters/22-ci-cd.md)
+* [23. Deployment y Infraestructura](chapters/23-deployment.md)
+* [24. Observabilidad](chapters/24-observabilidad.md)
+* [25. Escalabilidad y Rendimiento](chapters/25-escalabilidad-rendimiento.md)
+* [26. Seguridad en Aplicaciones Web](chapters/26-seguridad-aplicaciones-web.md)
 
-## Parte VI: El Futuro
+## Parte VI: Stacks en Práctica
 
-* [26. La Nueva Capa de Abstracción](chapters/26-nueva-capa-abstraccion.md)
-* [27. Tendencias y Horizontes](chapters/27-tendencias.md)
+* [27. Stack: Next.js + Node.js](chapters/27-stack-nextjs-node.md)
+* [28. Stack: Python + FastAPI](chapters/28-stack-python-fastapi.md)
+* [29. Stack: Go + APIs de Alto Rendimiento](chapters/29-stack-go.md)
+
+## Parte VII: El Futuro
+
+* [30. La Nueva Capa de Abstracción](chapters/30-nueva-capa-abstraccion.md)
+* [31. Tendencias y Horizontes](chapters/31-tendencias-horizontes.md)
 
 ## Apéndices
 
-* [Glosario](appendices/glosario.md)
-* [Herramientas Recomendadas](appendices/herramientas.md)
-* [Recursos de Aprendizaje](appendices/recursos.md)
-* [Plantillas y Checklists](appendices/plantillas.md)
-* [Referencias y Bibliografía](appendices/referencias.md)
+* [A. Glosario](appendices/a-glosario.md)
+* [B. Herramientas recomendadas](appendices/b-herramientas-recomendadas.md)
+* [C. Recursos y rutas de aprendizaje](appendices/c-recursos-aprendizaje.md)
+* [D. Plantillas y listas de verificación](appendices/d-plantillas-listas.md)
+* [E. Referencias y bibliografía](appendices/e-referencias-bibliografia.md)

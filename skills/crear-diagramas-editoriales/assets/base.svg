@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Título del diagrama</title>
+  <desc id="desc">Descripción de la relación principal que muestra el diagrama.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#59636D"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .node { fill: #FFFDFA; stroke: #A9A49B; stroke-width: 2.5; }
+      .node-blue { fill: #E8EEF1; stroke: #31536A; stroke-width: 2.5; }
+      .flow { fill: none; stroke: #59636D; stroke-width: 3; marker-end: url(#arrow); }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-meta { font-size: 15px; fill: #72706C; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="700" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Título del diagrama</text>
+  <text x="48" y="91" class="sans subtitle">Relación principal en una frase</text>
+
+  <rect id="node-a" class="node-blue" x="100" y="250" width="260" height="140" rx="14"/>
+  <text data-container="node-a" data-padding="24" x="230" y="302"
+        class="sans node-title">
+    <tspan x="230">Componente A</tspan>
+    <tspan x="230" dy="34" class="node-meta">Responsabilidad principal</tspan>
+  </text>
+
+  <rect id="node-b" class="node" x="640" y="250" width="260" height="140" rx="14"/>
+  <text data-container="node-b" data-padding="24" x="770" y="302"
+        class="sans node-title">
+    <tspan x="770">Componente B</tspan>
+    <tspan x="770" dy="34" class="node-meta">Responsabilidad principal</tspan>
+  </text>
+
+  <line class="flow" x1="360" y1="320" x2="636" y2="320"/>
+  <rect id="flow-label" x="417" y="279" width="164" height="34" rx="8"
+        fill="#FFFDFA"/>
+  <text data-container="flow-label" data-padding="6" x="499" y="302"
+        class="sans node-meta">contrato o evento</text>
+</svg>

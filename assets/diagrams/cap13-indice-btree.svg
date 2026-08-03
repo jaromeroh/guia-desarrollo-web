@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Un índice reduce el espacio de búsqueda</title>
+  <desc id="desc">Un árbol B compara una clave con nodos ordenados y desciende solo por la rama compatible, en lugar de recorrer todas las filas.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Un índice reduce el espacio de búsqueda</text>
+  <text x="48" y="91" class="sans subtitle">Ejemplo conceptual: localizar «Pedro» en tres decisiones</text><rect id="bt-root" x="510" y="130" width="180" height="90" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="bt-root" data-padding="18" x="600" y="165" class="sans node-title"><tspan x="600" y="165">M</tspan><tspan x="600" dy="32" class="node-copy">raíz</tspan></text><rect id="bt-left" x="250" y="300" width="210" height="95" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="bt-left" data-padding="18" x="355" y="335" class="sans node-title"><tspan x="355" y="335">D · H</tspan><tspan x="355" dy="32" class="node-copy">claves menores</tspan></text><rect id="bt-right" x="740" y="300" width="210" height="95" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="bt-right" data-padding="18" x="845" y="335" class="sans node-title"><tspan x="845" y="335">R · V</tspan><tspan x="845" dy="32" class="node-copy">claves mayores</tspan></text><rect id="bt-leaf-0" x="90" y="500" width="130" height="85" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="bt-leaf-0" data-padding="18" x="155" y="542" class="sans node-title"><tspan x="155" y="542">A–C</tspan></text><rect id="bt-leaf-1" x="300" y="500" width="130" height="85" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="bt-leaf-1" data-padding="18" x="365" y="542" class="sans node-title"><tspan x="365" y="542">E–G</tspan></text><rect id="bt-leaf-2" x="510" y="500" width="130" height="85" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="bt-leaf-2" data-padding="18" x="575" y="542" class="sans node-title"><tspan x="575" y="542">I–L</tspan></text><rect id="bt-leaf-3" x="710" y="500" width="130" height="85" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="bt-leaf-3" data-padding="18" x="775" y="542" class="sans node-title"><tspan x="775" y="542">N–Q</tspan></text><rect id="bt-leaf-4" x="910" y="500" width="130" height="85" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="bt-leaf-4" data-padding="18" x="975" y="542" class="sans node-title"><tspan x="975" y="542">S–U</tspan></text><rect id="bt-leaf-5" x="1060" y="500" width="105" height="85" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="bt-leaf-5" data-padding="18" x="1112.5" y="542" class="sans node-title"><tspan x="1112.5" y="542">W–Z</tspan></text><path class="relation" d="M600 220V260M355 260H845M355 260V296M845 260V296"/><path class="relation" d="M355 395V455M155 455H575M155 455V496M365 455V496M575 455V496"/><path class="relation" d="M845 395V455M775 455H1112M775 455V496M975 455V496M1112 455V496"/><path class="risk-flow" d="M690 175H845V296"/><path class="risk-flow" d="M845 395V455H775V496"/><text x="760" y="155" class="sans label" fill="#B95736">P &gt; M</text><text x="805" y="444" class="sans label" fill="#B95736">P &lt; R</text>
+</svg>
