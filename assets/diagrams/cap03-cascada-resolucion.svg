@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo resuelve la cascada un valor CSS</title>
+  <desc id="desc">Las declaraciones que aplican al elemento se comparan, en orden, por relevancia, origen e importancia, capa de cascada, especificidad y orden de aparición. El resultado es el valor aplicado.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:21px;font-weight:760;letter-spacing:2px;fill:#31536A}.heading{font-size:31px;font-weight:760;text-anchor:middle}.copy{font-size:22px;fill:#59636D;text-anchor:middle}.detail{font-size:20px}.left{text-anchor:start}.item{font-size:23px;font-weight:720}.code{font-size:20px}.num{font-size:18px;font-weight:760;fill:#FFFDFA;text-anchor:middle;dominant-baseline:central}.flow{stroke:#31536A;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#F2EEE6"/>
+  <rect x="38" y="38" width="1124" height="684" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="72" y="84" class="sans tag">LA CASCADA ES UN DESEMPATE ORDENADO</text>
+
+  <rect x="70" y="190" width="250" height="360" rx="22" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="195" y="236" class="sans heading">Candidatas</text>
+  <text x="195" y="270" class="sans copy">reglas que sí aplican</text>
+  <rect x="94" y="310" width="202" height="62" rx="12" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+  <text x="112" y="349" class="mono code">button</text>
+  <rect x="94" y="390" width="202" height="62" rx="12" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+  <text x="112" y="429" class="mono code">.toolbar button</text>
+  <rect x="94" y="470" width="202" height="62" rx="12" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+  <text x="112" y="509" class="mono code">@layer components</text>
+
+  <path class="flow" d="M320 370H350V173H374"/>
+  <rect x="380" y="128" width="430" height="90" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="422" cy="173" r="20" fill="#31536A"/><text x="422" y="173" class="sans num">1</text>
+  <text x="458" y="168" class="sans item">Relevancia</text><text x="458" y="198" class="sans copy detail left">¿la regla aplica en este contexto?</text>
+  <rect x="380" y="236" width="430" height="90" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="422" cy="281" r="20" fill="#31536A"/><text x="422" y="281" class="sans num">2</text>
+  <text x="458" y="276" class="sans item">Origen e importancia</text><text x="458" y="306" class="sans copy detail left">autor, usuario, navegador e !important</text>
+  <rect x="380" y="344" width="430" height="90" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <circle cx="422" cy="389" r="20" fill="#31536A"/><text x="422" y="389" class="sans num">3</text>
+  <text x="458" y="384" class="sans item">Capa de cascada</text><text x="458" y="414" class="sans copy detail left">orden declarado entre grupos</text>
+  <rect x="380" y="452" width="430" height="90" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="422" cy="497" r="20" fill="#31536A"/><text x="422" y="497" class="sans num">4</text>
+  <text x="458" y="492" class="sans item">Especificidad</text><text x="458" y="522" class="sans copy detail left">peso del selector que permanece</text>
+  <rect x="380" y="560" width="430" height="90" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="422" cy="605" r="20" fill="#31536A"/><text x="422" y="605" class="sans num">5</text>
+  <text x="458" y="600" class="sans item">Orden de aparición</text><text x="458" y="630" class="sans copy detail left">la última declaración equivalente gana</text>
+
+  <line class="flow" x1="595" y1="220" x2="595" y2="230"/>
+  <line class="flow" x1="595" y1="328" x2="595" y2="338"/>
+  <line class="flow" x1="595" y1="436" x2="595" y2="446"/>
+  <line class="flow" x1="595" y1="544" x2="595" y2="554"/>
+  <path class="flow" d="M810 605H834V389H850"/>
+  <rect x="858" y="250" width="272" height="278" rx="22" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="994" y="304" class="sans heading">Valor aplicado</text>
+  <text x="994" y="344" class="sans copy">resultado del primer</text>
+  <text x="994" y="376" class="sans copy">criterio que logra</text>
+  <text x="994" y="408" class="sans copy">desempatar</text>
+  <rect x="894" y="448" width="200" height="58" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/>
+  <text x="994" y="485" class="mono item" text-anchor="middle">color: teal</text>
+  <text x="600" y="690" class="sans copy">No se suman puntos globales: cada criterio se consulta solo si el anterior deja un empate.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Una cola separa aceptación y ejecución</title>
+  <desc id="desc">La aplicación persiste el trabajo y responde; la cola conserva trabajos pendientes; uno o más workers reservan y procesan cada trabajo, registrando éxito o fallo para reintento e intervención.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Una cola separa aceptación y ejecución</text>
+  <text x="48" y="91" class="sans subtitle">La respuesta HTTP confirma un contrato; no necesariamente el resultado final</text><rect id="q-client" x="60" y="260" width="190" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="q-client" data-padding="18" x="155" y="302" class="sans node-title"><tspan x="155" y="302">Cliente</tspan><tspan x="155" dy="32" class="node-copy">solicita una tarea</tspan></text><rect id="q-app" x="315" y="230" width="230" height="190" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="q-app" data-padding="18" x="430" y="272" class="sans node-title"><tspan x="430" y="272">Aplicación</tspan><tspan x="430" dy="32" class="node-copy">valida</tspan><tspan x="430" dy="24" class="node-copy">persiste trabajo</tspan><tspan x="430" dy="24" class="node-copy">responde 202 o recurso</tspan></text><rect id="q-queue" x="620" y="230" width="230" height="190" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="q-queue" data-padding="18" x="735" y="272" class="sans node-title"><tspan x="735" y="272">Cola durable</tspan><tspan x="735" dy="32" class="node-copy">espera · reserva</tspan><tspan x="735" dy="24" class="node-copy">reintenta · limita</tspan></text><rect id="q-worker" x="925" y="230" width="220" height="190" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="q-worker" data-padding="18" x="1035" y="272" class="sans node-title"><tspan x="1035" y="272">Workers</tspan><tspan x="1035" dy="32" class="node-copy">ejecutan</tspan><tspan x="1035" dy="24" class="node-copy">idempotencia</tspan><tspan x="1035" dy="24" class="node-copy">timeouts</tspan></text><path class="flow" d="M250 315H311"/><path class="flow" d="M545 315H616"/><path class="flow" d="M850 315H921"/><path class="flow" d="M315 370H254"/><rect id="q-label-job" x="548" y="265" width="65" height="34" rx="8" fill="#FFFDFA"/><text data-container="q-label-job" data-padding="6" x="580.5" y="288" class="sans label">job</text><rect id="q-label-reserve" x="845" y="265" width="80" height="34" rx="8" fill="#FFFDFA"/><text data-container="q-label-reserve" data-padding="6" x="885" y="288" class="sans label">reserva</text><rect id="q-state" x="405" y="510" width="390" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="q-state" data-padding="18" x="600" y="552" class="sans node-title"><tspan x="600" y="552">Estado observable</tspan><tspan x="600" dy="32" class="node-copy">pendiente · ejecutando</tspan><tspan x="600" dy="24" class="node-copy">completado · fallido</tspan></text><path class="flow" d="M1035 420V470H600V506"/>
+</svg>

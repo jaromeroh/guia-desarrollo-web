@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagramas editoriales del libro"
+  short_description: "Crea diagramas editoriales coherentes y accesibles"
+  default_prompt: "Usa $crear-diagramas-editoriales para convertir este contenido en un diagrama SVG coherente con el libro."

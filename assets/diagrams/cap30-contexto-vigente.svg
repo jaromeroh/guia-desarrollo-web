@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Contexto vigente · explorar menos, verificar mejor</title>
+  <desc id="desc">Una intención acotada apunta a documentación y convenciones vigentes; el agente selecciona los archivos relevantes, propone un cambio coherente y verifica el resultado con pruebas y revisión.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Contexto vigente · explorar menos, verificar mejor</text>
+  <text x="48" y="91" class="sans subtitle">La estructura compartida ayuda a humanos y agentes</text><rect id="ctx-step-0" x="35" y="220" width="205" height="175" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="ctx-step-0" data-padding="18" x="137.5" y="262" class="sans node-title"><tspan x="137.5" y="262">Intención</tspan><tspan x="137.5" dy="32" class="node-copy">alcance y criterio</tspan><tspan x="137.5" dy="24" class="node-copy">de aceptación</tspan></text><path class="flow" d="M240 307H263"/><rect id="ctx-step-1" x="267" y="220" width="205" height="175" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="ctx-step-1" data-padding="18" x="369.5" y="262" class="sans node-title"><tspan x="369.5" y="262">Contexto</tspan><tspan x="369.5" dy="32" class="node-copy">docs · ADR · reglas</tspan><tspan x="369.5" dy="24" class="node-copy">y ejemplos vigentes</tspan></text><path class="flow" d="M472 307H495"/><rect id="ctx-step-2" x="499" y="220" width="205" height="175" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ctx-step-2" data-padding="18" x="601.5" y="262" class="sans node-title"><tspan x="601.5" y="262">Selección</tspan><tspan x="601.5" dy="32" class="node-copy">archivos y contratos</tspan><tspan x="601.5" dy="24" class="node-copy">realmente relevantes</tspan></text><path class="flow" d="M704 307H727"/><rect id="ctx-step-3" x="731" y="220" width="205" height="175" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="ctx-step-3" data-padding="18" x="833.5" y="262" class="sans node-title"><tspan x="833.5" y="262">Cambio</tspan><tspan x="833.5" dy="32" class="node-copy">diff pequeño</tspan><tspan x="833.5" dy="24" class="node-copy">alineado al sistema</tspan></text><path class="flow" d="M936 307H959"/><rect id="ctx-step-4" x="963" y="220" width="205" height="175" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="ctx-step-4" data-padding="18" x="1065.5" y="262" class="sans node-title"><tspan x="1065.5" y="262">Evidencia</tspan><tspan x="1065.5" dy="32" class="node-copy">pruebas · revisión</tspan><tspan x="1065.5" dy="24" class="node-copy">comportamiento</tspan></text><path class="risk-flow" d="M1070 395V510H370V399"/><rect id="ctx-loop" x="475" y="492" width="450" height="36" rx="8" fill="#FFFDFA"/><text data-container="ctx-loop" data-padding="6" x="700" y="516" class="sans label">si la evidencia contradice el contexto, corregir ambos</text><rect id="ctx-note" x="225" y="575" width="750" height="88" rx="14" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="ctx-note" data-padding="16" x="600" y="610" class="sans node-copy"><tspan x="600">Documentar no evita explorar; reduce el espacio de búsqueda.</tspan><tspan x="600" dy="25">La documentación desactualizada puede dirigir el cambio al lugar equivocado.</tspan></text>
+</svg>

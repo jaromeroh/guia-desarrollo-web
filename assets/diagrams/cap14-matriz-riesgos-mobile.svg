@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 690" role="img" aria-labelledby="title desc">
+  <title id="title">Matriz de riesgo técnico</title>
+  <desc id="desc">La acción recomendada surge al combinar probabilidad e impacto: ignorar o aceptar en la zona baja, vigilar en la intermedia y mitigar o actuar de inmediato en la alta.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="690" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="658" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">PROBABILIDAD × IMPACTO</text><text x="131.0" y="138" class="sans label">Bajo</text><text x="233.0" y="138" class="sans label">Medio</text><text x="335.0" y="138" class="sans label">Alto</text><text x="62" y="215" class="sans label" text-anchor="end">Alta</text><rect id="risk-mobile-0-0" x="80" y="155" width="102" height="105" fill="#F5ECD8" stroke="#C59132" stroke-width="2"/><text data-container="risk-mobile-0-0" data-padding="9" x="131.0" y="215" class="sans label">Vigilar</text><rect id="risk-mobile-0-1" x="182" y="155" width="102" height="105" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="risk-mobile-0-1" data-padding="9" x="233.0" y="215" class="sans label">Mitigar</text><rect id="risk-mobile-0-2" x="284" y="155" width="102" height="105" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="risk-mobile-0-2" data-padding="9" x="335.0" y="215" class="sans label">Ya</text><text x="62" y="320" class="sans label" text-anchor="end">Media</text><rect id="risk-mobile-1-0" x="80" y="260" width="102" height="105" fill="#E8EEF1" stroke="#31536A" stroke-width="2"/><text data-container="risk-mobile-1-0" data-padding="9" x="131.0" y="320" class="sans label">Aceptar</text><rect id="risk-mobile-1-1" x="182" y="260" width="102" height="105" fill="#F5ECD8" stroke="#C59132" stroke-width="2"/><text data-container="risk-mobile-1-1" data-padding="9" x="233.0" y="320" class="sans label">Vigilar</text><rect id="risk-mobile-1-2" x="284" y="260" width="102" height="105" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="risk-mobile-1-2" data-padding="9" x="335.0" y="320" class="sans label">Mitigar</text><text x="62" y="425" class="sans label" text-anchor="end">Baja</text><rect id="risk-mobile-2-0" x="80" y="365" width="102" height="105" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/><text data-container="risk-mobile-2-0" data-padding="9" x="131.0" y="425" class="sans label">Ignorar</text><rect id="risk-mobile-2-1" x="182" y="365" width="102" height="105" fill="#E8EEF1" stroke="#31536A" stroke-width="2"/><text data-container="risk-mobile-2-1" data-padding="9" x="233.0" y="425" class="sans label">Aceptar</text><rect id="risk-mobile-2-2" x="284" y="365" width="102" height="105" fill="#F5ECD8" stroke="#C59132" stroke-width="2"/><text data-container="risk-mobile-2-2" data-padding="9" x="335.0" y="425" class="sans label">Vigilar</text><text x="210" y="510" class="sans tag" text-anchor="middle">IMPACTO →</text><text x="210" y="555" class="sans small" text-anchor="middle">La esquina alta/alta exige acción inmediata.</text>
+</svg>

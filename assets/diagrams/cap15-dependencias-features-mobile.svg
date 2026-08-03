@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1160" role="img" aria-labelledby="title desc">
+  <title id="title">Las dependencias apuntan hacia módulos estables</title>
+  <desc id="desc">El nivel app compone páginas y proveedores; las páginas consumen APIs públicas de features; las features usan shared. Las features no se importan entre sí ni dependen del nivel app.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1160" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1128" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">REGLAS DE DEPENDENCIA</text><rect id="fe-mobile-0" x="52" y="95" width="316" height="140" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="fe-mobile-0" data-padding="18" x="210" y="137" class="sans node-title"><tspan x="210" y="137">app</tspan><tspan x="210" dy="32" class="node-copy">compone rutas y providers</tspan></text><path class="flow" d="M210 235V292"/><rect id="fe-mobile-1" x="52" y="300" width="316" height="140" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="fe-mobile-1" data-padding="18" x="210" y="342" class="sans node-title"><tspan x="210" y="342">pages</tspan><tspan x="210" dy="32" class="node-copy">ensambla recorridos</tspan></text><path class="flow" d="M210 440V497"/><rect id="fe-mobile-2" x="52" y="505" width="316" height="140" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="fe-mobile-2" data-padding="18" x="210" y="547" class="sans node-title"><tspan x="210" y="547">features</tspan><tspan x="210" dy="32" class="node-copy">expone APIs públicas</tspan></text><path class="flow" d="M210 645V702"/><rect id="fe-mobile-3" x="52" y="710" width="316" height="140" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="fe-mobile-3" data-padding="18" x="210" y="752" class="sans node-title"><tspan x="210" y="752">shared</tspan><tspan x="210" dy="32" class="node-copy">UI, hooks y utilidades</tspan></text><rect id="fe-mobile-rule" x="52" y="920" width="316" height="150" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="fe-mobile-rule" data-padding="18" x="210" y="958" class="sans node-copy"><tspan x="210">Las features no se importan</tspan><tspan x="210" dy="26">ni dependen de app/store.</tspan><tspan x="210" dy="26">La composición resuelve el cruce.</tspan></text>
+</svg>

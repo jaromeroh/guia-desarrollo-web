@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Multiagente · paralelizar sin perder integración</title>
+  <desc id="desc">El orquestador delega tareas independientes con contratos de entrada y salida; cada agente produce un entregable verificable; la integración detecta conflictos y reúne evidencia antes de aceptar.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Multiagente · paralelizar sin perder integración</text>
+  <text x="48" y="91" class="sans subtitle">La concurrencia sirve cuando los límites y entregables son explícitos</text><rect id="ma-orch" x="430" y="125" width="340" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="ma-orch" data-padding="18" x="600" y="167" class="sans node-title"><tspan x="600" y="167">Orquestador</tspan><tspan x="600" dy="32" class="node-copy">divide · limita</tspan><tspan x="600" dy="24" class="node-copy">define aceptación</tspan></text><rect id="ma-agent-0" x="55" y="350" width="310" height="175" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ma-agent-0" data-padding="18" x="210" y="392" class="sans node-title"><tspan x="210" y="392">Backend</tspan><tspan x="210" dy="32" class="node-copy">API y dominio</tspan><tspan x="210" dy="24" class="node-copy">contrato A</tspan></text><path class="flow" d="M600 255V300H210V346"/><rect id="ma-agent-1" x="445" y="350" width="310" height="175" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ma-agent-1" data-padding="18" x="600" y="392" class="sans node-title"><tspan x="600" y="392">Frontend</tspan><tspan x="600" dy="32" class="node-copy">interfaz y estados</tspan><tspan x="600" dy="24" class="node-copy">contrato B</tspan></text><path class="flow" d="M600 255V300H600V346"/><rect id="ma-agent-2" x="835" y="350" width="310" height="175" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="ma-agent-2" data-padding="18" x="990" y="392" class="sans node-title"><tspan x="990" y="392">Verificación</tspan><tspan x="990" dy="32" class="node-copy">pruebas y revisión</tspan><tspan x="990" dy="24" class="node-copy">evidencia C</tspan></text><path class="flow" d="M600 255V300H990V346"/><rect id="ma-integrate" x="390" y="610" width="420" height="110" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="ma-integrate" data-padding="18" x="600" y="652" class="sans node-title"><tspan x="600" y="652">Integración</tspan><tspan x="600" dy="32" class="node-copy">conflictos · pruebas · revisión</tspan></text><path class="flow" d="M210 525V565H600V606"/><path class="flow" d="M600 525V565H600V606"/><path class="flow" d="M990 525V565H600V606"/><rect id="ma-contract" x="490" y="282" width="220" height="36" rx="8" fill="#FFFDFA"/><text data-container="ma-contract" data-padding="6" x="600" y="306" class="sans label">entrada y salida definidas</text>
+</svg>

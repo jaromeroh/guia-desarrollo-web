@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+  <title id="title">Dos decisiones arquitectónicas que pueden combinarse</title>
+  <desc id="desc">La organización de responsabilidades puede concentrarse en una aplicación principal o distribuirse entre servicios autónomos. La ejecución puede usar capacidad de larga duración o activarse mediante eventos administrados. Ambas decisiones forman un continuo y pueden combinarse.</desc>
+  <style>
+    .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.tag{font-size:18px;font-weight:760;letter-spacing:2px;fill:#31536A}.question{font-size:24px;font-weight:760}.end{font-size:18px;font-weight:700}.copy{font-size:17px;fill:#59636D}.axis{font-size:18px;font-weight:750;fill:#59636D;text-anchor:middle}.cell-title{font-size:22px;font-weight:750;text-anchor:middle}.cell-copy{font-size:17px;fill:#59636D;text-anchor:middle}.note{font-size:17px;fill:#59636D;text-anchor:middle}
+  </style>
+  <rect width="1100" height="760" fill="#F2EEE6"/>
+  <rect x="34" y="34" width="1032" height="692" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="68" y="80" class="sans tag">DOS DECISIONES INDEPENDIENTES</text>
+
+  <rect x="68" y="112" width="464" height="132" rx="20" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="94" y="150" class="sans question">1. ¿Cómo agrupo responsabilidades?</text>
+  <text x="94" y="188" class="sans end">Una app principal</text>
+  <text x="506" y="188" class="sans end" text-anchor="end">Servicios autónomos</text>
+  <line x1="218" y1="206" x2="382" y2="206" stroke="#31536A" stroke-width="3"/>
+  <circle cx="218" cy="206" r="6" fill="#31536A"/><circle cx="382" cy="206" r="6" fill="#31536A"/>
+  <text x="300" y="232" class="sans copy" text-anchor="middle">un continuo, no dos plantillas rígidas</text>
+
+  <rect x="568" y="112" width="464" height="132" rx="20" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="594" y="150" class="sans question">2. ¿Cómo aprovisiono ejecución?</text>
+  <text x="594" y="188" class="sans end">Capacidad duradera</text>
+  <text x="1006" y="188" class="sans end" text-anchor="end">Activación por eventos</text>
+  <line x1="744" y1="206" x2="856" y2="206" stroke="#B68125" stroke-width="3"/>
+  <circle cx="744" cy="206" r="6" fill="#B68125"/><circle cx="856" cy="206" r="6" fill="#B68125"/>
+  <text x="800" y="232" class="sans copy" text-anchor="middle">procesos, contenedores, funciones o isolates</text>
+
+  <text x="395" y="286" class="sans axis">UNA UNIDAD PRINCIPAL</text>
+  <text x="775" y="286" class="sans axis">SERVICIOS AUTÓNOMOS</text>
+  <text x="138" y="394" class="sans axis" transform="rotate(-90 138 394)">DURADERA</text>
+  <text x="138" y="570" class="sans axis" transform="rotate(-90 138 570)">POR EVENTOS</text>
+
+  <rect x="180" y="306" width="380" height="176" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+  <text x="370" y="356" class="sans cell-title">Aplicación modular</text>
+  <text x="370" y="392" class="sans cell-copy">un proceso o contenedor principal</text>
+  <text x="370" y="424" class="sans cell-copy">módulos internos bien delimitados</text>
+  <text x="370" y="456" class="sans cell-copy">operación concentrada</text>
+
+  <rect x="560" y="306" width="380" height="176" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/>
+  <text x="750" y="356" class="sans cell-title">Servicios desplegables</text>
+  <text x="750" y="392" class="sans cell-copy">varios procesos o contenedores</text>
+  <text x="750" y="424" class="sans cell-copy">red y observabilidad obligatorias</text>
+  <text x="750" y="456" class="sans cell-copy">autonomía con coste operativo</text>
+
+  <rect x="180" y="482" width="380" height="176" fill="#F7F4ED" stroke="#A9A49B" stroke-width="2.5"/>
+  <text x="370" y="532" class="sans cell-title">Artefactos generados</text>
+  <text x="370" y="568" class="sans cell-copy">una base de código puede producir</text>
+  <text x="370" y="600" class="sans cell-copy">funciones, contenido estático o edge</text>
+  <text x="370" y="632" class="sans cell-copy">según framework y plataforma</text>
+
+  <rect x="560" y="482" width="380" height="176" fill="#F5ECD8" stroke="#B68125" stroke-width="2.5"/>
+  <text x="750" y="532" class="sans cell-title">Servicios por evento</text>
+  <text x="750" y="568" class="sans cell-copy">funciones, colas y consumidores</text>
+  <text x="750" y="600" class="sans cell-copy">límites y escalado por producto</text>
+  <text x="750" y="632" class="sans cell-copy">coordinación distribuida</text>
+
+  <text x="550" y="700" class="sans note">Los contenedores administrados y otros servicios ocupan posiciones intermedias.</text>
+</svg>

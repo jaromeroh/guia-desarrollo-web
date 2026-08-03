@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">API-first · trabajo paralelo con un contrato</title>
+  <desc id="desc">Consumidor y proveedor acuerdan un contrato, desarrollan en paralelo contra mocks y pruebas, y se integran verificando el mismo contrato.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">API-first · trabajo paralelo con un contrato</text>
+  <text x="48" y="91" class="sans subtitle">Diseñar el intercambio antes de acoplar implementaciones</text><rect id="api-contract" x="420" y="135" width="360" height="125" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="api-contract" data-padding="18" x="600" y="177" class="sans node-title"><tspan x="600" y="177">Contrato acordado</tspan><tspan x="600" dy="32" class="node-copy">OpenAPI · esquema · ejemplos</tspan></text><rect id="api-front" x="135" y="350" width="360" height="150" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="api-front" data-padding="18" x="315" y="392" class="sans node-title"><tspan x="315" y="392">Consumidor</tspan><tspan x="315" dy="32" class="node-copy">frontend o cliente</tspan><tspan x="315" dy="24" class="node-copy">trabaja contra un mock</tspan></text><rect id="api-back" x="705" y="350" width="360" height="150" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="api-back" data-padding="18" x="885" y="392" class="sans node-title"><tspan x="885" y="392">Proveedor</tspan><tspan x="885" dy="32" class="node-copy">backend o servicio</tspan><tspan x="885" dy="24" class="node-copy">implementa y valida</tspan></text><rect id="api-integrate" x="420" y="555" width="360" height="105" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="api-integrate" data-padding="18" x="600" y="597" class="sans node-title"><tspan x="600" y="597">Integración verificable</tspan><tspan x="600" dy="32" class="node-copy">pruebas de contrato</tspan></text><path class="flow" d="M510 260V315H315V346"/><path class="flow" d="M690 260V315H885V346"/><path class="flow" d="M315 500V530H510V551"/><path class="flow" d="M885 500V530H690V551"/>
+</svg>

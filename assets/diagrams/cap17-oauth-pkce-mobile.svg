@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1370" role="img" aria-labelledby="title desc">
+  <title id="title">Authorization Code con PKCE</title>
+  <desc id="desc">La aplicación crea un verifier y envía solo su challenge al servidor de autorización; después canjea el código junto con el verifier. Un código interceptado no basta para obtener tokens.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1370" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1338" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">SECUENCIA PKCE</text><rect id="pkce-mobile-0" x="52" y="92" width="316" height="150" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="pkce-mobile-0" data-padding="18" x="210" y="134" class="sans node-title"><tspan x="210" y="134">1 · Preparar</tspan><tspan x="210" dy="32" class="node-copy">verifier · challenge</tspan><tspan x="210" dy="24" class="node-copy">state</tspan></text><path class="flow" d="M210 242V304"/><rect id="pkce-mobile-1" x="52" y="312" width="316" height="150" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="pkce-mobile-1" data-padding="18" x="210" y="354" class="sans node-title"><tspan x="210" y="354">2 · Autorizar</tspan><tspan x="210" dy="32" class="node-copy">enviar challenge</tspan><tspan x="210" dy="24" class="node-copy">autenticar a la persona</tspan></text><path class="flow" d="M210 462V524"/><rect id="pkce-mobile-2" x="52" y="532" width="316" height="150" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="pkce-mobile-2" data-padding="18" x="210" y="574" class="sans node-title"><tspan x="210" y="574">3 · Recibir código</tspan><tspan x="210" dy="32" class="node-copy">validar respuesta</tspan><tspan x="210" dy="24" class="node-copy">y contexto</tspan></text><path class="flow" d="M210 682V744"/><rect id="pkce-mobile-3" x="52" y="752" width="316" height="150" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="pkce-mobile-3" data-padding="18" x="210" y="794" class="sans node-title"><tspan x="210" y="794">4 · Canjear</tspan><tspan x="210" dy="32" class="node-copy">código + verifier</tspan><tspan x="210" dy="24" class="node-copy">al token endpoint</tspan></text><path class="flow" d="M210 902V964"/><rect id="pkce-mobile-4" x="52" y="972" width="316" height="150" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="pkce-mobile-4" data-padding="18" x="210" y="1014" class="sans node-title"><tspan x="210" y="1014">5 · Usar token</tspan><tspan x="210" dy="32" class="node-copy">limitar audiencia</tspan><tspan x="210" dy="24" class="node-copy">alcance y vigencia</tspan></text><rect id="pkce-mobile-note" x="52" y="1190" width="316" height="115" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2"/><text data-container="pkce-mobile-note" data-padding="16" x="210" y="1226" class="sans node-copy"><tspan x="210">PKCE protege el canje del código.</tspan><tspan x="210" dy="25">OIDC añade identidad;</tspan><tspan x="210" dy="25">OAuth delega acceso.</tspan></text>
+</svg>

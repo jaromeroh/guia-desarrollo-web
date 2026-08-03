@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1040" role="img" aria-labelledby="title desc">
+  <title id="title">Validación en cliente y servidor en composición vertical</title>
+  <desc id="desc">El cliente ayuda a corregir datos. Después de cruzar la frontera de confianza, el servidor analiza, valida y autoriza antes de aceptar la operación.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <marker id="return-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#59636D"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:14px;font-weight:760;letter-spacing:1.5px;fill:#31536A}.title{font-size:23px;font-weight:760;text-anchor:middle}.copy{font-size:16px;fill:#59636D;text-anchor:middle}.item{font-size:16px;font-weight:650;text-anchor:start}.boundary{font-size: 14px;font-weight:720;letter-spacing:1px;fill:#59636D;text-anchor:middle}.flow{stroke:#31536A;stroke-width:3.5;fill:none;marker-end:url(#arrow)}.return{stroke:#59636D;stroke-width:3;stroke-dasharray:9 7;fill:none;marker-end:url(#return-arrow)}
+    </style>
+  </defs>
+  <rect width="420" height="1040" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1008" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="36" y="50" class="sans tag">AYUDA Y AUTORIDAD</text>
+
+  <rect x="44" y="78" width="332" height="306" rx="20" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+  <text x="210" y="122" class="sans title">Cliente</text>
+  <text x="210" y="153" class="sans copy">ayuda a corregir pronto</text>
+  <rect x="76" y="184" width="268" height="142" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+  <text x="98" y="221" class="mono item">required</text>
+  <text x="98" y="258" class="mono item">minlength="3"</text>
+  <text x="98" y="295" class="sans item">mensaje junto al campo</text>
+  <text x="210" y="356" class="sans copy">experiencia útil, datos aún no confiables</text>
+
+  <line class="flow" x1="180" y1="384" x2="180" y2="474"/>
+  <text x="272" y="432" class="sans copy">datos propuestos</text>
+  <line x1="36" y1="454" x2="384" y2="454" stroke="#B95736" stroke-width="3" stroke-dasharray="9 8"/>
+  <rect x="116" y="437" width="188" height="34" rx="11" fill="#FFFDFA"/>
+  <text x="210" y="460" class="sans boundary">FRONTERA DE CONFIANZA</text>
+
+  <rect x="44" y="486" width="332" height="354" rx="20" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/>
+  <text x="210" y="530" class="sans title">Servidor</text>
+  <text x="210" y="561" class="sans copy">decide si la operación es aceptable</text>
+  <rect x="76" y="592" width="268" height="190" rx="14" fill="#FFFDFA" stroke="#B95736" stroke-width="2"/>
+  <text x="98" y="631" class="sans item">1. Analiza y normaliza</text>
+  <text x="98" y="670" class="sans item">2. Valida el contrato</text>
+  <text x="98" y="709" class="sans item">3. Autentica y autoriza</text>
+  <text x="98" y="748" class="sans item">4. Acepta o rechaza</text>
+  <text x="210" y="813" class="sans copy">protege la integridad del sistema</text>
+
+  <path class="return" d="M240 840 V894 H70 V390"/>
+  <rect x="110" y="876" width="200" height="36" rx="11" fill="#FFFDFA"/>
+  <text x="210" y="901" class="sans copy">resultado o errores</text>
+  <text x="210" y="972" class="sans title">El cliente propone;</text>
+  <text x="210" y="1002" class="sans title">el servidor decide.</text>
+</svg>

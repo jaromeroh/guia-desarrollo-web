@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1410" role="img" aria-labelledby="title desc">
+  <title id="title">Elegir el nivel por la pregunta</title>
+  <desc id="desc">Una prueba unitaria aísla una regla, una de integración comprueba colaboraciones y una E2E recorre el sistema visible. El análisis estático atraviesa todo el código y detecta otra clase de defectos.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1410" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1378" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">COMPARACIÓN ESTRUCTURADA</text><rect id="mobile-card-0" x="38" y="92" width="344" height="372" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="mobile-card-0" data-padding="18" x="210" y="137" class="sans node-title"><tspan x="210" y="137">Unit</tspan></text><text x="62" y="184" class="sans tag">MODELO</text><text x="62" y="209" class="sans small">regla pura y determinista</text><text x="62" y="230" class="sans small">sin red, DOM ni disco</text><text x="62" y="272" class="sans tag">ENCAJA CUANDO</text><text x="62" y="297" class="sans small">cálculos · validadores</text><text x="62" y="318" class="sans small">transformaciones · estados</text><text x="62" y="360" class="sans tag">COSTE A OPERAR</text><text x="62" y="385" class="sans small">mocks excesivos</text><text x="62" y="406" class="sans small">pueden ocultar integración</text><rect id="mobile-card-1" x="38" y="512" width="344" height="372" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="mobile-card-1" data-padding="18" x="210" y="557" class="sans node-title"><tspan x="210" y="557">Integration</tspan></text><text x="62" y="604" class="sans tag">MODELO</text><text x="62" y="629" class="sans small">piezas colaboran</text><text x="62" y="650" class="sans small">en una frontera observable</text><text x="62" y="692" class="sans tag">ENCAJA CUANDO</text><text x="62" y="717" class="sans small">componentes · API · DB</text><text x="62" y="738" class="sans small">contratos y errores</text><text x="62" y="780" class="sans tag">COSTE A OPERAR</text><text x="62" y="805" class="sans small">datos de prueba</text><text x="62" y="826" class="sans small">entorno y limpieza</text><rect id="mobile-card-2" x="38" y="932" width="344" height="372" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="mobile-card-2" data-padding="18" x="210" y="977" class="sans node-title"><tspan x="210" y="977">End-to-end</tspan></text><text x="62" y="1024" class="sans tag">MODELO</text><text x="62" y="1049" class="sans small">flujo crítico completo</text><text x="62" y="1070" class="sans small">desde la interfaz</text><text x="62" y="1112" class="sans tag">ENCAJA CUANDO</text><text x="62" y="1137" class="sans small">checkout · acceso</text><text x="62" y="1158" class="sans small">onboarding · pago</text><text x="62" y="1200" class="sans tag">COSTE A OPERAR</text><text x="62" y="1225" class="sans small">tiempo · diagnóstico</text><text x="62" y="1246" class="sans small">variabilidad del entorno</text>
+</svg>

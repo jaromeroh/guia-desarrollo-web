@@ -1,0 +1,14 @@
+{
+  "title": "El Arte del Desarrollo Web Moderno",
+  "description": "Fundamentos para diseñar, construir y operar aplicaciones web en la era de la IA",
+  "language": "es",
+  "structure": {
+    "readme": "README.md",
+    "summary": "SUMMARY.md"
+  },
+  "pluginsConfig": {
+    "lunr": {
+      "maxIndexSize": 2000000
+    }
+  }
+}

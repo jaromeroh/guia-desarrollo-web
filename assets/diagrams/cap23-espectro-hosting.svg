@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Hosting · responsabilidad frente a abstracción</title>
+  <desc id="desc">Infraestructura ofrece mayor control operativo; una plataforma o contenedor administrado comparte responsabilidades; funciones y edge administran más del runtime, pero imponen contratos y límites específicos.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Hosting · responsabilidad frente a abstracción</text>
+  <text x="48" y="91" class="sans subtitle">Elige por requisitos y capacidad operativa, no por prestigio técnico</text><rect id="card-0" x="55" y="145" width="344" height="465" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="card-0" data-padding="18" x="227" y="195" class="sans node-title"><tspan x="227" y="195">Infraestructura</tspan></text><text x="83" y="250" class="sans tag">MODELO</text><text x="83" y="281" class="sans small"><tspan x="83" y="281">VM · red · sistema</tspan><tspan x="83" y="305">configurados por el equipo</tspan></text><text x="83" y="362" class="sans tag">ENCAJA CUANDO</text><text x="83" y="393" class="sans small"><tspan x="83" y="393">runtime o red especiales</tspan><tspan x="83" y="417">control fino</tspan></text><text x="83" y="474" class="sans tag">COSTE A OPERAR</text><text x="83" y="505" class="sans small"><tspan x="83" y="505">parches · capacidad</tspan><tspan x="83" y="529">recuperación · guardias</tspan></text><rect id="card-1" x="437" y="145" width="344" height="465" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="card-1" data-padding="18" x="609" y="195" class="sans node-title"><tspan x="609" y="195">Plataforma</tspan></text><text x="465" y="250" class="sans tag">MODELO</text><text x="465" y="281" class="sans small"><tspan x="465" y="281">app o contenedor</tspan><tspan x="465" y="305">ciclo administrado</tspan></text><text x="465" y="362" class="sans tag">ENCAJA CUANDO</text><text x="465" y="393" class="sans small"><tspan x="465" y="393">servicio web común</tspan><tspan x="465" y="417">equipo pequeño o medio</tspan></text><text x="465" y="474" class="sans tag">COSTE A OPERAR</text><text x="465" y="505" class="sans small"><tspan x="465" y="505">límites del producto</tspan><tspan x="465" y="529">red y portabilidad</tspan></text><rect id="card-2" x="819" y="145" width="344" height="465" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="card-2" data-padding="18" x="991" y="195" class="sans node-title"><tspan x="991" y="195">Funciones y edge</tspan></text><text x="847" y="250" class="sans tag">MODELO</text><text x="847" y="281" class="sans small"><tspan x="847" y="281">ejecución por evento</tspan><tspan x="847" y="305">distribución gestionada</tspan></text><text x="847" y="362" class="sans tag">ENCAJA CUANDO</text><text x="847" y="393" class="sans small"><tspan x="847" y="393">carga variable</tspan><tspan x="847" y="417">trabajo cercano y acotado</tspan></text><text x="847" y="474" class="sans tag">COSTE A OPERAR</text><text x="847" y="505" class="sans small"><tspan x="847" y="505">cuotas · latencia a datos</tspan><tspan x="847" y="529">runtime específico</tspan></text>
+</svg>

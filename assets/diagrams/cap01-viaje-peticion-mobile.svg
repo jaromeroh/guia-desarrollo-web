@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Viaje vertical simplificado de una petición web</title>
+  <desc id="desc">Siete pasos: resolver el dominio, establecer una conexión segura, enviar la solicitud por un intermediario opcional, validar y aplicar reglas, consultar datos, devolver la respuesta y actualizar la interfaz.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#59636D"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:14px;font-weight:760;letter-spacing:1.5px;fill:#31536A}.step-title{font-size:19px;font-weight:750}.copy{font-size:14px;fill:#59636D}.literal{font-size:14px}.flow{stroke:#59636D;stroke-width:3.5;fill:none;marker-end:url(#arrow)}.number{font-size:16px;font-weight:760;fill:#FFFDFA;text-anchor:middle;dominant-baseline:central}
+    </style>
+  </defs>
+  <rect width="420" height="1080" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1048" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="36" y="50" class="sans tag">VIAJE DE UNA PETICIÓN</text>
+
+  <line class="flow" x1="68" y1="106" x2="68" y2="986"/>
+
+  <g>
+    <circle cx="68" cy="106" r="22" fill="#31536A"/><text x="68" y="106" class="sans number">1</text>
+    <rect x="108" y="76" width="268" height="92" rx="16" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+    <text x="128" y="110" class="sans step-title">Resolver el dominio</text><text x="128" y="141" class="mono literal">DNS: nombre → dirección</text>
+
+    <circle cx="68" cy="240" r="22" fill="#31536A"/><text x="68" y="240" class="sans number">2</text>
+    <rect x="108" y="210" width="268" height="92" rx="16" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+    <text x="128" y="244" class="sans step-title">Conexión segura</text><text x="128" y="275" class="sans copy">transporte y negociación TLS</text>
+
+    <circle cx="68" cy="374" r="22" fill="#31536A"/><text x="68" y="374" class="sans number">3</text>
+    <rect x="108" y="334" width="268" height="106" rx="16" fill="#F7F4ED" stroke="#A9A49B" stroke-width="2.5"/>
+    <text x="128" y="369" class="sans step-title">Enviar la solicitud</text><text x="128" y="399" class="mono literal">GET /perfil</text><text x="128" y="424" class="sans copy">edge o proxy pueden intermediar</text>
+
+    <circle cx="68" cy="520" r="22" fill="#B95736"/><text x="68" y="520" class="sans number">4</text>
+    <rect x="108" y="480" width="268" height="106" rx="16" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/>
+    <text x="128" y="515" class="sans step-title">Procesar en la aplicación</text><text x="128" y="546" class="sans copy">validar · autorizar · aplicar reglas</text><text x="128" y="571" class="sans copy">decidir qué dependencias usar</text>
+
+    <circle cx="68" cy="666" r="22" fill="#B68125"/><text x="68" y="666" class="sans number">5</text>
+    <rect x="108" y="626" width="268" height="106" rx="16" fill="#F5ECD8" stroke="#B68125" stroke-width="2.5"/>
+    <text x="128" y="661" class="sans step-title">Consultar dependencias</text><text x="128" y="692" class="sans copy">datos, caché o servicios externos</text><text x="128" y="717" class="sans copy">pueden fallar o tardar</text>
+
+    <circle cx="68" cy="812" r="22" fill="#59636D"/><text x="68" y="812" class="sans number">6</text>
+    <rect x="108" y="772" width="268" height="106" rx="16" fill="#F7F4ED" stroke="#59636D" stroke-width="2.5"/>
+    <text x="128" y="807" class="sans step-title">Devolver la respuesta</text><text x="128" y="838" class="mono literal">200 OK · HTML o JSON</text><text x="128" y="863" class="sans copy">regresa por los intermediarios</text>
+
+    <circle cx="68" cy="958" r="22" fill="#31536A"/><text x="68" y="958" class="sans number">7</text>
+    <rect x="108" y="918" width="268" height="106" rx="16" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+    <text x="128" y="953" class="sans step-title">Actualizar la interfaz</text><text x="128" y="984" class="sans copy">mostrar contenido, error o reintento</text><text x="128" y="1009" class="sans copy">según el resultado observado</text>
+  </g>
+</svg>

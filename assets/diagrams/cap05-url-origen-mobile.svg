@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1040" role="img" aria-labelledby="title desc">
+  <title id="title">Componentes de una URL y origen en composición vertical</title><desc id="desc">Esquema, host y puerto forman el origen. Ruta, consulta y fragmento ubican contenido sin cambiarlo.</desc>
+  <defs><style>.s{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.m{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:15px;font-weight:760;letter-spacing:1.4px;fill:#31536A}.head{font-size:23px;font-weight:760}.lab{font-size:14px;font-weight:760;letter-spacing:1px;text-anchor:middle}.copy{font-size:17px;fill:#59636D;text-anchor:middle}.item{font-size:18px;font-weight:700;text-anchor:middle}.url{font-size:16px;font-weight:700;text-anchor:start}.detail{font-size:15px;text-anchor:middle}</style></defs>
+  <rect width="420" height="1040" fill="#F2EEE6"/><rect x="16" y="16" width="388" height="1008" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="s tag">URL Y FRONTERA DE SEGURIDAD</text><text x="38" y="104" class="s head">¿Qué parte cambia el origen?</text>
+  <rect x="38" y="134" width="344" height="134" rx="17" fill="#F7F4ED" stroke="#A9A49B" stroke-width="2"/>
+  <text x="60" y="174" class="m url" fill="#31536A">https://app.example.com</text><text x="60" y="207" class="m url" fill="#31536A">:8443</text><text x="60" y="240" class="m url">/perfil?modo=breve#actividad</text>
+  <rect x="38" y="300" width="344" height="390" rx="20" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/><text x="210" y="342" class="s lab" fill="#31536A">DEFINEN EL ORIGEN</text>
+  <rect x="66" y="374" width="288" height="76" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text x="210" y="405" class="s lab">ESQUEMA</text><text x="210" y="434" class="m copy">https</text>
+  <rect x="66" y="468" width="288" height="76" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text x="210" y="499" class="s lab">HOST</text><text x="210" y="528" class="m copy">app.example.com</text>
+  <rect x="66" y="562" width="288" height="76" rx="14" fill="#FFFDFA" stroke="#31536A" stroke-width="2"/><text x="210" y="593" class="s lab">PUERTO</text><text x="210" y="622" class="m copy">8443</text><text x="210" y="670" class="s copy">Si cambia uno, cambia el origen.</text>
+  <rect x="38" y="722" width="344" height="202" rx="20" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/><text x="210" y="762" class="s lab" fill="#C59132">NO CAMBIAN EL ORIGEN</text><text x="210" y="808" class="m item">ruta · consulta · fragmento</text><text x="210" y="848" class="m detail">/perfil · ?modo=breve · #actividad</text><text x="210" y="890" class="s copy">Solo ubican contenido o estado.</text>
+  <text x="210" y="976" class="s copy">Dominio y origen no son sinónimos.</text>
+</svg>

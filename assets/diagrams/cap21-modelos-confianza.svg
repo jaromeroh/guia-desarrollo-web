@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">De la cantidad de tests a la evidencia útil</title>
+  <desc id="desc">La pirámide clásica optimiza coste por nivel; el Testing Trophy da más peso a la integración; una estrategia guiada por riesgo combina niveles según la propiedad que necesita demostrar.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">De la cantidad de tests a la evidencia útil</text>
+  <text x="48" y="91" class="sans subtitle">Los modelos orientan la inversión; ninguno prescribe una cuota universal</text><rect id="card-0" x="55" y="145" width="344" height="465" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="card-0" data-padding="18" x="227" y="195" class="sans node-title"><tspan x="227" y="195">Pirámide clásica</tspan></text><text x="83" y="250" class="sans tag">MODELO</text><text x="83" y="281" class="sans small"><tspan x="83" y="281">muchos unitarios</tspan><tspan x="83" y="305">menos integración y E2E</tspan></text><text x="83" y="362" class="sans tag">ENCAJA CUANDO</text><text x="83" y="393" class="sans small"><tspan x="83" y="393">unidades bien aisladas</tspan><tspan x="83" y="417">E2E costosos o inestables</tspan></text><text x="83" y="474" class="sans tag">COSTE A OPERAR</text><text x="83" y="505" class="sans small"><tspan x="83" y="505">puede premiar cantidad</tspan><tspan x="83" y="529">sin validar colaboraciones</tspan></text><rect id="card-1" x="437" y="145" width="344" height="465" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="card-1" data-padding="18" x="609" y="195" class="sans node-title"><tspan x="609" y="195">Testing Trophy</tspan></text><text x="465" y="250" class="sans tag">MODELO</text><text x="465" y="281" class="sans small"><tspan x="465" y="281">estático como base</tspan><tspan x="465" y="305">integración como foco</tspan></text><text x="465" y="362" class="sans tag">ENCAJA CUANDO</text><text x="465" y="393" class="sans small"><tspan x="465" y="393">aplicaciones web</tspan><tspan x="465" y="417">valor entre componentes</tspan></text><text x="465" y="474" class="sans tag">COSTE A OPERAR</text><text x="465" y="505" class="sans small"><tspan x="465" y="505">fixtures y fronteras reales</tspan><tspan x="465" y="529">deben ser mantenibles</tspan></text><rect id="card-2" x="819" y="145" width="344" height="465" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="card-2" data-padding="18" x="991" y="195" class="sans node-title"><tspan x="991" y="195">Guiado por riesgo</tspan></text><text x="847" y="250" class="sans tag">MODELO</text><text x="847" y="281" class="sans small"><tspan x="847" y="281">propiedad → evidencia</tspan><tspan x="847" y="305">entorno proporcional</tspan></text><text x="847" y="362" class="sans tag">ENCAJA CUANDO</text><text x="847" y="393" class="sans small"><tspan x="847" y="393">riesgos distintos</tspan><tspan x="847" y="417">por flujo y dominio</tspan></text><text x="847" y="474" class="sans tag">COSTE A OPERAR</text><text x="847" y="505" class="sans small"><tspan x="847" y="505">exige criterio explícito</tspan><tspan x="847" y="529">y revisar la estrategia</tspan></text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+  <title id="title">Dos diagramas, dos preguntas</title>
+  <desc id="desc">El mapa de contexto muestra quién usa el sistema y qué dependencias externas toca; el flujo de pago muestra el orden del proceso y sus salidas de error.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="790" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Dos diagramas, dos preguntas</text>
+  <text x="48" y="91" class="sans subtitle">Escoge la notación a partir de la pregunta que necesitas responder</text><rect x="38" y="125" width="545" height="610" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><rect x="617" y="125" width="545" height="610" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text x="66" y="165" class="sans tag">MAPA DE CONTEXTO · ¿QUIÉN SE CONECTA?</text><rect id="ctx-users" x="185" y="195" width="250" height="85" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="ctx-users" data-padding="18" x="310" y="237" class="sans node-title"><tspan x="310" y="237">Usuarios</tspan></text><rect id="ctx-app" x="185" y="345" width="250" height="105" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="ctx-app" data-padding="18" x="310" y="387" class="sans node-title"><tspan x="310" y="387">Aplicación</tspan><tspan x="310" dy="32" class="node-copy">responsabilidad propia</tspan></text><rect id="ctx-ext-0" x="68" y="540" width="150" height="100" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="ctx-ext-0" data-padding="18" x="143" y="582" class="sans node-title"><tspan x="143" y="582">Pagos</tspan><tspan x="143" dy="32" class="node-copy">Stripe</tspan></text><rect id="ctx-ext-1" x="238" y="540" width="150" height="100" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="ctx-ext-1" data-padding="18" x="313" y="582" class="sans node-title"><tspan x="313" y="582">Correo</tspan><tspan x="313" dy="32" class="node-copy">proveedor</tspan></text><rect id="ctx-ext-2" x="408" y="540" width="150" height="100" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="ctx-ext-2" data-padding="18" x="483" y="582" class="sans node-title"><tspan x="483" y="582">Archivos</tspan><tspan x="483" dy="32" class="node-copy">objetos</tspan></text><path class="flow" d="M310 280V341"/><path class="relation" d="M310 450V500M143 500H483M143 500V536M313 500V536M483 500V536"/><text x="645" y="165" class="sans tag">FLUJO · ¿QUÉ OCURRE Y EN QUÉ ORDEN?</text><rect id="pay-step-0" x="655" y="235" width="125" height="95" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="pay-step-0" data-padding="18" x="717.5" y="277" class="sans node-title"><tspan x="717.5" y="277">Enviar</tspan></text><path class="flow" d="M780 282H796"/><rect id="pay-step-1" x="800" y="235" width="125" height="95" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="pay-step-1" data-padding="18" x="862.5" y="277" class="sans node-title"><tspan x="862.5" y="277">Validar</tspan></text><path class="flow" d="M925 282H941"/><rect id="pay-step-2" x="945" y="235" width="125" height="95" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="pay-step-2" data-padding="18" x="1007.5" y="277" class="sans node-title"><tspan x="1007.5" y="277">Cobrar</tspan></text><rect id="pay-confirm" x="945" y="420" width="165" height="100" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="pay-confirm" data-padding="18" x="1027.5" y="462" class="sans node-title"><tspan x="1027.5" y="462">Confirmar</tspan><tspan x="1027.5" dy="32" class="node-copy">correo</tspan></text><rect id="pay-user-error" x="700" y="420" width="165" height="100" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="pay-user-error" data-padding="18" x="782.5" y="462" class="sans node-title"><tspan x="782.5" y="462">Corregir</tspan><tspan x="782.5" dy="32" class="node-copy">datos</tspan></text><rect id="pay-provider-error" x="945" y="575" width="165" height="100" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="pay-provider-error" data-padding="18" x="1027.5" y="617" class="sans node-title"><tspan x="1027.5" y="617">Recuperar</tspan><tspan x="1027.5" dy="32" class="node-copy">fallo de pago</tspan></text><path class="flow" d="M1007 330V416"/><path class="risk-flow" d="M862 330V416"/><path class="risk-flow" d="M1027 520V571"/>
+</svg>

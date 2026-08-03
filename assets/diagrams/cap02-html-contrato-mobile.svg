@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1120" role="img" aria-labelledby="title desc">
+  <title id="title">HTML semántico como contrato inicial en composición vertical</title>
+  <desc id="desc">El HTML semántico es interpretado por el navegador para producir estructura, comportamiento nativo y una base accesible.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:14px;font-weight:760;letter-spacing:1.5px;fill:#31536A}.title{font-size:22px;font-weight:760;text-anchor:middle}.copy{font-size:16px;fill:#59636D;text-anchor:middle}.code{font-size:17px;text-anchor:middle}.flow{stroke:#31536A;stroke-width:3.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="420" height="1120" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1088" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="36" y="50" class="sans tag">HTML COMO CONTRATO</text>
+
+  <rect x="44" y="78" width="332" height="216" rx="20" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+  <text x="210" y="120" class="sans title">HTML semántico</text>
+  <text x="210" y="150" class="sans copy">declara qué representa cada parte</text>
+  <rect x="78" y="176" width="264" height="82" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2"/>
+  <text x="210" y="208" class="mono code">&lt;header&gt; · &lt;nav&gt;</text>
+  <text x="210" y="237" class="mono code">&lt;main&gt; · &lt;form&gt;</text>
+
+  <line class="flow" x1="210" y1="294" x2="210" y2="342"/>
+  <rect x="72" y="348" width="276" height="142" rx="20" fill="#F7F4ED" stroke="#A9A49B" stroke-width="2.5"/>
+  <text x="210" y="394" class="sans title">Navegador</text>
+  <text x="210" y="428" class="sans copy">interpreta elementos y relaciones</text>
+  <text x="210" y="458" class="sans copy">antes de aplicar mejoras</text>
+
+  <line class="flow" x1="210" y1="490" x2="210" y2="538"/>
+  <rect x="44" y="544" width="332" height="136" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/>
+  <text x="210" y="588" class="sans title">Estructura</text>
+  <text x="210" y="620" class="sans copy">regiones · encabezados · listas</text>
+  <text x="210" y="650" class="sans copy">forman un documento comprensible</text>
+
+  <line class="flow" x1="210" y1="680" x2="210" y2="728"/>
+  <rect x="44" y="734" width="332" height="136" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="2.5"/>
+  <text x="210" y="778" class="sans title">Comportamiento nativo</text>
+  <text x="210" y="810" class="sans copy">navegar · enfocar · seleccionar</text>
+  <text x="210" y="840" class="sans copy">y enviar formularios</text>
+
+  <line class="flow" x1="210" y1="870" x2="210" y2="918"/>
+  <rect x="44" y="924" width="332" height="136" rx="18" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/>
+  <text x="210" y="968" class="sans title">Accesibilidad</text>
+  <text x="210" y="1000" class="sans copy">nombres · roles · relaciones</text>
+  <text x="210" y="1030" class="sans copy">alimentan el árbol accesible</text>
+  <text x="210" y="1082" class="sans copy">CSS presenta · JavaScript amplía</text>
+</svg>

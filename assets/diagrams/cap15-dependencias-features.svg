@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Las dependencias apuntan hacia módulos estables</title>
+  <desc id="desc">El nivel app compone páginas y proveedores; las páginas consumen APIs públicas de features; las features usan shared. Las features no se importan entre sí ni dependen del nivel app.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Las dependencias apuntan hacia módulos estables</text>
+  <text x="48" y="91" class="sans subtitle">Componer arriba; reutilizar abajo; evitar atajos globales</text><rect id="fe-app" x="435" y="135" width="330" height="110" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="fe-app" data-padding="18" x="600" y="177" class="sans node-title"><tspan x="600" y="177">app</tspan><tspan x="600" dy="32" class="node-copy">rutas · providers · composición</tspan></text><rect id="fe-pages" x="435" y="310" width="330" height="110" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="fe-pages" data-padding="18" x="600" y="352" class="sans node-title"><tspan x="600" y="352">pages</tspan><tspan x="600" dy="32" class="node-copy">ensamblan recorridos</tspan></text><rect id="fe-auth" x="105" y="505" width="250" height="115" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="fe-auth" data-padding="18" x="230" y="547" class="sans node-title"><tspan x="230" y="547">feature/auth</tspan><tspan x="230" dy="32" class="node-copy">API pública</tspan></text><rect id="fe-cart" x="475" y="505" width="250" height="115" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="fe-cart" data-padding="18" x="600" y="547" class="sans node-title"><tspan x="600" y="547">feature/cart</tspan><tspan x="600" dy="32" class="node-copy">API pública</tspan></text><rect id="fe-products" x="845" y="505" width="250" height="115" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="fe-products" data-padding="18" x="970" y="547" class="sans node-title"><tspan x="970" y="547">feature/products</tspan><tspan x="970" dy="32" class="node-copy">API pública</tspan></text><rect id="fe-shared" x="875" y="285" width="250" height="115" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="fe-shared" data-padding="18" x="1000" y="327" class="sans node-title"><tspan x="1000" y="327">shared</tspan><tspan x="1000" dy="32" class="node-copy">UI · hooks · utilidades</tspan></text><path class="flow" d="M600 245V306"/><path class="flow" d="M520 420V460H230V501"/><path class="flow" d="M600 420V501"/><path class="flow" d="M680 420V460H970V501"/><path class="flow" d="M970 505V404"/><path class="flow" d="M725 562H815V400H871"/><path class="flow" d="M355 562H410V365H431"/><path d="M355 470H845" stroke="#B95736" stroke-width="3" stroke-dasharray="10 8"/><text x="600" y="455" class="sans label" fill="#B95736">sin imports entre features</text>
+</svg>

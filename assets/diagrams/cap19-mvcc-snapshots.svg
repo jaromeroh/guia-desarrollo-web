@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">MVCC · cada sentencia lee un snapshot permitido</title>
+  <desc id="desc">Una transacción puede seguir viendo una versión anterior mientras otra confirma una versión nueva. Qué snapshot usa cada sentencia depende del nivel de aislamiento; MVCC no elimina los conflictos entre escritores.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">MVCC · cada sentencia lee un snapshot permitido</text>
+  <text x="48" y="91" class="sans subtitle">Versiones visibles en lugar de bloquear todas las lecturas</text><rect id="mv-row-1" x="430" y="145" width="340" height="105" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="mv-row-1" data-padding="18" x="600" y="187" class="sans node-title"><tspan x="600" y="187">Versión v1</tspan><tspan x="600" dy="32" class="node-copy">precio = 100 · visible para A</tspan></text><rect id="mv-a" x="70" y="300" width="280" height="150" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="mv-a" data-padding="18" x="210" y="342" class="sans node-title"><tspan x="210" y="342">Transacción A</tspan><tspan x="210" dy="32" class="node-copy">snapshot anterior</tspan><tspan x="210" dy="24" class="node-copy">continúa leyendo v1</tspan></text><rect id="mv-b" x="850" y="300" width="280" height="150" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="mv-b" data-padding="18" x="990" y="342" class="sans node-title"><tspan x="990" y="342">Transacción B</tspan><tspan x="990" dy="32" class="node-copy">actualiza a 120</tspan><tspan x="990" dy="24" class="node-copy">y confirma</tspan></text><rect id="mv-row-2" x="430" y="500" width="340" height="105" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="mv-row-2" data-padding="18" x="600" y="542" class="sans node-title"><tspan x="600" y="542">Versión v2</tspan><tspan x="600" dy="32" class="node-copy">precio = 120 · visible después</tspan></text><path class="flow" d="M350 365H426"/><path class="flow" d="M850 365H774"/><path class="risk-flow" d="M990 450V552H774"/><path class="flow" d="M430 552H350V454"/><rect id="mv-label-old" x="350" y="315" width="80" height="34" rx="8" fill="#FFFDFA"/><text data-container="mv-label-old" data-padding="6" x="390" y="338" class="sans label">lee v1</text><rect id="mv-label-write" x="770" y="315" width="80" height="34" rx="8" fill="#FFFDFA"/><text data-container="mv-label-write" data-padding="6" x="810" y="338" class="sans label">escribe</text><rect id="mv-label-new" x="350" y="535" width="80" height="34" rx="8" fill="#FFFDFA"/><text data-container="mv-label-new" data-padding="6" x="390" y="558" class="sans label">después</text><rect id="mv-note" x="300" y="620" width="600" height="70" rx="12" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="mv-note" data-padding="12" x="600" y="662" class="sans node-copy">El aislamiento decide cuándo una transacción puede observar v2.</text>
+</svg>

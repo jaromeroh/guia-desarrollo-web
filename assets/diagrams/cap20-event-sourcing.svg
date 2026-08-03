@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Event Sourcing · el estado se deriva del historial</title>
+  <desc id="desc">Cada evento aceptado se añade a un stream; un fold aplica los eventos en orden para reconstruir el estado. Un snapshot acelera la carga, pero no reemplaza los eventos posteriores ni el versionado del contrato.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Event Sourcing · el estado se deriva del historial</text>
+  <text x="48" y="91" class="sans subtitle">Guardar hechos inmutables cambia el modelo de escritura, lectura y evolución</text><rect id="es-1" x="55" y="180" width="205" height="105" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="es-1" data-padding="18" x="157.5" y="220" class="sans node-title"><tspan x="157.5" y="220">1 · Cuenta</tspan><tspan x="157.5" dy="32" class="node-copy">creada · saldo 0</tspan></text><rect id="es-2" x="300" y="180" width="205" height="105" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="es-2" data-padding="18" x="402.5" y="220" class="sans node-title"><tspan x="402.5" y="220">2 · Depositar</tspan><tspan x="402.5" dy="32" class="node-copy">+200</tspan></text><rect id="es-3" x="545" y="180" width="205" height="105" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="es-3" data-padding="18" x="647.5" y="220" class="sans node-title"><tspan x="647.5" y="220">3 · Retirar</tspan><tspan x="647.5" dy="32" class="node-copy">−50</tspan></text><path class="flow" d="M260 232H296"/><path class="flow" d="M505 232H541"/><rect id="es-fold" x="850" y="180" width="285" height="105" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="es-fold" data-padding="18" x="992.5" y="222" class="sans node-title"><tspan x="992.5" y="222">Fold</tspan><tspan x="992.5" dy="32" class="node-copy">aplica eventos en orden</tspan></text><path class="flow" d="M750 232H846"/><rect id="es-snapshot" x="300" y="425" width="250" height="120" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="es-snapshot" data-padding="18" x="425" y="467" class="sans node-title"><tspan x="425" y="467">Snapshot opcional</tspan><tspan x="425" dy="32" class="node-copy">estado hasta seq 2</tspan></text><rect id="es-state" x="750" y="425" width="300" height="120" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="es-state" data-padding="18" x="900" y="467" class="sans node-title"><tspan x="900" y="467">Estado derivado</tspan><tspan x="900" dy="32" class="node-copy">saldo = 150</tspan></text><path class="flow" d="M425 545V610H900V549"/><path class="flow" d="M992 285V421"/><rect id="es-label-replay" x="580" y="592" width="180" height="34" rx="8" fill="#FFFDFA"/><text data-container="es-label-replay" data-padding="6" x="670" y="615" class="sans label">snapshot + eventos</text><rect id="es-note" x="300" y="620" width="600" height="70" rx="12" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="es-note" data-padding="12" x="600" y="662" class="sans node-copy">Replay exige eventos versionados y proyecciones deterministas.</text>
+</svg>

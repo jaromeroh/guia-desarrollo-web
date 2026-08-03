@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 960" role="img" aria-labelledby="title desc">
+  <title id="title">Del HTML y CSS a los píxeles de la pantalla</title>
+  <desc id="desc">El navegador analiza HTML para construir el DOM y CSS para construir el CSSOM. Combina ambos en una estructura de renderizado, calcula estilos y layout, y finalmente pinta y compone los píxeles.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#59636D"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:18px;font-weight:760;letter-spacing:2px;fill:#31536A}.title{font-size:29px;font-weight:750;text-anchor:middle}.copy{font-size:22px;fill:#59636D;text-anchor:middle}.code{font-size:20px;text-anchor:middle}.flow{stroke:#59636D;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="760" height="960" fill="#F2EEE6"/>
+  <rect x="34" y="34" width="692" height="892" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="68" y="80" class="sans tag">DEL CÓDIGO A LA PANTALLA</text>
+
+  <rect x="78" y="118" width="270" height="126" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="213" y="164" class="sans title">HTML</text>
+  <text x="213" y="202" class="mono code">&lt;main&gt;…&lt;/main&gt;</text>
+  <rect x="412" y="118" width="270" height="126" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="547" y="164" class="sans title">CSS</text>
+  <text x="547" y="192" class="mono code">.app {</text>
+  <text x="547" y="218" class="mono code">display: grid; }</text>
+
+  <line class="flow" x1="213" y1="244" x2="213" y2="300"/>
+  <line class="flow" x1="547" y1="244" x2="547" y2="300"/>
+
+  <rect x="78" y="306" width="270" height="132" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="213" y="354" class="sans title">DOM</text>
+  <text x="213" y="390" class="sans copy">contenido y estructura</text>
+  <text x="213" y="418" class="sans copy">expuestos a JavaScript</text>
+  <rect x="412" y="306" width="270" height="132" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="547" y="354" class="sans title">CSSOM</text>
+  <text x="547" y="390" class="sans copy">reglas y cascada</text>
+  <text x="547" y="418" class="sans copy">de estilos</text>
+
+  <path class="flow" d="M213 438 V484 H380 V520"/>
+  <path class="flow" d="M547 438 V484 H380 V520"/>
+
+  <rect x="154" y="526" width="452" height="114" rx="20" fill="#F3E6DF" stroke="#B95736" stroke-width="3"/>
+  <text x="380" y="572" class="sans title">Estructura de renderizado</text>
+  <text x="380" y="610" class="sans copy">contenido visible + estilos calculados</text>
+
+  <line class="flow" x1="380" y1="640" x2="380" y2="692"/>
+  <rect x="154" y="698" width="452" height="82" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <text x="380" y="748" class="sans title">Layout</text>
+  <text x="380" y="773" class="sans copy">tamaño y posición</text>
+
+  <line class="flow" x1="380" y1="780" x2="380" y2="824"/>
+  <rect x="214" y="830" width="332" height="60" rx="18" fill="#31536A"/>
+  <text x="380" y="869" class="sans title" fill="#FFFDFA" style="fill:#FFFDFA">Pintura y composición</text>
+</svg>

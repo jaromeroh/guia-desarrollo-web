@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">MVC · de la entrada a la respuesta</title>
+  <desc id="desc">El usuario envía una acción al controlador; el controlador coordina el modelo y selecciona una vista que presenta el resultado al usuario.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="690" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">MVC · de la entrada a la respuesta</text>
+  <text x="48" y="91" class="sans subtitle">El controlador coordina; el modelo decide y la vista presenta</text><rect x="38" y="125" width="1124" height="505" rx="24" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><rect id="mvc-user" x="75" y="265" width="190" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="mvc-user" data-padding="18" x="170" y="307" class="sans node-title"><tspan x="170" y="307">Usuario</tspan><tspan x="170" dy="32" class="node-copy">acción</tspan></text><rect id="mvc-controller" x="340" y="185" width="225" height="150" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="mvc-controller" data-padding="18" x="452.5" y="227" class="sans node-title"><tspan x="452.5" y="227">Controller</tspan><tspan x="452.5" dy="32" class="node-copy">interpreta la entrada</tspan><tspan x="452.5" dy="24" class="node-copy">coordina el flujo</tspan></text><rect id="mvc-model" x="690" y="185" width="225" height="150" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="mvc-model" data-padding="18" x="802.5" y="227" class="sans node-title"><tspan x="802.5" y="227">Model</tspan><tspan x="802.5" dy="32" class="node-copy">datos y reglas</tspan><tspan x="802.5" dy="24" class="node-copy">sin HTML ni HTTP</tspan></text><rect id="mvc-view" x="515" y="430" width="225" height="140" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="mvc-view" data-padding="18" x="627.5" y="472" class="sans node-title"><tspan x="627.5" y="472">View</tspan><tspan x="627.5" dy="32" class="node-copy">presenta el resultado</tspan></text><path class="flow" d="M265 315H336"/><text x="300" y="296" class="sans label">entrada</text><path class="flow" d="M565 250H686"/><text x="625" y="231" class="sans label">consulta o cambio</text><path class="flow" d="M802 335V398H740"/><text x="845" y="380" class="sans label">datos</text><path class="flow" d="M452 335V500H511"/><text x="425" y="410" class="sans label">selecciona</text><path class="flow" d="M515 500H180V399"/><text x="335" y="480" class="sans label">respuesta</text>
+</svg>

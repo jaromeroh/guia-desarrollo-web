@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1160" role="img" aria-labelledby="title desc">
+  <title id="title">Modelo de caja y diagnóstico de desbordamiento en composición vertical</title>
+  <desc id="desc">La caja contiene contenido, padding, borde y margen. Si el mínimo del contenido es mayor que el espacio disponible, aparece desbordamiento.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:15px;font-weight:760;letter-spacing:1.5px;fill:#31536A}.heading{font-size:23px;font-weight:760;text-anchor:middle}.copy{font-size:17px;fill:#59636D;text-anchor:middle}.item{font-size:18px;font-weight:720}.flow{stroke:#31536A;stroke-width:3.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="420" height="1160" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1128" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">TAMAÑO DECLARADO Y REAL</text>
+  <text x="210" y="104" class="sans heading">Capas de una caja</text>
+  <rect x="38" y="136" width="344" height="392" rx="18" fill="#F2EEE6" stroke="#A9A49B" stroke-width="3" stroke-dasharray="9 7"/>
+  <text x="58" y="168" class="sans item">margin</text>
+  <rect x="72" y="188" width="276" height="292" rx="16" fill="#F3E6DF" stroke="#B95736" stroke-width="4"/>
+  <text x="92" y="220" class="sans item">border</text>
+  <rect x="106" y="240" width="208" height="192" rx="14" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="126" y="272" class="sans item">padding</text>
+  <rect x="140" y="292" width="140" height="92" rx="12" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="210" y="347" class="sans item" text-anchor="middle">contenido</text>
+  <text x="210" y="512" class="sans copy">border-box incluye padding y borde</text>
+
+  <text x="210" y="594" class="sans heading">Cuando no cabe</text>
+  <rect x="42" y="628" width="336" height="98" rx="16" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="66" y="668" class="sans item">Espacio disponible</text><text x="350" y="704" class="mono item" text-anchor="end">22rem</text>
+  <path class="flow" d="M210 728V766"/>
+  <rect x="42" y="776" width="336" height="98" rx="16" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <text x="66" y="816" class="sans item">Mínimo del contenido</text><text x="350" y="852" class="mono item" text-anchor="end">30rem</text>
+  <path class="flow" d="M210 876V914"/>
+  <rect x="42" y="924" width="336" height="110" rx="16" fill="#F3E6DF" stroke="#B95736" stroke-width="3"/>
+  <text x="210" y="970" class="sans heading">Desbordamiento</text>
+  <text x="210" y="1006" class="sans copy">las restricciones no concuerdan</text>
+  <text x="210" y="1084" class="sans copy">Antes de ocultarlo, descubre qué caja</text>
+  <text x="210" y="1108" class="sans copy">no puede reducirse y por qué.</text>
+</svg>

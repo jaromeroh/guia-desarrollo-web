@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">El sistema vive en las conexiones</title>
+  <desc id="desc">Flujo para agregar un producto al carrito a través del frontend, API, servicio de carrito, inventario y base de datos. Destaca riesgos en las conexiones y el bucle de confirmación o reversión de la interfaz.</desc>
+  <defs>
+    <marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#59636d"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536a"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262e; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262e; }
+      .node { fill: #fffdfa; stroke: #a9a49b; stroke-width: 2.5; }
+      .node-blue { fill: #e8eef1; stroke: #31536a; stroke-width: 2.5; }
+      .node-ochre { fill: #f5ecd8; stroke: #b68125; stroke-width: 2.5; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706c; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-meta { font-size: 14px; fill: #72706c; text-anchor: middle; }
+      .flow { stroke: #59636d; stroke-width: 3; fill: none; marker-end: url(#arrow-ink); }
+      .feedback { stroke: #31536a; stroke-width: 3; stroke-dasharray: 10 7; fill: none; marker-end: url(#arrow-blue); }
+      .label { font-size: 14px; font-weight: 650; text-anchor: middle; }
+      .small { font-size: 13px; fill: #72706c; }
+      .risk { fill: #f3e6df; stroke: #b95736; stroke-width: 2; }
+      .risk-text { font-size: 13px; font-weight: 650; fill: #8f3f26; text-anchor: middle; }
+      .step { fill: #31536a; }
+      .step-text { font-size: 12px; font-weight: 750; fill: #fff; text-anchor: middle; dominant-baseline: central; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" fill="#f2eee6"/>
+  <text x="56" y="62" class="sans title">El sistema vive en las conexiones</text>
+  <text x="56" y="94" class="sans subtitle">Flujo «agregar al carrito» · los componentes pueden funcionar y el sistema aun así fallar</text>
+
+  <rect x="42" y="126" width="1116" height="604" rx="20" fill="#fffdfa" stroke="#d8d2c7" stroke-width="2"/>
+  <text x="66" y="158" class="sans" font-size="12" font-weight="750" letter-spacing="1.5" fill="#31536a">FRONTERA DEL SISTEMA</text>
+
+  <g>
+    <rect class="node-blue" x="70" y="232" width="205" height="142" rx="14"/>
+    <text x="172" y="267" class="sans node-title">Frontend</text>
+    <text x="172" y="295" class="sans node-meta">1. Captura el clic</text>
+    <text x="172" y="320" class="sans node-meta">2. Actualiza la UI</text>
+    <text x="172" y="345" class="sans node-meta">3. Envía la petición</text>
+
+    <rect class="node" x="350" y="232" width="190" height="142" rx="14"/>
+    <text x="445" y="267" class="sans node-title">API</text>
+    <text x="445" y="295" class="sans node-meta">Autentica</text>
+    <text x="445" y="320" class="sans node-meta">Valida entrada</text>
+    <text x="445" y="345" class="sans node-meta">Orquesta</text>
+
+    <rect class="node" x="615" y="232" width="205" height="142" rx="14"/>
+    <text x="718" y="267" class="sans node-title">Servicio de carrito</text>
+    <text x="718" y="295" class="sans node-meta">Calcula precio</text>
+    <text x="718" y="320" class="sans node-meta">Agrega el ítem</text>
+    <text x="718" y="345" class="sans node-meta">Coordina persistencia</text>
+
+    <rect class="node-ochre" x="895" y="232" width="205" height="142" rx="14"/>
+    <text x="998" y="267" class="sans node-title">Inventario</text>
+    <text x="998" y="295" class="sans node-meta">Verifica producto</text>
+    <text x="998" y="320" class="sans node-meta">Comprueba stock</text>
+    <text x="998" y="345" class="sans node-meta">Reserva unidades</text>
+  </g>
+
+  <g>
+    <line class="flow" x1="275" y1="303" x2="346" y2="303"/>
+    <circle class="step" cx="295" cy="303" r="13"/><text x="295" y="303" class="sans step-text">1</text>
+    <text x="311" y="285" class="mono label">POST /cart/items</text>
+
+    <line class="flow" x1="540" y1="303" x2="611" y2="303"/>
+    <circle class="step" cx="560" cy="303" r="13"/><text x="560" y="303" class="sans step-text">2</text>
+    <text x="575" y="285" class="sans label">datos validados</text>
+
+    <line class="flow" x1="820" y1="303" x2="891" y2="303"/>
+    <circle class="step" cx="840" cy="303" r="13"/><text x="840" y="303" class="sans step-text">3</text>
+    <text x="855" y="285" class="sans label">consultar stock</text>
+  </g>
+
+  <g>
+    <rect class="risk" x="278" y="395" width="145" height="48" rx="10"/>
+    <text x="350" y="416" class="sans risk-text">timeout</text>
+    <text x="350" y="433" class="sans risk-text">o doble clic</text>
+
+    <rect class="risk" x="548" y="395" width="162" height="48" rx="10"/>
+    <text x="629" y="416" class="sans risk-text">contrato</text>
+    <text x="629" y="433" class="sans risk-text">incompatible</text>
+
+    <rect class="risk" x="830" y="395" width="170" height="48" rx="10"/>
+    <text x="915" y="416" class="sans risk-text">stock cambia</text>
+    <text x="915" y="433" class="sans risk-text">en concurrencia</text>
+  </g>
+
+  <g>
+    <path class="flow" d="M718 374 V495 H825"/>
+    <path class="flow" d="M998 374 V495 H935"/>
+    <rect class="node-ochre" x="825" y="463" width="110" height="66" rx="14"/>
+    <text x="880" y="491" class="sans node-title">Datos</text>
+    <text x="880" y="514" class="sans node-meta">transacción</text>
+    <text x="770" y="478" class="sans small" text-anchor="end">guardar carrito</text>
+    <text x="983" y="478" class="sans small">reservar stock</text>
+  </g>
+
+  <path class="feedback" d="M880 529 V622 H174 V378"/>
+  <circle class="step" cx="854" cy="622" r="13"/><text x="854" y="622" class="sans step-text">4</text>
+  <text x="560" y="607" class="sans label">confirmación o error vuelve por el mismo sistema</text>
+
+  <g>
+    <rect x="69" y="562" width="205" height="90" rx="13" fill="#e8eef1" stroke="#31536a" stroke-width="2"/>
+    <text x="171" y="588" class="sans" font-size="15" font-weight="720" text-anchor="middle">Bucle de feedback</text>
+    <text x="171" y="614" class="sans node-meta">Éxito → conservar cambio</text>
+    <text x="171" y="638" class="sans node-meta">Error → revertir UI</text>
+  </g>
+
+  <g transform="translate(720 682)">
+    <line x1="0" y1="0" x2="50" y2="0" class="flow"/>
+    <text x="64" y="5" class="sans small">petición o dependencia</text>
+    <line x1="235" y1="0" x2="285" y2="0" class="feedback"/>
+    <text x="299" y="5" class="sans small">respuesta o feedback</text>
+  </g>
+</svg>

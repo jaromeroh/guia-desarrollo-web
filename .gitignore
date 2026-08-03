@@ -11,8 +11,18 @@ Thumbs.db
 # Build outputs (si eventualmente generamos un sitio)
 dist/
 build/
+_book/
 .next/
 node_modules/
+
+# Artefactos locales de revisión y automatización
+output/
+.playwright-cli/
+assets/diagrams/explorations/
+assets/diagrams/*.png
+!assets/diagrams/cap06-evolucion-rol.png
+__pycache__/
+*.py[cod]
 
 # Drafts personales
 drafts/

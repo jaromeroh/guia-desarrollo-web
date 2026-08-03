@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1020" role="img" aria-labelledby="title desc">
+  <title id="title">Capas de la mejora progresiva</title>
+  <desc id="desc">HTML aporta la función esencial. CSS mejora la presentación y JavaScript amplía el comportamiento. Cada capa se apoya en la anterior, que conserva su propósito si la superior falla.</desc>
+  <defs>
+    <style>
+      .bg { fill: #F2EEE6; }
+      .frame { fill: #FFFDFA; stroke: #D8D2C7; stroke-width: 2; }
+      .eyebrow { fill: #31536A; font-family: sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; }
+      .title { fill: #20262E; font-family: sans-serif; font-size: 23px; font-weight: 700; }
+      .copy { fill: #59636D; font-family: sans-serif; font-size: 17px; font-weight: 400; }
+      .item { fill: #31536A; font-family: sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 1px; }
+      .html { fill: #E8EEF1; stroke: #31536A; stroke-width: 3; }
+      .css { fill: #F2EEE6; stroke: #A9A49B; stroke-width: 3; }
+      .js { fill: #F5ECD8; stroke: #C59132; stroke-width: 3; }
+      .support { fill: none; stroke: #72706C; stroke-width: 3; }
+      .badge-blue { fill: #31536A; }
+      .badge-gray { fill: #72706C; }
+      .badge { fill: #fff; font-family: sans-serif; font-size: 17px; font-weight: 700; }
+      .footer { fill: #31536A; font-family: sans-serif; font-size: 16px; font-weight: 600; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#72706C"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="420" height="1020"/>
+  <rect class="frame" x="16" y="16" width="388" height="988" rx="22"/>
+  <text class="eyebrow" x="38" y="60">CAPAS ACUMULATIVAS</text>
+
+  <path class="support" d="M210 746V706" marker-end="url(#arrow)"/>
+  <path class="support" d="M210 474V434" marker-end="url(#arrow)"/>
+
+  <rect class="html" x="32" y="752" width="356" height="184" rx="20"/>
+  <circle class="badge-blue" cx="70" cy="794" r="20"/>
+  <text class="badge" x="70" y="800" text-anchor="middle">1</text>
+  <text class="item" x="102" y="800">BASE</text>
+  <text class="title" x="54" y="842">HTML</text>
+  <text class="copy" x="54" y="876">Función esencial: contenido,</text>
+  <text class="copy" x="54" y="901">enlaces y formularios útiles</text>
+
+  <rect class="css" x="50" y="480" width="320" height="214" rx="20"/>
+  <circle class="badge-gray" cx="88" cy="522" r="20"/>
+  <text class="badge" x="88" y="528" text-anchor="middle">2</text>
+  <text class="item" x="120" y="528">MEJORA</text>
+  <text class="title" x="72" y="574">CSS</text>
+  <text class="copy" x="72" y="608">Presentación: jerarquía,</text>
+  <text class="copy" x="72" y="633">adaptación y legibilidad</text>
+
+  <rect class="js" x="68" y="178" width="284" height="244" rx="20"/>
+  <circle class="badge-blue" cx="106" cy="220" r="20"/>
+  <text class="badge" x="106" y="226" text-anchor="middle">3</text>
+  <text class="item" x="138" y="226">AMPLÍA</text>
+  <text class="title" x="90" y="272">JavaScript</text>
+  <text class="copy" x="90" y="307">Comportamiento:</text>
+  <text class="copy" x="90" y="334">actualizaciones parciales,</text>
+  <text class="copy" x="90" y="359">autocompletado y otras</text>
+  <text class="copy" x="90" y="384">interacciones enriquecidas</text>
+
+  <rect x="38" y="954" width="344" height="1" fill="#D8D2C7"/>
+  <text class="footer" x="210" y="978" text-anchor="middle">Si una capa superior falla,</text>
+  <text class="footer" x="210" y="998" text-anchor="middle">la inferior conserva su propósito.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1510" role="img" aria-labelledby="title desc">
+  <title id="title">Dos diagramas, dos preguntas</title>
+  <desc id="desc">El mapa de contexto muestra quién usa el sistema y qué dependencias externas toca; el flujo de pago muestra el orden del proceso y sus salidas de error.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1510" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1478" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">LA PREGUNTA ELIGE LA NOTACIÓN</text><rect x="32" y="90" width="356" height="620" rx="20" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text x="52" y="125" class="sans tag">MAPA DE CONTEXTO</text><rect id="m-ctx-users" x="68" y="160" width="284" height="90" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="m-ctx-users" data-padding="18" x="210" y="202" class="sans node-title"><tspan x="210" y="202">Usuarios</tspan></text><rect id="m-ctx-app" x="68" y="330" width="284" height="110" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="m-ctx-app" data-padding="18" x="210" y="372" class="sans node-title"><tspan x="210" y="372">Aplicación</tspan><tspan x="210" dy="32" class="node-copy">responsabilidad propia</tspan></text><path class="flow" d="M210 250V326"/><rect id="m-ctx-ext-0" x="42" y="545" width="94" height="95" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="m-ctx-ext-0" data-padding="18" x="89" y="587" class="sans node-title"><tspan x="89" y="587">Pagos</tspan></text><rect id="m-ctx-ext-1" x="163" y="545" width="94" height="95" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="m-ctx-ext-1" data-padding="18" x="210" y="587" class="sans node-title"><tspan x="210" y="587">Email</tspan></text><rect id="m-ctx-ext-2" x="284" y="545" width="94" height="95" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="m-ctx-ext-2" data-padding="18" x="331" y="587" class="sans node-title"><tspan x="331" y="587">S3</tspan></text><path class="relation" d="M210 440V505M89 505H331M89 505V541M210 505V541M331 505V541"/><rect x="32" y="745" width="356" height="705" rx="20" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text x="52" y="780" class="sans tag">FLUJO DE PAGO</text><rect id="m-pay-step-0" x="90" y="815" width="240" height="100" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="m-pay-step-0" data-padding="18" x="210" y="857" class="sans node-title"><tspan x="210" y="857">Enviar</tspan><tspan x="210" dy="32" class="node-copy">acción</tspan></text><path class="flow" d="M210 915V952"/><rect id="m-pay-step-1" x="90" y="960" width="240" height="100" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="m-pay-step-1" data-padding="18" x="210" y="1002" class="sans node-title"><tspan x="210" y="1002">Validar</tspan><tspan x="210" dy="32" class="node-copy">datos</tspan></text><path class="flow" d="M210 1060V1097"/><rect id="m-pay-step-2" x="90" y="1105" width="240" height="100" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="m-pay-step-2" data-padding="18" x="210" y="1147" class="sans node-title"><tspan x="210" y="1147">Cobrar</tspan><tspan x="210" dy="32" class="node-copy">pago</tspan></text><path class="flow" d="M210 1205V1242"/><rect id="m-pay-step-3" x="90" y="1250" width="240" height="100" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="m-pay-step-3" data-padding="18" x="210" y="1292" class="sans node-title"><tspan x="210" y="1292">Confirmar</tspan><tspan x="210" dy="32" class="node-copy">correo</tspan></text><rect id="m-pay-note" x="62" y="1345" width="296" height="100" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="m-pay-note" data-padding="18" x="210" y="1382" class="sans node-title"><tspan x="210" y="1382">Cada validación</tspan><tspan x="210" dy="32" class="node-copy">necesita una salida de error</tspan></text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Passkey · demostrar sin compartir un secreto</title>
+  <desc id="desc">El servidor envía un desafío único; el autenticador autoriza el uso de la clave privada vinculada al sitio, firma el desafío y el servidor verifica la firma con la clave pública registrada.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1100" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1068" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">DESAFÍO Y FIRMA</text><rect id="pk-mobile-0" x="52" y="92" width="316" height="140" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="pk-mobile-0" data-padding="18" x="210" y="134" class="sans node-title"><tspan x="210" y="134">Servidor</tspan><tspan x="210" dy="32" class="node-copy">crea un desafío único</tspan></text><path class="flow" d="M210 232V289"/><rect id="pk-mobile-1" x="52" y="297" width="316" height="140" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="pk-mobile-1" data-padding="18" x="210" y="339" class="sans node-title"><tspan x="210" y="339">Autenticador</tspan><tspan x="210" dy="32" class="node-copy">verifica el sitio</tspan><tspan x="210" dy="24" class="node-copy">y pide autorización</tspan></text><path class="flow" d="M210 437V494"/><rect id="pk-mobile-2" x="52" y="502" width="316" height="140" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="pk-mobile-2" data-padding="18" x="210" y="544" class="sans node-title"><tspan x="210" y="544">Clave privada</tspan><tspan x="210" dy="32" class="node-copy">firma dentro</tspan><tspan x="210" dy="24" class="node-copy">del autenticador</tspan></text><path class="flow" d="M210 642V699"/><rect id="pk-mobile-3" x="52" y="707" width="316" height="140" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="pk-mobile-3" data-padding="18" x="210" y="749" class="sans node-title"><tspan x="210" y="749">Servidor</tspan><tspan x="210" dy="32" class="node-copy">verifica con</tspan><tspan x="210" dy="24" class="node-copy">la clave pública</tspan></text><rect id="pk-mobile-note" x="52" y="920" width="316" height="115" rx="14" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="pk-mobile-note" data-padding="16" x="210" y="955" class="sans node-copy"><tspan x="210">La biometría desbloquea</tspan><tspan x="210" dy="25">la credencial local.</tspan><tspan x="210" dy="25">No se envía al servidor.</tspan></text>
+</svg>

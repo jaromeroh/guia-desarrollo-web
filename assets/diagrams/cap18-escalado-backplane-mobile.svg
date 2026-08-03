@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1210" role="img" aria-labelledby="title desc">
+  <title id="title">Escalar conexiones exige un backplane</title>
+  <desc id="desc">Cada instancia conserva sus conexiones locales; un backplane distribuye mensajes entre instancias para alcanzar al destinatario conectado en otro proceso. La durabilidad depende de la tecnología elegida.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="420" height="1210" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1178" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">CONEXIONES DISTRIBUIDAS</text><rect id="rtm-lb" x="52" y="92" width="316" height="130" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="rtm-lb" data-padding="18" x="210" y="134" class="sans node-title"><tspan x="210" y="134">Balanceador</tspan><tspan x="210" dy="32" class="node-copy">asigna cada conexión</tspan></text><path class="flow" d="M210 222V280"/><rect id="rtm-instance-1" x="38" y="290" width="160" height="170" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="rtm-instance-1" data-padding="18" x="118" y="332" class="sans node-title"><tspan x="118" y="332">Instancia 1</tspan><tspan x="118" dy="32" class="node-copy">clientes</tspan><tspan x="118" dy="24" class="node-copy">locales</tspan></text><rect id="rtm-instance-2" x="222" y="290" width="160" height="170" rx="14" fill="#FFFDFA" stroke="#A9A49B" stroke-width="2.5"/><text data-container="rtm-instance-2" data-padding="18" x="302" y="332" class="sans node-title"><tspan x="302" y="332">Instancia 2</tspan><tspan x="302" dy="32" class="node-copy">clientes</tspan><tspan x="302" dy="24" class="node-copy">locales</tspan></text><path class="flow" d="M118 460V535H210V600"/><path class="flow" d="M302 460V535H210V600"/><rect id="rtm-bus" x="52" y="610" width="316" height="165" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="rtm-bus" data-padding="18" x="210" y="652" class="sans node-title"><tspan x="210" y="652">Backplane</tspan><tspan x="210" dy="32" class="node-copy">distribuye entre procesos</tspan><tspan x="210" dy="24" class="node-copy">según su semántica</tspan></text><path class="flow" d="M210 775V845"/><rect id="rtm-delivery" x="52" y="855" width="316" height="165" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="rtm-delivery" data-padding="18" x="210" y="897" class="sans node-title"><tspan x="210" y="897">Entrega local</tspan><tspan x="210" dy="32" class="node-copy">cada instancia emite</tspan><tspan x="210" dy="24" class="node-copy">a sus conexiones</tspan></text><rect id="rtm-note" x="52" y="1070" width="316" height="85" rx="14" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/><text data-container="rtm-note" data-padding="15" x="210" y="1102" class="sans node-copy"><tspan x="210">Presencia, orden y replay</tspan><tspan x="210" dy="25">requieren decisiones adicionales.</tspan></text>
+</svg>

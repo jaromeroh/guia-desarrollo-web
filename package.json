@@ -1,0 +1,17 @@
+{
+  "name": "el-arte-del-desarrollo-web-moderno",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Previsualización local del manuscrito El Arte del Desarrollo Web Moderno",
+  "scripts": {
+    "book:audit-references": "node scripts/audit-references.mjs",
+    "book:build": "honkit build",
+    "book:serve": "honkit serve --port 4000"
+  },
+  "devDependencies": {
+    "honkit": "6.2.2"
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  }
+}

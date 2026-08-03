@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1260" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo resuelve la cascada un valor CSS en composición vertical</title>
+  <desc id="desc">Las declaraciones candidatas pasan por relevancia, origen e importancia, capa de cascada, especificidad y orden de aparición hasta obtener el valor aplicado.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.tag{font-size:15px;font-weight:760;letter-spacing:1.5px;fill:#31536A}.heading{font-size:23px;font-weight:760;text-anchor:middle}.copy{font-size:17px;fill:#59636D;text-anchor:middle}.left{text-anchor:start}.item{font-size:18px;font-weight:720}.num{font-size:16px;font-weight:760;fill:#FFFDFA;text-anchor:middle;dominant-baseline:central}.flow{stroke:#31536A;stroke-width:3.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="420" height="1260" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="1228" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2"/>
+  <text x="38" y="58" class="sans tag">DESEMPATE ORDENADO</text>
+  <rect x="42" y="92" width="336" height="120" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="210" y="138" class="sans heading">Declaraciones candidatas</text>
+  <text x="210" y="168" class="sans copy">solo las reglas que aplican</text>
+  <text x="210" y="190" class="sans copy">al elemento</text>
+  <path class="flow" d="M210 214V250"/>
+
+  <rect x="42" y="260" width="336" height="120" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="76" cy="300" r="19" fill="#31536A"/><text x="76" y="300" class="sans num">1</text>
+  <text x="108" y="304" class="sans item">Relevancia</text><text x="66" y="334" class="sans copy left" text-anchor="start"><tspan x="66">¿la regla aplica</tspan><tspan x="66" dy="24">aquí?</tspan></text>
+  <path class="flow" d="M210 382V418"/>
+  <rect x="42" y="428" width="336" height="120" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="76" cy="468" r="19" fill="#31536A"/><text x="76" y="468" class="sans num">2</text>
+  <text x="108" y="472" class="sans item">Origen e importancia</text><text x="66" y="502" class="sans copy left" text-anchor="start"><tspan x="66">autor, usuario,</tspan><tspan x="66" dy="24">navegador</tspan></text>
+  <path class="flow" d="M210 550V586"/>
+  <rect x="42" y="596" width="336" height="120" rx="18" fill="#F5ECD8" stroke="#B68125" stroke-width="3"/>
+  <circle cx="76" cy="636" r="19" fill="#31536A"/><text x="76" y="636" class="sans num">3</text>
+  <text x="108" y="640" class="sans item">Capa de cascada</text><text x="66" y="670" class="sans copy left" text-anchor="start"><tspan x="66">orden declarado</tspan><tspan x="66" dy="24">entre grupos</tspan></text>
+  <path class="flow" d="M210 718V754"/>
+  <rect x="42" y="764" width="336" height="120" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="76" cy="804" r="19" fill="#31536A"/><text x="76" y="804" class="sans num">4</text>
+  <text x="108" y="808" class="sans item">Especificidad</text><text x="66" y="838" class="sans copy left" text-anchor="start"><tspan x="66">peso del selector</tspan><tspan x="66" dy="24">restante</tspan></text>
+  <path class="flow" d="M210 886V922"/>
+  <rect x="42" y="932" width="336" height="120" rx="18" fill="#F7F4ED" stroke="#A9A49B" stroke-width="3"/>
+  <circle cx="76" cy="972" r="19" fill="#31536A"/><text x="76" y="972" class="sans num">5</text>
+  <text x="108" y="976" class="sans item">Orden de aparición</text><text x="66" y="1006" class="sans copy left" text-anchor="start"><tspan x="66">la última equivalente</tspan><tspan x="66" dy="24">gana</tspan></text>
+  <path class="flow" d="M210 1054V1090"/>
+  <rect x="66" y="1100" width="288" height="104" rx="18" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="210" y="1142" class="sans heading">Valor aplicado</text>
+  <text x="210" y="1178" class="sans copy">primer criterio que desempata</text>
+</svg>

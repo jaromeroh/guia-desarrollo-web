@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 820" role="img" aria-labelledby="title desc">
+  <title id="title">Máquina de estados vertical de un circuit breaker</title>
+  <desc id="desc">El circuito pasa de cerrado a abierto cuando alcanza el umbral de errores. Tras el tiempo de espera pasa a semiabierto. Una prueba exitosa lo cierra y una fallida lo devuelve a abierto.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#59636D"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .tag { font-size: 14px; font-weight: 760; letter-spacing: 1.5px; fill: #31536A; }
+      .state-title { font-size: 28px; font-weight: 750; text-anchor: middle; }
+      .state-copy { font-size: 19px; fill: #59636D; text-anchor: middle; }
+      .flow { stroke: #59636D; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .failure { stroke: #B95736; stroke-width: 4; fill: none; marker-end: url(#arrow-rust); }
+      .label { font-size: 16px; font-weight: 680; fill: #59636D; text-anchor: middle; }
+      .failure-label { font-size: 16px; font-weight: 700; fill: #8F3F26; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="420" height="820" fill="#F2EEE6"/>
+  <rect x="16" y="16" width="388" height="788" rx="22" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="36" y="50" class="sans tag">MÁQUINA DE ESTADOS</text>
+
+  <g>
+    <rect x="60" y="86" width="300" height="112" rx="56" fill="#E8EEF1" stroke="#31536A" stroke-width="4"/>
+    <text x="210" y="137" class="sans state-title">Cerrado</text>
+    <text x="210" y="169" class="sans state-copy">tráfico normal</text>
+
+    <rect x="60" y="332" width="300" height="112" rx="56" fill="#F3E6DF" stroke="#B95736" stroke-width="4"/>
+    <text x="210" y="383" class="sans state-title">Abierto</text>
+    <text x="210" y="415" class="sans state-copy">rechazar rápido</text>
+
+    <rect x="60" y="578" width="300" height="112" rx="56" fill="#F5ECD8" stroke="#B68125" stroke-width="4"/>
+    <text x="210" y="629" class="sans state-title">Semiabierto</text>
+    <text x="210" y="661" class="sans state-copy">probar el servicio</text>
+  </g>
+
+  <line class="failure" x1="210" y1="198" x2="210" y2="326"/>
+  <rect x="126" y="246" width="168" height="32" rx="10" fill="#FFFDFA"/>
+  <text x="210" y="268" class="sans failure-label">errores ≥ umbral</text>
+
+  <line class="flow" x1="210" y1="444" x2="210" y2="572"/>
+  <rect x="166" y="492" width="88" height="32" rx="10" fill="#FFFDFA"/>
+  <text x="210" y="514" class="sans label">timeout</text>
+
+  <path class="failure" d="M360 634 C394 634 394 388 360 388"/>
+  <text x="326" y="548" class="sans failure-label">prueba fallida</text>
+
+  <path class="flow" d="M60 634 C24 634 24 142 60 142"/>
+  <text x="94" y="548" class="sans label">prueba exitosa</text>
+
+  <text x="210" y="748" class="sans label">Cada estado cambia cómo se trata</text>
+  <text x="210" y="772" class="sans label">la siguiente llamada.</text>
+</svg>

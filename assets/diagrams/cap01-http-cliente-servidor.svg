@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 780" role="img" aria-labelledby="title desc">
+  <title id="title">Intercambio HTTP entre cliente y servidor</title>
+  <desc id="desc">El cliente envía una solicitud HTTP con método, ruta, cabeceras y, cuando corresponde, cuerpo. El servidor procesa la solicitud y devuelve una respuesta con estado, cabeceras y un cuerpo opcional.</desc>
+  <defs>
+    <marker id="request-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#31536A"/></marker>
+    <marker id="response-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#59636D"/></marker>
+    <style>
+      .sans{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#20262E}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;fill:#20262E}.tag{font-size:18px;font-weight:760;letter-spacing:2px;fill:#31536A}.actor{font-size:31px;font-weight:750;text-anchor:middle}.copy{font-size:21px;fill:#59636D;text-anchor:middle}.message{font-size:22px;font-weight:700;text-anchor:middle}.literal{font-size:20px;text-anchor:middle}.request{stroke:#31536A;stroke-width:5;fill:none;marker-end:url(#request-arrow)}.request-tail{stroke:#31536A;stroke-width:5;fill:none}.response{stroke:#59636D;stroke-width:4;stroke-dasharray:11 9;fill:none;marker-end:url(#response-arrow)}.response-tail{stroke:#59636D;stroke-width:4;stroke-dasharray:11 9;fill:none}
+    </style>
+  </defs>
+  <rect width="760" height="780" fill="#F2EEE6"/>
+  <rect x="34" y="34" width="692" height="712" rx="26" fill="#FFFDFA" stroke="#D8D2C7" stroke-width="2.5"/>
+  <text x="68" y="80" class="sans tag">SOLICITUD Y RESPUESTA</text>
+
+  <rect x="150" y="112" width="460" height="106" rx="22" fill="#E8EEF1" stroke="#31536A" stroke-width="3"/>
+  <text x="380" y="162" class="sans actor">Cliente</text>
+  <text x="380" y="195" class="sans copy">inicia el intercambio</text>
+
+  <line class="request-tail" x1="202" y1="218" x2="202" y2="290"/>
+  <rect x="52" y="296" width="300" height="146" rx="18" fill="#FFFDFA" stroke="#31536A" stroke-width="2.5"/>
+  <text x="202" y="336" class="sans message">Solicitud HTTP</text>
+  <text x="202" y="372" class="mono literal">GET /perfil</text>
+  <text x="202" y="405" class="sans copy">cabeceras</text>
+  <text x="202" y="431" class="sans copy">cuerpo opcional</text>
+  <line class="request" x1="202" y1="442" x2="202" y2="504"/>
+
+  <rect x="150" y="510" width="460" height="106" rx="22" fill="#F3E6DF" stroke="#B95736" stroke-width="3"/>
+  <text x="380" y="560" class="sans actor">Servidor</text>
+  <text x="380" y="593" class="sans copy">procesa según el contrato</text>
+
+  <line class="response-tail" x1="558" y1="504" x2="558" y2="448"/>
+  <rect x="408" y="296" width="300" height="146" rx="18" fill="#FFFDFA" stroke="#59636D" stroke-width="2.5"/>
+  <text x="558" y="336" class="sans message">Respuesta HTTP</text>
+  <text x="558" y="372" class="mono literal">200 OK</text>
+  <text x="558" y="405" class="sans copy">cabeceras</text>
+  <text x="558" y="431" class="sans copy">cuerpo opcional</text>
+  <line class="response" x1="558" y1="290" x2="558" y2="232"/>
+
+  <text x="380" y="674" class="sans copy">HTTP define mensajes y su semántica;</text>
+  <text x="380" y="706" class="sans copy">no obliga a que cada rol sea una sola máquina.</text>
+</svg>

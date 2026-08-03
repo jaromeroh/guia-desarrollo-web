@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Tres contratos de ejecución</title>
+  <desc id="desc">Una función determinista aplica una regla explícita; un modelo lingüístico produce una salida condicionada por prompt y contexto; un agente añade decisiones, herramientas y estado externo que deben observarse y limitarse.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#31536A"/>
+    </marker>
+    <marker id="arrow-rust" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#B95736"/>
+    </marker>
+    <style>
+      .sans { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20262E; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; fill: #20262E; }
+      .title { font-size: 34px; font-weight: 750; }
+      .subtitle { font-size: 17px; fill: #72706C; }
+      .tag { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; fill: #31536A; }
+      .node-title { font-size: 19px; font-weight: 720; text-anchor: middle; }
+      .node-copy { font-size: 15px; fill: #59636D; text-anchor: middle; }
+      .label { font-size: 14px; font-weight: 680; text-anchor: middle; }
+      .small { font-size: 14px; fill: #72706C; }
+      .flow { fill: none; stroke: #31536A; stroke-width: 3; marker-end: url(#arrow); }
+      .risk-flow { fill: none; stroke: #B95736; stroke-width: 3; marker-end: url(#arrow-rust); }
+      .relation { fill: none; stroke: #59636D; stroke-width: 2.5; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#F2EEE6"/>
+  <text x="48" y="60" class="sans title">Tres contratos de ejecución</text>
+  <text x="48" y="91" class="sans subtitle">Cuanto más abierta es la ejecución, más importante es el oráculo</text><rect id="card-0" x="55" y="145" width="344" height="465" rx="14" fill="#E8EEF1" stroke="#31536A" stroke-width="2.5"/><text data-container="card-0" data-padding="18" x="227" y="195" class="sans node-title"><tspan x="227" y="195">Función</tspan></text><text x="83" y="250" class="sans tag">MODELO</text><text x="83" y="281" class="sans small"><tspan x="83" y="281">entrada + estado</tspan><tspan x="83" y="305">regla explícita</tspan></text><text x="83" y="362" class="sans tag">ENCAJA CUANDO</text><text x="83" y="393" class="sans small"><tspan x="83" y="393">contrato estable</tspan><tspan x="83" y="417">resultado reproducible</tspan></text><text x="83" y="474" class="sans tag">COSTE A OPERAR</text><text x="83" y="505" class="sans small"><tspan x="83" y="505">depurar variables</tspan><tspan x="83" y="529">y flujo observable</tspan></text><rect id="card-1" x="437" y="145" width="344" height="465" rx="14" fill="#F5ECD8" stroke="#C59132" stroke-width="2.5"/><text data-container="card-1" data-padding="18" x="609" y="195" class="sans node-title"><tspan x="609" y="195">Modelo lingüístico</tspan></text><text x="465" y="250" class="sans tag">MODELO</text><text x="465" y="281" class="sans small"><tspan x="465" y="281">prompt + contexto</tspan><tspan x="465" y="305">salida probabilística</tspan></text><text x="465" y="362" class="sans tag">ENCAJA CUANDO</text><text x="465" y="393" class="sans small"><tspan x="465" y="393">síntesis · lenguaje</tspan><tspan x="465" y="417">propuestas variadas</tspan></text><text x="465" y="474" class="sans tag">COSTE A OPERAR</text><text x="465" y="505" class="sans small"><tspan x="465" y="505">muestreo y evaluación</tspan><tspan x="465" y="529">supuestos no visibles</tspan></text><rect id="card-2" x="819" y="145" width="344" height="465" rx="14" fill="#F3E6DF" stroke="#B95736" stroke-width="2.5"/><text data-container="card-2" data-padding="18" x="991" y="195" class="sans node-title"><tspan x="991" y="195">Agente</tspan></text><text x="847" y="250" class="sans tag">MODELO</text><text x="847" y="281" class="sans small"><tspan x="847" y="281">modelo + herramientas</tspan><tspan x="847" y="305">decisiones y efectos</tspan></text><text x="847" y="362" class="sans tag">ENCAJA CUANDO</text><text x="847" y="393" class="sans small"><tspan x="847" y="393">tarea multietapa</tspan><tspan x="847" y="417">con feedback externo</tspan></text><text x="847" y="474" class="sans tag">COSTE A OPERAR</text><text x="847" y="505" class="sans small"><tspan x="847" y="505">permisos · trazas</tspan><tspan x="847" y="529">parada y recuperación</tspan></text>
+</svg>
